@@ -2,7 +2,6 @@
 	$repjs="systeme/donnees/walk.json";
 	$json = file_get_contents($repjs);
 	$walk = json_decode($json, true);
-	include ("systeme/php/fonctions.php");
 	include ("systeme/php/donnes_walk.php");
 ?>
 <!doctype html>
