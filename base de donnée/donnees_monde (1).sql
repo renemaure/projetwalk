@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : collecpcmit2023.mysql.db
--- Généré le : ven. 11 juil. 2025 à 18:58
+-- Généré le : ven. 11 juil. 2025 à 18:59
 -- Version du serveur : 8.0.42-33
 -- Version de PHP : 8.1.32
 
@@ -24,38 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `img_avatar`
+-- Structure de la table `donnees_monde`
 --
 
-CREATE TABLE `img_avatar` (
+CREATE TABLE `donnees_monde` (
   `id` int NOT NULL,
-  `nom` tinytext NOT NULL,
-  `corps` int NOT NULL,
-  `tete` int NOT NULL,
-  `bouche` int NOT NULL,
-  `yeux` int NOT NULL,
-  `cheveux` int NOT NULL,
-  `pantalon` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `ans` int NOT NULL,
+  `mois` int NOT NULL,
+  `jours` int NOT NULL,
+  `heurs` int NOT NULL,
+  `minutes` int NOT NULL,
+  `secondes` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `img_avatar`
+-- Déchargement des données de la table `donnees_monde`
 --
 
-INSERT INTO `img_avatar` (`id`, `nom`, `corps`, `tete`, `bouche`, `yeux`, `cheveux`, `pantalon`) VALUES
-(3, 'mimile', 10195, 10207, 10028, 10477, 11135, 0),
-(4, 'maurice', 10195, 10207, 10027, 10260, 10822, 0),
-(10, 'bernard', 10197, 10209, 10011, 10271, 10768, 11991),
-(11, 'dudule', 10203, 10215, 10005, 10260, 10738, 11412);
+INSERT INTO `donnees_monde` (`id`, `ans`, `mois`, `jours`, `heurs`, `minutes`, `secondes`) VALUES
+(1, 12, 2, 23, 17, 50, 50);
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `img_avatar`
+-- Index pour la table `donnees_monde`
 --
-ALTER TABLE `img_avatar`
+ALTER TABLE `donnees_monde`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -63,10 +59,10 @@ ALTER TABLE `img_avatar`
 --
 
 --
--- AUTO_INCREMENT pour la table `img_avatar`
+-- AUTO_INCREMENT pour la table `donnees_monde`
 --
-ALTER TABLE `img_avatar`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `donnees_monde`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
