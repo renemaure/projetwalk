@@ -1,0 +1,11 @@
+DD12/02/2013
+création du site michelangelo4tet.com
+DD16/02/2013
+instalation du module bug.php
+instalation du module contact.php
+instalation du module gestion contacts.php
+activation de la page presse
+activation de la page bio
+DD23/02/2013
+rajouté deux page à la rubrique presse
+modifier la page d'accueil

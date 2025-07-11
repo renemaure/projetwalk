@@ -1,0 +1,100 @@
+09:44 29 09 2013
+lat: 48.20065
+long: 3.28268
+presis: 18000
+comment: commantaire
+11:46 29 09 2013
+lat: 48.20065
+long: 3.28268
+presis: 18000
+comment: test
+12:15 29 09 2013
+lat: 48.1959627
+long: 3.2784497
+presis: 2372
+comment: test sens bus
+13:14 29 09 2013
+lat: 48.1931009
+long: 3.2786104
+presis: 2740
+comment: montreau
+14:41 29 09 2013
+lat: 48.8878614
+long: 2.3491969
+presis: 500
+comment: château  rouge
+14:58 29 09 2013
+lat: 48.8878184
+long: 2.3490644
+presis: 500
+comment: café tinanic rue dejean
+15:51 29 09 2013
+lat: 48.8878614
+long: 2.3491969
+presis: 500
+comment: pionnier myra
+16:45 29 09 2013
+lat: 48.8843052
+long: 2.3526541
+presis: 615
+comment: rue des gardes myrha
+17:10 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: léon oran
+17:14 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: ldestiné passage
+17:17 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: déployé/ stephen
+17:22 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: doudovile sncf
+17:26 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: doudovile max hormis
+17:26 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: doudovile max hormis
+17:38 29 09 2013
+lat: 48.8877485
+long: 2.3479544
+presis: 1058
+comment: rue de l olive
+13:59 4 10 2013
+lat: 48.8878283
+long: 2.349064
+presis: 500
+comment: titane vendredi
+13:40 11 10 2013
+lat: 48.8878368
+long: 2.3490607
+presis: 500
+comment: tinac 11octobre
+14:09 11 10 2013
+lat: 48.8878683
+long: 2.34918
+presis: 500
+comment: tinac 11octobre 2
+15:12 27 10 2013
+lat: 48.2016664
+long: 3.2641935
+presis: 20
+comment: test avec gps st martin
+15:23 27 10 2013
+lat: 48.2016664
+long: 3.2641935
+presis: 20
+comment:  test avec gps st martin 2

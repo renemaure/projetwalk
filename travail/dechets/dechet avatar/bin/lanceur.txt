@@ -1,0 +1,7 @@
+fichiers/entrer_bord.php
+menu_vide
+version 1.0.0 / phase test
+Création & gestion avatar projet Swart/Walk
+fichiers/enregistrement.php
+fichiers/etape1.php
+fichiers/civil.php

@@ -1,0 +1,118 @@
+#liens {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 200px;
+    left: 810px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    position: absolute;
+    top: 380px;
+    width: 150px;
+    z-index: 1;
+}
+#liens li {text-decoration:none;}
+
+#liens li a { color:#000000; text-decoration:none; } 
+
+#liens li a:hover {background: #66FFFF; color:#002143;}
+
+#definition {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 200px;
+    left: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    width: 400px;
+    z-index: 1;
+}
+#avatar {
+    background: none repeat scroll 0 0 #EDAEBE;
+    border: 1px solid white;
+    display: block;
+    font-size: 12pt;
+    height: 230px;
+    left: 630px;
+    position: absolute;
+    top: 40px;
+    width: 300px;
+}
+#control_monde {background: none repeat scroll 0 0 #6699FF;     border: 1px solid white;     bottom: 50px;     height: 150px;      position: absolute;     width: 560px;  font-size: 12pt;}
+
+#pilotage {background: none repeat scroll 0 0 #6699FF;     border: 1px solid white;     bottom: 10px;     height: 170px;      position: absolute;     width: 560px;  font-size: 12pt;}
+
+#reste {position: absolute;     height: 20px;     left: 350px;     top: 45px;     width: 200px; background: none repeat scroll 0 0 #FFFF99;     border: 1px solid white; text-align:center;}
+
+#zone_img , #img_avatar {background: none repeat scroll 0 0 #A1A1A1;     border: 1px solid white;  position: absolute; height: 110px ; width: 110px;}
+
+#zone_img {left: 100px; top: 100px;}
+
+#img_avatar {
+    left: 170px;
+    top: 40px;
+    z-index: 1;
+}
+#creation input[type="submit"] {
+    border: 1px solid #CC00CC;
+    left: 120px;
+    position: absolute;
+    top: 140px;
+    width: 60px;
+}
+#creation input[type="button"] {
+    border: 1px solid #CC00CC;
+    left: 280px;
+    position: absolute;
+    top: 140px;
+    width: 120px;
+}
+#tab_objet {position: absolute; top: 10px; left: 10px;}
+#couleur {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    visibility: visible;
+}
+.dessin {position: absolute; left: 0px;top: 0px; z-index:1;}
+.fond {position: absolute; left: 0px;top: 0px; z-index:0;}
+#blog {
+    background: none repeat scroll 0 0 #EDAEBE;
+    border: 1px solid white;
+    height: 350px;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    width: 560px;
+}
+#zone_img_avatar {
+    background: none repeat scroll 0 0 #A1A1A1;
+    border: 1px solid white;
+    height: 110px;
+    left: 420px;
+    position: absolute;
+    top: 390px;
+    width: 110px;
+}
+#tab_objet {position: absolute; top: 50px; left: 10px;}
+#nav_avatar {
+    background: none repeat scroll 0 0 #00CC99;
+    border: 1px solid white;
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 355px;
+    width: 560px;
+}
+#cache_img {
+    left: 50px;
+    position: absolute;
+    top: 430px;
+    width: 130px;
+}
+#nav_avatar li {cursor: pointer;}
+.carre {position: relative; width: 20px;     height: 20px; cursor: pointer;}
+
+/*fin page entree mot de pase tab bord*/

@@ -1,0 +1,11 @@
+<table border=1 cellpadding=2 cellspacing=0 bgcolor=#FFFFFF bordercolor=#ae206c id="tab_princ"> 
+<tr>
+<td><span class ='gras'>utile wiki</span></td>
+<td><span class ='gras'>théorie SWart / wal</span>k </td>
+<td><span class ='gras'>technique SWart / walk </span></td>
+<td><span class ='gras'>scénario SWart / walk </span></td>
+</tr>
+</table>
+<!-- c'est normal que le menu apparaisse deux fois le deuxième est celui en édition! ne rien ecrire ici ce sont des commentaires! -->
+
+<!-- <td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=matières">menu /table des matières</a></td>  -->

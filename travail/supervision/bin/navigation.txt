@@ -1,0 +1,4 @@
+index.php
+../wiki/index.php
+../index.php
+supervision.php

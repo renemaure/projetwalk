@@ -1,0 +1,66 @@
+{
+"ref_chem":{
+            "indc1" : "corps",
+            "indc2" : "tete"
+},
+"corps":{
+            "nbr_corps" : 12,
+            "deb_corps" : 10194,
+            "chem_corps" : "corps",
+            "col_table" : 4,
+            "coul_corps" :{
+                        "coul1" :"FFCCCC",
+                        "coul2" :"FFCC74",
+                        "coul3" :"E5C093",
+                        "coul4" :"996600",
+                        "coul5" :"999966",
+                        "coul6" :"9999CC",
+                        "coul7" :"F4BE9A",
+                        "coul8" :"CC9D59",
+                        "coul9" :"CC0000",
+                        "coul10" :"F8DCCE",
+                        "coul11" :"6799CC",
+                        "coul12" :"FF9902"
+            }
+},
+"tete":{
+    "nbr_corps" : 12,
+    "deb_tete"  : 10206,
+    "chem_tete" : "tete",
+    "col_table" : 4,
+    "coul_tete" :{
+                "coul1" :"FFCCCC",
+                "coul2" :"FFCC74",
+                "coul3" :"E5C093",
+                "coul4" :"996600",
+                "coul5" :"999966",
+                "coul6" :"9999CC",
+                "coul7" :"F4BE9A",
+                "coul8" :"CC9D59",
+                "coul9" :"CC0000",
+                "coul10" :"F8DCCE",
+                "coul11" :"6799CC",
+                "coul12" :"FF9902"
+    }
+},
+"rept" : {
+            "max" : 10,
+            "ind3" : "bouche",
+            "txt3" :"La bouche",
+            "ind4" : "yeux",
+            "txt4" : "Les yeux",
+            "ind5" : "cheveux",
+            "txt5" : "Les cheveux",
+            "ind6" : "pantalon",
+            "txt6" : "Le pantalon",
+            "ind7" : "chemises",
+            "txt7" : "La chemises",
+            "ind8" : "robes",
+            "txt8" : "Les robes",
+            "ind9"  : "chaussures",
+            "txt9" : "Les chaussures",
+            "ind10" : "divers",
+            "txt10" : "test divers"
+
+}
+}

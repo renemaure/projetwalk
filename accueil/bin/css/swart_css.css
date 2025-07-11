@@ -1,0 +1,144 @@
+@import url("http://webmaster.collectif11880.com/css-collectif/cms-collectif.css"); 
+
+/*@import url("http://fonts.googleapis.com/css?family=Diplomata+SC");*/
+
+/*utilisation: font-family: 'Diplomata SC', cursive;
+
+@import url(http://fonts.googleapis.com/css?family=Playball&subset=latin-ext);*/
+
+
+@import url("http://fonts.googleapis.com/css?family=Diplomata+SC|Clicker+Script|Playfair+Display+SC:900,400|Playball&subset=latin-ext");
+
+/*font-family: 'Clicker Script', cursive; ou font-family: 'Playfair Display SC', serif;*/
+
+body {  margin: 0;   text-align: center;  background:  none repeat scroll 0 0 #E3E3E3; }
+
+#zone_centrale {
+    background: none repeat scroll 0 0 #CFC8A9;
+    height: 450px;
+    left: 0;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    width: 900px;
+    z-index: 0;
+	border:8px double #86571B;
+}
+#zone_haut {
+  position: relative;
+  top:350px;
+}
+#modifiable {
+  overflow: hidden;
+  position: absolute;
+  height: 350px;
+  width: 900px;
+  top: 45px;
+}
+#header {
+  height: 70px;
+  overflow: hidden;
+  position: absolute;
+  width: 900px;
+  background: none repeat scroll 0 0 #9F9A82;
+}
+#zone_central {
+  height: 320px;
+  overflow: hidden;
+  padding: 10px;
+  position: absolute;
+  text-align: justify;
+  top: 80px;
+  width: 880px;
+}
+#titre_central , #titre_walk {
+  	position: relative;
+	font-family: 'Diplomata SC',cursive;
+	font-size: 6em;
+}
+#titre_central {
+  font-size: 6em;
+}
+#titre_walk {
+  font-size: 3.5em;
+}
+#texte_central {
+  font-family:'Playfair Display SC', serif;
+  font-weight: 400; 
+  font-size: 2em;
+  position: relative;
+  top: 10px;
+}
+#sous_titre {
+  font-family: 'Playball', cursive;
+  font-size: 1.5em;
+  font-style: italic;
+  position: relative;
+  top: 100px;
+}
+#pre_texte{
+  font-family:'Playfair Display SC', serif;
+  font-weight: 900; 
+  font-size: 2em;
+}	
+#bouton_header {
+  border: 3px solid #86571B;
+  height: 25px;
+  left: 650px;
+  padding: 5px;
+  position: absolute;
+  top: 15px;
+  width: 200px;	 
+  background: none repeat scroll 0 0 #CFC8A9; 
+  cursor:pointer;
+}  
+#bouton_header:hover, #bouton_header:focus{
+	color: #86571B;
+}
+#titre {
+  left: 30px;
+  position: relative;
+  top: 6px;
+  width: 500px;
+}
+#titre_walk1 {
+  	position: relative;
+	font-family: 'Diplomata SC',cursive;
+	font-size: 2em;
+	text-align:left;
+}   
+#pre_texte1{
+  position:relative;
+  font-family:'Playfair Display SC', serif;
+  font-weight: 900; 
+  font-size: 1em;
+  text-align:left;
+}	
+#texte_clustars , #texte_collec , #texte_saute {
+  font-family: 'verdana',serif;
+  font-size: 0.6em;
+  font-style: italic;
+  left: 5px;
+  position: absolute;
+  top: 431px;
+}
+#texte_collec {
+  left: 5px;
+}
+#texte_saute{
+left: 407px;
+cursor:pointer;
+}
+#texte_collec {
+  left: 753px;
+}
+#text_bas {
+  font-family: arial;
+  font-size: 1em;
+  padding: 10px;
+  position: relative;
+  text-align: justify;
+  top: 40px;
+}
+
+/* font-family: ‘Metrophobic’, Arial, serif; font-weight: 400; */

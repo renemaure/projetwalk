@@ -1,0 +1,75 @@
+
+#global {height: 640px; width: 1200px;}
+
+#central {
+    height: 490px;
+    left: 10px;
+    position: absolute;
+    top: 70px;
+    width: 1170px;
+}
+
+#avatar_table {position: absolute; top: 70px; left:120px;}
+
+#avatar_table th {
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 5px;
+	background-color: #596980;
+	color: #FFF;
+}
+td.caret {
+	width:15px;
+	padding:0;
+}
+.severity5 {
+	background-color:#f3a29b;
+	color:#000;
+}
+
+#avatar_table td .tdnum {text-align:center;  }
+
+/*tr.severity5:hover {
+	background-color:#f3867e;
+	color:#000;
+}*/
+
+
+#tab_princ , #tab_donne  {position:absolute;  left:100px; width:1000px; z-index:2;}
+/*
+#tab_donne {top:80px;}*/
+
+#tab_princ {top:80px;}
+ 
+#tab_princ td  , #tab_donne td  {font-size:9pt; text-align:center;} 
+
+#tab_princ td  a , #tab_donne td a {color:#000000;}
+
+
+.bug-titre  {position:absolute; top: 0px; font:bold 16px; height:36px; background: #FFFFFF; width:460px; left:0px; text-align:center;} 
+
+#tab-modif, #tab-bug {
+    background: none repeat scroll 0 0 #FFCCFF;
+    height: 450px;
+    overflow: auto;
+    padding: 10px;
+    position: absolute;
+    top: 100px;
+    width: 440px;
+}
+#tab-modif {left: 40px;}
+
+#tab-bug {left: 520px;}
+
+.titre-date {font-weight:bold; TEXT-DECORATION:underline; position:relatif;}	
+
+#tab-bug li {color:#ff0000;} 
+
+#tab-bug li .important {text-decoration:blink;}	 
+
+#version {
+    font: italic 10px;
+    left: 800px;
+    position: absolute;
+    top: 590px;
+}

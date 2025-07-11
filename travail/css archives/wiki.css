@@ -1,0 +1,96 @@
+
+#global {height: 1600px; width: 1200px;}
+
+
+#central {
+    height: 490px;
+    left: 10px;
+    position: absolute;
+    top: 70px;
+    width: 1170px;
+}
+
+
+#bout_saisi {position:absolute; top:10px; left:950; color:#ffffff;}
+
+#formul , #tab_bord {position:absolute;  display:block;  font-family:verdana; text-align:center;} 
+
+#tab_bord {top: 0px; left:0px; width: 1200px;  height:555px; z-index:2; } 
+
+#tab_princ , #tab_donne  {position:relative;  margin:auto;  width:1000; z-index:2;}
+
+#tab_donne {top:80px;}
+
+#tab_princ {top:60px;}
+ 
+#tab_princ td  , #tab_donne td  {font-size:9pt; text-align:center;} 
+
+#tab_princ td  a , #tab_donne td a {color:#000000;}
+
+#formul {
+    border: 1px solid #CC0000;
+    height: 370px;
+    left: 150px;
+    top: 100px;
+    width: 720px;
+	background: #FFBBBC; 
+}
+#util_bord {
+    height: 450px;
+    left: 10px;
+    position: absolute;
+    top: 80px;
+    width: 1150px;
+}
+#pit {
+    left: 1250px;
+    position: fixed;
+    top: 510px;
+}
+#saisie {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 400px;
+    left: 80px;
+    position: fixed;
+    top: 200px;
+    visibility: hidden;
+    width: 1000px;
+}
+
+#zone_text {
+    left: 30px;
+    position: absolute;
+    top: 150px;
+    width: 900px;
+}
+
+#zone_text p {margin-bottom:10px;}
+
+#saisie textarea { height: 300px;  width: 1000px;}
+
+#voir {
+    left: 0px;
+    position: fixed;
+    top: 120px;
+}
+	
+.vert {color: #797979;}
+
+.titre {position:relative; font-weight:bold; font-size: 14pt; text-align: center;}
+
+
+.code
+	{
+	text-align:left;
+	background-color:#eee;
+	color:black;
+	font-size:16px;
+	}
+	
+.apropos
+	{
+	background-color:#ffe;
+	border:solid 1px #CCCCCC;
+	}
+
+/*fin page entree mot de pase tab bord*/

@@ -1,0 +1,68 @@
+function tirage(text_jon){
+		affichage("monde", text_jon["structure1"]);
+		AffichageHeader(text_jon);
+		affichage("titre_conex",text_jon["titre1"])
+		affichage("zon_form",text_jon["tirage"]);
+		affichage("zon_enreg",text_jon["text4"]);
+		gesoption("physi",rest_piont,physi);
+		gesoption("intel",rest_piont,intel);
+		gesoption("charis",rest_piont,charis);
+
+		$("#monde").on("change", "#physi", function(){
+			physi = parseInt($("#physi").val());
+			rest_piont =  calcul_point("physi",rest_piont,physi);
+			gesoption("intel",rest_piont,intel);
+			gesoption("charis",rest_piont,charis);
+		});
+		$("#monde").on("change", "#intel", function(){
+			intel = parseInt($("#intel").val());
+			rest_piont =  calcul_point("intel",rest_piont,intel);
+			gesoption("physi",rest_piont,physi);
+			gesoption("charis",rest_piont,charis);
+		});
+		$("#monde").on("change", "#charis", function(){
+			charis = parseInt($("#charis").val());
+			rest_piont =  calcul_point("charis",rest_piont,charis);
+			gesoption("physi",rest_piont,physi);
+			gesoption("intel",rest_piont,intel);
+		});
+		$("#monde").on("click","#tirage_caract",function(){
+			console.log("bouton fonctionne");
+			$.post("systeme/php/gestion_logger.php",{
+				point_restant : rest_piont,
+				charisme : charis,
+				intellligence : intel,
+				physique : physi,
+				nom_avatar : nom_avatar,
+			},
+			function(data){
+				console.log(data);
+				etape(text_jon);
+			});
+		});
+	};
+
+
+function calcul_point(idselect, rest_piont, point_caract){
+  if (point_caract >= 3) {
+    if(parseInt(rest_piont) > 0 ) rest_piont = rest_piont -2;
+  }
+  else rest_piont = rest_piont + 1;
+  gesoption(idselect, rest_piont, point_caract);
+  return rest_piont;
+};
+function gesoption(idselect, rest_piont, point_caract){
+  max_opt = point_caract + parseInt(rest_piont/2);
+  html = "";
+  selc_defaut = "";
+  for (let index_png = 1; index_png <= max_opt; index_png++) {
+    if(index_png == point_caract) selc_defaut = " selected ";
+    else selc_defaut = "";
+    html = html + "<option" + selc_defaut + " value=\"" + index_png + "\">" + index_png + "</option>\r\n";
+  }
+  max_opt = 0;
+  $("#"+ idselect).html(html);
+  $("#reste").html("Il vous reste "+ rest_piont +" points de création")
+  return rest_piont;
+}
+

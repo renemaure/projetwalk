@@ -1,0 +1,4 @@
+suivi_avatar.php
+menu_vide
+version 1.0.0 / phase test
+Site web supervision projet Swart/Walk 

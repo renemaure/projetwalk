@@ -1,0 +1,112 @@
+#entre_code {
+    background: none repeat scroll 0 0 #FFCCCC;
+    border: 1px solid #CC00CC;
+    height: 40px;
+    left: 250px;
+    position: absolute;
+    top: 250px;
+    width: 290px;
+} 
+#entre_code input[type="text"] {
+    border: 1px solid #CC00CC;
+    left: 120px;
+    position: absolute;
+    top: 15px;
+}
+#entre_code label[for="code"] {
+    color: #AE206C;
+    font-size: 12pt;
+    font-weight: bold;
+    left: 0;
+    position: relative;
+    top: 10px;
+}
+#entre_code input[type="submit"] {
+    left: 250px;
+    position: absolute;
+    top: 15px;
+}
+#entre_code input[type="submit"]:hover { 
+	background-color: #66CC33;
+}  
+#allopass {
+    left: 30px;
+    position: absolute;
+    top: 250px;
+}
+
+#inscrip_index #nom {position:relative;  border: 1px solid #CC00CC; width:120px; top:70px; left:20px;}
+
+#inscrip_index #passe {position:relative;  border: 1px solid #CC00CC; width:150px; top:70px; left:80px;}
+
+#inscrip_index input[type="submit"] {position:relative; border: 1px solid #CC00CC; width:40px; top:120px; left:70px; }
+
+#inscrip_index input[type="submit"]:hover { background-color: #66CC33;}  	
+
+#inscrip_index input[type="button"] {position:relative; border: 1px solid #CC00CC; width:100px; top:120px; left:180px;}
+
+#inscrip_index input[type="button"]:hover { background-color: #FF0000;}  	
+
+
+#contact #nom {position :absolute; left:100px; top:50px; }
+
+#contact label[for="nom"]{position :absolute; left:20px; top:52px;}	 
+
+#contact #mail {position :absolute; left:100px; top:80px; }	
+
+#contact label[for="email"]{position :absolute; left:20px; top:82px;}	 
+
+#contact #tel {position :absolute; left:100px; top:120px;}	
+
+#contact label[for="tel"]{position :absolute; left:20px; top:122px;} 
+
+#contact #ip {position :absolute; left:20px; top:160px;}	
+
+#contact #body {position :absolute; left:100px; top:190px;}	
+
+#contact label[for="body"]{position :absolute; left:20px; top:192px;}  
+
+#contact input[type="submit"] {position :absolute; left:20px; top:250px; }
+
+#contact input[type="submit"]:hover { background-color: #66CC33;}  	
+
+
+#comantaire #nom {
+    left: 50px;
+    position: absolute;
+    top: 80px;
+}
+
+#comantaire #body {position :absolute; left:280px; top:80px;}		
+
+#comantaire input[type="submit"] {
+    left: 70px;
+    position: absolute;
+    top: 130px;
+}
+
+#comantaire input[type="submit"]:hover { background-color: #66CC33;}  		
+
+#reponse {
+    height: 150px;
+    left: 0;
+    position: absolute;
+    top: 200px;
+    width: 500px;
+	color:#FFFFFF;
+}
+
+#civil #nom {position :absolute; left:10px; top:80px;}
+
+#civil #email {position :absolute; left:220px; top:80px;}
+
+#civil #pass {position :absolute; left:400px; top:80px;}
+
+#civil input {position:relative; top:130px; float:left; margin:5px; left : 200px; border: 1px solid #CC00CC;}
+
+#civil input[type="button"]:hover { background-color: #FF0000;color:#ffffff;}  	
+
+#civil input[type="submit"]:hover { background-color: #66CC33; color:#fff;}  	
+
+#civil input[type="reset"]:hover { background-color: #0033FF; color:#fff;}  	
+

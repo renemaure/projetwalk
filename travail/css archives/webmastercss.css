@@ -1,0 +1,32 @@
+#super_header {display: block;  color:#ffffff;   position: absolute;     height: 50px;      top: 0px;     width: inherit; border-bottom: 1px solid white;  background: none repeat scroll 0 0 #002143;}
+#titre {font: bold 20pt arial; position: relative; text-align: left; left: 150px; top:5px; padding:0px; margin:0px;  width: 40%;  }
+#navigation {
+    display: block;
+    left: 40%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 40%;
+}	
+#navigation li { margin-left:20px; width:130px; float:left; display:block; text-decoration:none; text-align:center; padding-top:10px;}
+#navigation li a {color:#FFFFFF;text-decoration:none; } 
+#navigation  li a:hover {background: #66FFFF; color:#002143;} 
+#formul {
+    border: 1px solid #FFFFFF;
+    height: 370px;
+    left: 20%;
+    top: 130px;
+    width: 720px;
+	background: #FFBBBC; 
+}
+#txt_haut {font-weight: bold; position: absolute; top: 70px;  text-align:center; width: inherit;} 	
+
+#entr_bord {position:absolute; left:190px;  top:150px; height:25px; width:320px;  border:1px solid #ae206c; padding:10px;}
+
+#txt_bas {position: absolute; font-style: italic; top: 250px; text-align:center; width: inherit; }	 .
+
+#formul  input[type="submit"]:hover { background-color: #66CC33;  color:#ffffff;}  
+
+#formul  input[type="reset"]:hover { background-color: #ff0000; color:#ffffff;}  

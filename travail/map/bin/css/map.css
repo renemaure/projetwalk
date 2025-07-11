@@ -1,0 +1,22 @@
+@import url("http://webmaster.collectif11880.com/css-collectif/cms-collectif.css");
+
+
+html {
+height: 100%;
+}
+body {
+height: 100%;
+margin: 0px;
+padding: 0px;
+}
+#map_canvas {
+height: 100%;
+}
+
+#reponse {position:absolute;
+top:150px;
+left:150px;
+width:400px;
+height:20px;
+background:  none repeat scroll 0 0 #B9CFD3;
+}

@@ -1,0 +1,11 @@
+body {position: absolute; margin:0px; padding:0px; height:100%;      width: 100%;  background: none repeat scroll 0 0 #99FF33;}
+
+h2 {background: #CC99FF; font-family: arial balck; text-align: center}
+
+.moit {position:absolute; width:50%; left:20%; top:10%}
+
+#geolocation {position:absolute; width:25%;; right:20%; top:50%}
+
+#bouton {position:absolute; width:50%;; right:20%; top:30%}
+
+/* Fin de la section de style généré par WebExpert le 12/03/2013 16:03:17 */

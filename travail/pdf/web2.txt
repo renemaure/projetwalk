@@ -1,0 +1,78 @@
+<br><br><p class='titre'>Le Web 2.0</p>
+
+<p class='f12 justifier'>Le terme "Web 2.0" désigne une multitude d'innovations d'ordre éditorial, technologique, sociologique qui, mises bout à bout, forment un ensemble, certes disparate, mais
+qui change , de manière radicale, notre rapport à l'informatique. Le Web 2.0 est l'ensemble d'applications qui font du Web une sorte de système d'exploitation à part entière. Internet a donc quitté son statut de média en
+ligne pour celui de plate-forme, d'échanges, de pratiques et de savoirs.</p>
+
+<p class='f12 justifier'>L'informatique ubiquitaire marque alors ce saut qualitatif qui fait que la machine suit
+l'homme dans tous ses déplacements journaliers et que son rapport au Web ne se
+limite plus à l'utilisation de son ordinateur, chez soi ou au bureau. De fait, Internet a
+envahi son quotidien et on peut retrouver les services et applications qu'il a coutume
+d'utiliser sur une multitude de terminaux : téléphones mobiles, bornes d'information,
+télévision, consoles de jeux, réseaux Wi-Fi, etc. En bref, le logiciel se libère du PC et
+même mieux : la plupart des applications sont délocalisées, "dans les nuages" et for-
+ment un système déporté auquel chacun peut se connecter à tout moment. C'est le
+propre d'une expérience immersive dans le monde numérique et, prochainement, dans
+les mondes virtuels.</p>
+
+<p class='f12 justifier'>Le Web 2.0 se démarque par un certain nombre de traits distinctifs :</p>
+
+<p class='f12 justifier re l40'>- Ergonomie utilisateur plus conviviale.</p>
+
+<p class='f12 justifier re l40'>- Architecture technique plus souple.</p>
+
+<p class='f12 justifier re l40'>- interopérabilité accrue entre les services et les applications qui le composent.</p>
+
+<p class='f12 justifier re l40'>- Développement des sites collaboratifs dans lesquels les internautes sont mis à contribution.</p>
+
+<p class='f12 justifier'> Les internautes deviennent alors des co-auteurs ("des web acteurs") ou sont traités
+comme des co-développeurs. Le Web 2.0 marque le développement d'un certain nombre de technologies et de langages dont voici les principaux éléments :</p>
+
+<p class='f12 justifier re l40'>- AJAX (Asynchronous JavaScript and XML) : désigne l'utilisation conjointe de technologies pour le développement d'applications web.</p>
+
+<p class='f12 justifier re l40'>- Microformats : désigne une manière de formater les données présentes dans du
+contenu HTML grâce à l'emploi de métadonnées.</p>
+
+<p class='f12 justifier re l40'>- Interface riche (RIA ou "Rich Internet Application") : désigne l'emploi de techniques
+comme Flash, Javascript et ActiveX pour créer des sites web dans lesquels des applications peuvent s'exécuter sans que l'utilisateur ait besoin de les installer.</p>
+
+<p class='f12 justifier re l40'>- RSS (Rich Site Summaiy) : une branche de formats XML utilisés pour la syndication de contenu Web.</p>
+
+<p class='f12 justifier re l40'>- API (Application Programming Interface) : ensemble de fonctions, procédures ou clas-
+ses mises à disposition des développeurs par un système d'exploitation ou un service web et qui va leur permettre de créer leurs propres applications : les Mashups ;</p>
+
+<p class='f12 justifier re l40'>- Services de réseautage social : applications web servant a relier des amis, à créer
+ces communautés virtuelles et qui posent le problème de notre visibilité.</p>
+
+<p class='f12 justifier re l40'>- Folksonomies : système collaboratif de classification de ressources à l'aide des mots
+clés (ou tags, en anglais).</p>
+
+<p class='titre'>Le modèle économique du Web 2.0</p>
+
+<p class='f12 justifier'>Il faut savoir que, depuis quelques années, le coût de stockage et de consommation de la bande passante n'ont cessé de décroître. Il s'est alors développé une pléthore d'offres qui tendent vers une gratuité totale (ou presque). D'une certaine manière, les mondes numériques sont perçus comme synonymes de gratuité et d'abondance. Nous pouvons distinguer au moins trois ou quatre modèles économiques (ou supposés tel) :</p>
+
+<p class='f12 justifier re l40'>- Une version grand public couplée avec une ou plusieurs autres versions payantes mais qui offrent plus de possibilités </p> 
+
+<p class='f12 justifier re l40'>- Un service gratuit mais qui est financé par la publicité comme Facebook .</p>
+
+<p class='f12 justifier re l40'>- Une application libre mais subventionnée par les dons comme Wikipédia.</p>
+
+<p class='f12 justifier re l40'>- Des services gratuits qui renforcent l'image de marque d'une société et lui permettent
+d'augmenter ses parts de marché dans les produits financés par la publicité : Google.</p>
+
+<p class='f12 justifier'>Notez que beaucoup de services estampillés "Web 2.0" sont encore à la recherche d'un mode de rentabilité qui puisse réellement convaincre les investisseurs : Digg, YouTube,Twitter, etc. Et que, même si certains services ont connu des progressions fulgurantes (Deezer, facebook), ils butent sur deux écueils :</p>
+
+<p class='f12 justifier re l40'>- La très faible popularité du Web 2.0 auprès du grand public </p>
+
+<p class='f12 justifier re l40'>- Le faible taux d'engagement des internautes dans la majorité de ces services.</p>
+
+<p class='f12 justifier'>Un exemple classique est le site de partage de vidéos en ligne YouTube : le pourcentage d'internautes qui y publie des clips est, comparativement à la très grande popularité de ce service, extrêmement faible (moins de 1%). En bref, si les grands acteurs du Web 2.0 souhaitent un monde plus collaboratif, c'est qu'il en va aussi de leur survie économique.</p>
+
+<p class='f12 justifier'>Ajoutons qu'il se peut que d'autres modèles économiques voient le jour comme la possibilité de payer en monnaie virtuelle (les Linden Dollar de Second Llfe), de créer des systèmes de recommandations de produits ä l'image de ce que propose Bazaarvoice http://www.bazaarvoice.com ou "le Shopping social" ou des applications interconnectées qui vous permettront à partir de la photo prise d'un produit d'accéder automatiquement à un comparateur de prix ou aux commentaires des autres acheteurs.</p>
+
+<p class='f12 justifier'>note personnelle: Pit ne veut pas particulièrement que je mette la dernier adresse en lien direct, je l'ai laissé en texte dans le texte.</p>
+
+<p class='f12 justifier'>texte tiré d'un bouquin, que je trouvais pas terrible, mais qui a en fait servi: <span class='italique'>Du web 2.0 au web3.0 emei éditions</span></p>
+
+
+

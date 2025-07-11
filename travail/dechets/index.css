@@ -1,0 +1,222 @@
+
+#global {height: 620px; width: 1000px; top:5px;}
+
+#central {
+    /*background: none repeat scroll 0 0 #66FF99;*/
+    height: 530px;
+    left: 10px;
+    position: absolute;
+    top: 60px;
+    width: 780px;
+}
+
+#liens {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+	list-style-type: none;
+    height: 400px;
+    left: 810px;
+    padding: 5px;
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    z-index: 1;
+	margin:0px;
+}
+
+#liens li {text-decoration:none;}
+
+#liens li a { color:#000000; text-decoration:none; } 
+
+#liens li a:hover {background: #66FFFF; color:#002143;}
+
+#enregistrement , #suivit {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 40px;
+    left: 10px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 600px;
+    z-index: 1;
+}
+#enregistrement {visibility:visible;}
+#civil {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 180px;
+    left: 40px;
+    position: absolute;
+    top: 10px;
+    width: 600px;
+	visibility:visible;
+}
+#definition {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 200px;
+    left: 130px;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    width: 400px;
+    z-index: 1;
+}
+#avatar {
+    background: none repeat scroll 0 0 #EDAEBE;
+    border: 1px solid white;
+    display: block;
+    font-size: 12pt;
+    height: 430px;
+    left: 200px;
+    position: absolute;
+    top: 50px;
+    width: 320px;
+}
+#creation {background: none repeat scroll 0 0 #6699FF;     border: 1px solid white;     bottom: 10px;     height: 170px;     left: 60px;     position: absolute;     width: 570px;  font-size: 12pt;}
+
+#reste {position: absolute;     height: 20px;     left: 350px;     top: 45px;     width: 200px; background: none repeat scroll 0 0 #FFFF99;     border: 1px solid white; text-align:center;}
+
+#zone_img , #zone_img1 {background: none repeat scroll 0 0 #A1A1A1;     border: 1px solid white;  position: absolute; height: 110px ; width: 110px;}
+
+#zone_img {left: 100px; top: 100px;}
+
+#zone_img1 {
+	z-index:1;
+    left: 190px;
+    top: 10px;
+}
+#inscrip_index #nom {
+    border: 1px solid #CC00CC;
+    left: 150px;
+    position: absolute;
+    top: 10px;
+    width: 120px;
+}
+#inscrip_index #passe {
+    border: 1px solid #CC00CC;
+    left: 280px;
+    position: absolute;
+    top: 10px;
+    width: 150px;
+}
+#inscrip_index input[type="submit"] {
+    border: 1px solid #CC00CC;
+    left: 445px;
+    position: absolute;
+    top: 10px;
+    width: 40px;
+}
+	#inscrip_index input[type="button"] {
+    border: 1px solid #CC00CC;
+    left: 500px;
+    position: absolute;
+    top: 10px;
+    width: 100px;
+}
+input[type="submit"]:hover { background-color: #66CC33;}  
+
+input[type="button"]:hover { background-color: #FF0000;}  
+
+input[type="reset"]:hover { background-color: #0033FF;} 
+
+#civil #nom {position :absolute; left:10px; top:80px;}
+
+#civil #email {position :absolute; left:220px; top:80px;}
+
+#civil #pass {position :absolute; left:400px; top:80px;}
+
+#civil input[type="submit"] {
+    border: 1px solid #CC00CC;
+    left: 80px;
+    position: absolute;
+    top: 140px;
+    width: 60px;
+}
+#civil input[type="reset"] {
+    border: 1px solid #CC00CC;
+    left: 220px;
+    position: absolute;
+    top: 140px;
+    width: 120px;
+}
+#civil input[type="button"] {
+    border: 1px solid #CC00CC;
+    left: 420px;
+    position: absolute;
+    top: 140px;
+    width: 100px;
+}
+#creation input[type="submit"] {
+    border: 1px solid #CC00CC;
+    left: 120px;
+    position: absolute;
+    top: 140px;
+    width: 60px;
+}
+#creation input[type="button"] {
+    border: 1px solid #CC00CC;
+    left: 280px;
+    position: absolute;
+    top: 140px;
+    width: 120px;
+}
+
+#tab_objet {position: absolute; top: 10px; left: 10px;}
+
+#couleur {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    visibility: hidden;
+   
+}
+
+.dessin {position: absolute; left: 0px;top: 0px; z-index:1;}
+
+.fond {position: absolute; left: 0px;top: 0px; z-index:0;}
+
+#blog {
+    background: none repeat scroll 0 0 #EDAEBE;
+    border: 1px solid white;
+    height: 460px;
+    left: 280px;
+    overflow: auto;
+    position: absolute;
+    top: 30px;
+    width: 490px;
+}
+#zone_img_avatar {
+    background: none repeat scroll 0 0 #A1A1A1;
+    border: 1px solid white;
+    height: 110px;
+    left: 60px;
+    position: absolute;
+    top: 300px;
+    width: 110px;
+}
+#tab_objet {position: absolute; top: 50px; left: 10px;}
+
+#nav_avatar {
+    background: none repeat scroll 0 0 #00CC99;
+    border: 1px solid white;
+    height: 460px;
+    left: 20px;
+    position: absolute;
+    top: 30px;
+    width: 230px;
+}
+
+#cache_img {
+    left: 50px;
+    position: absolute;
+    top: 430px;
+    width: 130px;
+}
+
+#nav_avatar li {cursor: pointer;}
+
+.carre {position: relative; width: 20px;     height: 20px; cursor: pointer;}
+
+/*fin page entree mot de pase tab bord*/

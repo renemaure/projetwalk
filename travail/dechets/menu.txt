@@ -1,0 +1,25 @@
+<table border=1 cellpadding=2 cellspacing=0 bgcolor=#FFFFFF bordercolor=#ae206c id="tab_princ"> 
+<tr>
+<td><span class ='gras'>utile wiki</span></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=matières">menu /table des matières</a></td> 
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=accueil">accueil walk/swart</a></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=menu">Edition du menu</a></td> 
+</tr><tr>
+<td><span class ='gras'>théorie SWart / wal</span>k </td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=general">généralités swart/walk</a></td>	
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=preparation">préparation / déroulement walk</a></td> 
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=dispositif">Les dispositifs d'un walk</a></td>
+</tr><tr>
+<td><span class ='gras'>technique SWart / walk </span></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=administration">administration walk</a></td> 
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=techniq">Le serveur web</a></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=test_web">les tests sur le web</a></td>	
+</tr>
+<tr>
+<td><span class ='gras'>scénario SWart / walk </span></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=gneral_scenar">généralité scénario</a></td> 
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=trame_scenar">trame scenario</a></td>
+<td><a href="tab-bord.php?util=fichiers/donnees&cod=2&donn=tech_scenar">ressources techniques scenario</a></td>	
+</tr>
+</table>
+<!-- c'est normal que le menu apparaisse deux fois le deuxième est celui en édition! ne rien ecrire ici ce sont des commentaires! -->

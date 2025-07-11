@@ -1,0 +1,93 @@
+/* background: none repeat scroll 0 0 #E3E3E3; */
+body {background: silver; font: 9pt Times New Roman; text-align: center}
+
+#global {position: relative;     height: 600px;     left: 0;     width: 1000px;     margin: 0 auto;     text-align: left;     z-index: 1; background: #99FFFF; border: 1px solid white;}
+
+header {display: block;  color:#ffffff;   position: absolute;     height: 50px;      top: 0px;     width: inherit;   background: none repeat scroll 0 0 #002143;}
+
+h1 {font: bold 20pt arial; position: relative; text-align: center; top:5px; padding:0px; margin:0px;   width: inherit;}
+
+h3 {font: 10pt arial; position: absolute; top:25px; padding:0px; margin:0px;  left:85%;}
+
+#version {position: absolute; top: 45px; height: 20px; font-family: verdana; left: 490px;  width: 320px;}
+
+#enregistrement {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 300px;
+    left: 300px;
+    padding: 5px;
+    position: absolute;
+    top: 150px;
+    width: 400px;
+    z-index: 1;
+}
+
+#definition {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 300px;
+    left: 80px;
+    padding: 5px;
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    z-index: 1;
+}
+#civil {
+    background: none repeat scroll 0 0 #66FF99;
+    border: 1px solid white;
+    height: 300px;
+    left: 180px;
+    position: absolute;
+    top: 150px;
+    width: 600px;
+}
+#avatar {background: none repeat scroll 0 0 #EDAEBE;     border: 1px solid white;     display: block;     height: 450px;     left: 600px;     position: absolute;     top: 100px;     width: 320px;  font-size: 12pt;}
+
+#creation {background: none repeat scroll 0 0 #6699FF;     border: 1px solid white;     bottom: 10px;     height: 170px;     left: 10px;     position: absolute;     width: 570px;  font-size: 12pt;}
+
+#reste {position: absolute;     height: 20px;     left: 350px;     top: 45px;     width: 200px; background: none repeat scroll 0 0 #FFFF99;     border: 1px solid white; text-align:center;}
+
+/* ne sert pas encore ou jamais? */
+#defaut {position: absolute;     top: 140px;     width: 640px;     height: 250px;     left: 100px;     font-size: 20pt;     z-index: 2;}
+
+#defile {position: absolute;     height: 80px;     left: 350px;     top: 300px;     width: 330px;}
+
+footer {display: block;     position: absolute;     height: 15px;     top: 680px;     width: inherit;     left: 0;     color: #FFFFFF;     font-style: italic;     text-align: center;}
+
+footer a {color: #FFFFFF;}
+
+nav {display: block;     position: absolute;     height: 320px;     left: 840px;     top: 60px;     width: 160px;}
+
+#text_presentation {display: block;     position: absolute;     height: 340px;     left: 340px;     top: 0;     width: 420px;     color: #000000;     font: 10pt verdana;     padding: 5px;     text-align: justify;}
+
+#contact {display: block;     color: #FFFFFF;     position: absolute;     top: 0;     width: 600px;     height: 350px;     left: 10px;     padding: 10px;     font: 10pt verdana;}
+
+.dessin {position: absolute; left: 0px;top: 0px; z-index:1;}
+
+.fond {position: absolute; left: 0px;top: 0px; z-index:0;}
+
+#blog {background: none repeat scroll 0 0 #EDAEBE;     border: 1px solid white;      height: 460px;     left: 540px;     position: absolute;     top: 100px;     width: 430px;  overflow: auto;}
+
+#zone_img {background: none repeat scroll 0 0 #A1A1A1;     border: 1px solid white;   height: 110px;     left: 100px;     position: absolute;     top: 100px;     width: 110px;}
+
+#tab_objet {position: absolute; top: 50px; left: 10px;}
+
+#navigation {background:  none repeat scroll 0 0 #00CC99; border:  1px solid white; height: 460px; left: 260px; position: absolute; top: 100px; width: 230px}
+
+#navigation li {cursor: pointer;}
+
+#couleur {
+    background: none repeat scroll 0 0 #CCCCFF;
+    border: 1px solid white;
+    height: 90px;
+    left: 100px;
+    position: absolute;
+    top: 400px;
+    width: 100px;
+	visibility: hidden;
+}
+
+.carre {position: relative; width: 20px;     height: 20px; cursor: pointer;}
+/* Fin de la section de style généré par WebExpert le 24/03/2013 16:43:10 */

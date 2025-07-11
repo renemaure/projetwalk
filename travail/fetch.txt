@@ -1,0 +1,62 @@
+// Exemple d'implémentation pour une requête POST
+async function postData(url = "", donnees = {}) {
+  // Les options par défaut sont indiquées par *
+  const response = await fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(donnees), // le type utilisé pour le corps doit correspondre à l'en-tête "Content-Type"
+  });
+  return response.json(); // transforme la réponse JSON reçue en objet JavaScript natif
+}
+
+postData("https://example.com/solution", { solution: 42 }).then((donnees) => {
+  console.log(donnees); // Les données JSON analysées par l'appel `donnees.json()`
+});
+
+
+_________________________________________________________________
+
+
+let formRecherche = document.getElementById('formRecherche');
+let envoyer = document.getElementById('envoyer');
+let resultats = document.getElementById('resultats');
+
+envoyer.addEventListener("click", lanceRecherche, false);
+
+function lanceRecherche(event) {
+    // Ne soumet pas le formulaire
+    event.preventDefault();
+
+    // Récupère les données du formulaire
+    var saisie = new FormData(formRecherche);
+
+    // Lance la recherche
+    fetch('search.php', {
+        method: 'POST',
+        body: saisie
+    }).then((response) => {
+        return response.json();
+    }).then((data) => {
+        // Affiche les résultats
+        let ul = document.createElement("ul");
+        for (const element in data) {
+            var li = document.createElement("li");
+            li.innerHTML = data[element];
+            ul.appendChild(li);
+        }
+        resultats.innerHTML = '';
+        resultats.appendChild(ul);
+
+    }).catch((error) => {
+        console.log('Erreur : ' + error.message);
+    });
+
+}
