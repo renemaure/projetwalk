@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : collecpcmit2023.mysql.db
--- Généré le : ven. 11 juil. 2025 à 18:58
+-- Généré le : ven. 11 juil. 2025 à 19:19
 -- Version du serveur : 8.0.42-33
 -- Version de PHP : 8.1.32
 
@@ -45,6 +45,7 @@ CREATE TABLE `avatar` (
   `pwalk` int NOT NULL DEFAULT '0',
   `etape` tinyint NOT NULL DEFAULT '1',
   `pos_dep` int NOT NULL DEFAULT '200',
+  `ancien_pos` int NOT NULL DEFAULT '0',
   `nb_jour_inscp` int NOT NULL DEFAULT '0',
   `nb_jour_caract` int NOT NULL DEFAULT '0',
   `nb_jour_img` int NOT NULL DEFAULT '0'
@@ -54,21 +55,20 @@ CREATE TABLE `avatar` (
 -- Déchargement des données de la table `avatar`
 --
 
-INSERT INTO `avatar` (`nom`, `mail`, `passe`, `id`, `identifiant`, `erg_date`, `physq`, `intel`, `charis`, `vitalite`, `confiance`, `beaute`, `age`, `notoriete`, `pwalk`, `etape`, `pos_dep`, `nb_jour_inscp`, `nb_jour_caract`, `nb_jour_img`) VALUES
-('maurice', 'ducon@gg.ff', '95e146953f4f551afbd70edb44a868e0', 2, '', '16/03/2023', 5, 6, 3, 8, 9, 11, 11, 0, 14, 3, 2600, 0, 0, 0),
-('gertrude', 'blibli@ff.com', '95e146953f4f551afbd70edb44a868e0', 6, '', '31 03 2013', 3, 3, 3, 6, 6, 6, 0, 0, 14, 2, 1900, 0, 0, 0),
-('bernard', 'pouf@dd.fr', '95e146953f4f551afbd70edb44a868e0', 5, '', '31 03 2013', 5, 4, 6, 10, 11, 10, 0, 0, 15, 3, 3043, 0, 0, 0),
-('mimile', 'moi@fr.st', '95e146953f4f551afbd70edb44a868e0', 8, '', '06 04 2013', 5, 3, 5, 8, 10, 8, 0, 0, 13, 3, 3700, 0, 0, 0),
-('dudule', 'moi@fr.st', '95e146953f4f551afbd70edb44a868e0', 12, '', '11 04 2013', 5, 4, 4, 9, 9, 6, 0, 0, 13, 3, 3525, 0, 0, 0),
-('prunelle', 'moi@ducon.fr', '95e146953f4f551afbd70edb44a868e0', 13, '', '18/05/2024', 3, 3, 3, 6, 6, 6, 0, 0, 0, 1, 200, 0, 0, 0),
-('pascal', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 24, '', '19/05/2024', 4, 3, 5, 10, 9, 8, 0, 0, 12, 2, 200, 0, 0, 0),
-('vincent', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 32, '', '04/08/2024', 3, 3, 3, 6, 6, 6, 0, 0, 14, 2, 200, 0, 0, 0),
-('lolo', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 33, '', '20/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 14, 2, 200, 0, 0, 0),
-('lu', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 34, '', '20/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 14, 2, 200, 0, 0, 0),
-('jean luc', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 35, '', '26/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 1, 200, 0, 0, 0),
-('wilfrid', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 36, '', '29/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 1, 200, 0, 0, 0),
-('zombie223', 'adc7739ebb@emaily.pro', '752a998b622eb9cdd14eb996612575ab', 37, '', '11/07/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 3, 200, 0, 0, 0),
-('afdssafdssafdssafdssafdssafdssafdssafdssafdssafdssafdss', 'adc7739ebb@emaily.pro', '', 48, '', '11/07/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 1, 200, 0, 0, 0);
+INSERT INTO `avatar` (`nom`, `mail`, `passe`, `id`, `identifiant`, `erg_date`, `physq`, `intel`, `charis`, `vitalite`, `confiance`, `beaute`, `age`, `notoriete`, `pwalk`, `etape`, `pos_dep`, `ancien_pos`, `nb_jour_inscp`, `nb_jour_caract`, `nb_jour_img`) VALUES
+('maurice', 'ducon@gg.ff', '95e146953f4f551afbd70edb44a868e0', 2, '', '16/03/2023', 5, 6, 3, 8, 9, 11, 11, 0, 14, 3, 2198, 0, 0, 0, 0),
+('gertrude', 'blibli@ff.com', '95e146953f4f551afbd70edb44a868e0', 6, '', '31 03 2013', 3, 3, 3, 6, 6, 6, 0, 0, 14, 2, 1900, 0, 0, 0, 0),
+('bernard', 'pouf@dd.fr', '95e146953f4f551afbd70edb44a868e0', 5, '', '31 03 2013', 5, 4, 6, 10, 11, 10, 0, 0, 15, 3, 3043, 0, 0, 0, 0),
+('mimile', 'moi@fr.st', '95e146953f4f551afbd70edb44a868e0', 8, '', '06 04 2013', 5, 3, 5, 8, 10, 8, 0, 0, 13, 3, 3700, 0, 0, 0, 0),
+('dudule', 'moi@fr.st', '95e146953f4f551afbd70edb44a868e0', 12, '', '11 04 2013', 5, 4, 4, 9, 9, 6, 0, 0, 13, 3, 3525, 0, 0, 0, 0),
+('prunelle', 'moi@ducon.fr', '95e146953f4f551afbd70edb44a868e0', 13, '', '18/05/2024', 3, 3, 3, 6, 6, 6, 0, 0, 0, 1, 200, 0, 0, 0, 0),
+('pascal', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 24, '', '19/05/2024', 4, 3, 5, 10, 9, 8, 0, 0, 12, 2, 200, 0, 0, 0, 0),
+('vincent', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 32, '', '04/08/2024', 3, 3, 3, 6, 6, 6, 0, 0, 14, 2, 200, 0, 0, 0, 0),
+('lolo', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 33, '', '20/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 14, 2, 200, 0, 0, 0, 0),
+('lu', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 34, '', '20/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 14, 2, 200, 0, 0, 0, 0),
+('jean luc', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 35, '', '26/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 1, 200, 0, 0, 0, 0),
+('wilfrid', 'infos@reperechoppe89.com', '95e146953f4f551afbd70edb44a868e0', 36, '', '29/06/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 1, 200, 0, 0, 0, 0),
+('zombie223', 'adc7739ebb@emaily.pro', '752a998b622eb9cdd14eb996612575ab', 37, '', '11/07/2025', 3, 3, 3, 0, 0, 0, 5, 0, 0, 3, 200, 0, 0, 0, 0);
 
 --
 -- Index pour les tables déchargées
