@@ -3,13 +3,17 @@ function recupdonnemonde() {
     $.post("systeme/php/gestion_avatar.php",
         function(recup_donnees){
             Avatmonde = recup_donnees;
-            acccemonde()
+            if (prems) {
+                 acccemonde()
+            }else{
+                // en cours d'ecriture
+            }
+           
         }
         ,'json'
     );
 }
 function acccemonde(){
-    // Avatmonde = recup_donnees;
     console.log(Avatmonde);
     for (var i = 1; i <= Avatmonde.inc; i++) {
         if (getcookie("nom") == Avatmonde["inc"+i]["nom"]){
@@ -19,7 +23,6 @@ function acccemonde(){
         }
             // pos_avat_monde[i] = Avatmonde["inc"+i]["pos_dep"];  // tableau des positions absoluts des avatars ne sert pas
             tab_pos_rel[i] = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]);
-       
     }
     console.log("24 position des avatar reel " + tab_pos_rel);
     console.log("position du monde : " + pos_monde);
@@ -92,8 +95,7 @@ function avance_avatar(){
             $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
             anim_monde();
         }
-    }
-    else{
+    }else{
         avc_monde = -avc_avat;
         // console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
