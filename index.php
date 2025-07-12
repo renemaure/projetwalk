@@ -1,8 +1,8 @@
 <?php
-	$repjs="systeme/donnees/walk.json";
+	/* $repjs="systeme/donnees/walk.json";
 	$json = file_get_contents($repjs);
-	$walk = json_decode($json, true);
-	include ("systeme/php/donnes_walk.php");
+	$walk = json_decode($json, true); */
+	include ("systeme/php/donnes_walk.php"); /* permet de recupere des données sur les avatars mais c'est mal ecrit a revoir entierement */
 ?>
 <!doctype html>
 <html lang="fr">
