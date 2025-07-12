@@ -36,6 +36,7 @@ function extractdoneeavatars() {
         tab_pos_rel[k] = pos_monde + parseInt(Avatmonde["inc"+k]["pos_dep"]); 
         // pos_avat_monde[i] = Avatmonde["inc"+i]["pos_dep"];  // tableau des positions absoluts des avatars ne sert pas
     }
+    if (prems)  pos_avt_ancien  =  tab_pos_rel.slice(); /* copie les donées actuelles dans le tableau ancien pour la premier tour */
 }
 function affichageavatarmonde(){
    	for (var j = 1; j <= Avatmonde.inc; j++) {
@@ -50,7 +51,10 @@ function affichageavatarmonde(){
         /* 
         emplacement du bloc de code ou fonction pour la detections des avatars qui entre dans la fenetre du monde au 12/07/2025
         */
-        posit_avat_css = tab_pos_rel[j];
+          if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && getcookie("nom") != Avatmonde["inc"+j]["nom"]  ) {
+            posit_avat_css = pos_avt_ancien[j];
+          }else  posit_avat_css = tab_pos_rel[j];
+
         $("." + Avatmonde["inc"+j]["nom"]).css({
             left: posit_avat_css + 'px',
             zIndex: pos_z,
@@ -59,13 +63,19 @@ function affichageavatarmonde(){
             left: posit_avat_css + 'px',
             // display: "none",
         });	
+        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && getcookie("nom") != Avatmonde["inc"+j]["nom"]  ) {
+
+            let = av_avat = - (pos_avt_ancien[j] - tab_pos_rel[j]);
+            $("." + Avatmonde["inc"+i]["nom"] + " , #bulle_" + Avatmonde["inc"+i]["nom"]).animate({left: tab_pos_rel[i] + av_avat + 'px'},delais);
+        }
+
     }
 }
 
     function deplceavatmonde() {
-        if ((tab_pos_rel[i]<-110) && (tab_pos_rel[i]<1145) && getcookie("nom") != Avatmonde["inc"+j]["nom"]  ) {
+        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && getcookie("nom") != Avatmonde["inc"+j]["nom"]  ) {
 
-            let = av_avat = tab_pos_rel[i] - 55;
+            let = av_avat = - (pos_avt_ancien[j] - tab_pos_rel[j]);
             $("." + Avatmonde["inc"+i]["nom"] + " , #bulle_" + Avatmonde["inc"+i]["nom"]).animate({left: tab_pos_rel[i] + av_avat + 'px'},delais);
         }
     }
