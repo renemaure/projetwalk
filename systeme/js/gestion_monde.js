@@ -4,7 +4,8 @@ function recupdonnemonde() {
         function(recup_donnees){
             Avatmonde = recup_donnees;
             if (prems) {
-                 acccemonde()
+                //  acccemonde()
+                donneeavataractif();
             }else{
                 // en cours d'ecriture
             }
@@ -13,25 +14,32 @@ function recupdonnemonde() {
         ,'json'
     );
 }
-function acccemonde(){
-    console.log(Avatmonde);
+function donneeavataractif(){
     for (var i = 1; i <= Avatmonde.inc; i++) {
         if (getcookie("nom") == Avatmonde["inc"+i]["nom"]){
             Avatar_actif = new Avatar(Avatmonde["inc"+i]["nom"],Avatmonde["inc"+i]["pos_dep"],0,Avatmonde["inc"+i]["charis"],Avatmonde["inc"+i]["intel"],Avatmonde["inc"+i]["physq"],Avatmonde["inc"+i]["pwalk"],Avatmonde["inc"+i]["age"],Avatmonde["inc"+i]["beaute"]); 
-            pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));// mit à 250 
-            Avatar_actif.pos_rel = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]);
+            pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));//position du monde
+            Avatar_actif.pos_rel = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]);/*  position reel de l'avatar actif dans le monde */
         }
-            // pos_avat_monde[i] = Avatmonde["inc"+i]["pos_dep"];  // tableau des positions absoluts des avatars ne sert pas
-            tab_pos_rel[i] = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]);
     }
+    console.log(Avatmonde);
     console.log("24 position des avatar reel " + tab_pos_rel);
     console.log("position du monde : " + pos_monde);
+
+    extractdoneeavatars();
     DonneesMonde();
     affichHeurMond();
     affichageavatarmonde();
 }
+function extractdoneeavatars() {
+    for (var k = 1; k <= Avatmonde.inc; k++) {
+        tab_pos_rel[k] = pos_monde + parseInt(Avatmonde["inc"+k]["pos_dep"]); 
+        // pos_avat_monde[i] = Avatmonde["inc"+i]["pos_dep"];  // tableau des positions absoluts des avatars ne sert pas
+    }
+}
 function affichageavatarmonde(){
    	for (var j = 1; j <= Avatmonde.inc; j++) {
+        
         img_avat = "<div id=\"" + Avatmonde["inc"+j]["nom"] + "\""
         if (getcookie("nom") == Avatmonde["inc"+j]["nom"]) img_avat += " class =\"souris\" onclick=\"affpopupactif()\"";
         pos_z =  Avatmonde["inc"+j]["vitalite"];
@@ -39,7 +47,10 @@ function affichageavatarmonde(){
         img_avat += "<img class=\"avatar " + Avatmonde["inc"+j]["nom"] + "\" src=\"images/avatar/" + Avatmonde["inc"+j]["nom"] + ".png\">";
         img_avat += "<div class=\"bulle\" id=\"bulle_" + Avatmonde["inc"+j]["nom"] + "\"></div></div>";
         $("#monde").append(img_avat);
-        let posit_avat_css = tab_pos_rel[j];
+        /* 
+        emplacement du bloc de code ou fonction pour la detections des avatars qui entre dans la fenetre du monde au 12/07/2025
+        */
+        posit_avat_css = tab_pos_rel[j];
         $("." + Avatmonde["inc"+j]["nom"]).css({
             left: posit_avat_css + 'px',
             zIndex: pos_z,
@@ -48,7 +59,6 @@ function affichageavatarmonde(){
             left: posit_avat_css + 'px',
             // display: "none",
         });	
-    //    setTimeout(deplceavatmonde, delais*1.5);
     }
 }
 

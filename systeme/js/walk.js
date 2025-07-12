@@ -66,6 +66,7 @@
 	let indc_max;
 	let corps_avat;
 	let prems = true;
+	 let posit_avat_css;
 
 			/* nouvelle fetch en test juilet 2024 
 				modification par pasacl ajout d'un appel de la fonction AffichePermanent()
