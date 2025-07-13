@@ -15,12 +15,13 @@ function recupdonnemonde() {
 function donneeavataractif(){
     for (var i = 1; i <= Avatmonde.inc; i++) {
         if (getcookie("nom") == Avatmonde["inc"+i]["nom"]){
-            Avatar_actif = new Avatar(Avatmonde["inc"+i]["nom"],Avatmonde["inc"+i]["pos_dep"],0,Avatmonde["inc"+i]["charis"],Avatmonde["inc"+i]["intel"],Avatmonde["inc"+i]["physq"],Avatmonde["inc"+i]["pwalk"],Avatmonde["inc"+i]["age"],Avatmonde["inc"+i]["beaute"]); 
+            Avatar_actif = new Avatar(Avatmonde["inc"+i]["nom"],Avatmonde["inc"+i]["pos_dep"],0,Avatmonde["inc"+i]["charis"],Avatmonde["inc"+i]["intel"],Avatmonde["inc"+i]["physq"],Avatmonde["inc"+i]["pwalk"],Avatmonde["inc"+i]["age"],Avatmonde["inc"+i]["beaute"],i); 
             pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));//position du monde
             Avatar_actif.pos_rel = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]);/*  position reel de l'avatar actif dans le monde */
         }
     }
-    console.log(Avatmonde);
+    // console.log(Avatmonde);
+    console.log(Avatar_actif);
     console.log("24 position des avatar reel " + tab_pos_rel);
     console.log("position du monde : " + pos_monde);
 
