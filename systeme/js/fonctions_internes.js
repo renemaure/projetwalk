@@ -55,7 +55,7 @@ function AffichePermanent() {
   affichage("foot_phase",text_jon["phase"]);
 }
 
-function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,pnt_age,pnt_beaut){
+function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,pnt_age,pnt_beaut,don_ondic){
 		this.nom = nom_avt;
 		this.pos_abs = pos_dep;
 		this.pos_rel = posrel;
@@ -65,6 +65,7 @@ function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,p
 		this.pwalk = pnt_pwalk;
 		this.age = pnt_age;
     	this.beau = pnt_beaut;
+		this.indic = don_ondic;
 }
 
 /* nouvelle fonction permet d'afficher les données du monde et de l'avatar en phase test par pascal au 15/06/2025 aff_pw_avat
