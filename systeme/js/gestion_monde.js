@@ -4,12 +4,10 @@ function recupdonnemonde() {
         function(recup_donnees){
             Avatmonde = recup_donnees;
             if (prems) {
-                //  acccemonde()
                 donneeavataractif();
             }else{
                 // en cours d'ecriture
             }
-           
         }
         ,'json'
     );
@@ -72,13 +70,13 @@ function affichageavatarmonde(){
     }
 }
 
-    function deplceavatmonde() {
+/*     function deplceavatmonde() {
         if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && getcookie("nom") != Avatmonde["inc"+j]["nom"]  ) {
 
             let = av_avat = - (pos_avt_ancien[j] - tab_pos_rel[j]);
             $("." + Avatmonde["inc"+i]["nom"] + " , #bulle_" + Avatmonde["inc"+i]["nom"]).animate({left: tab_pos_rel[i] + av_avat + 'px'},delais);
         }
-    }
+    } */
 
 
 /* pas utiliser pour le moment */
@@ -117,19 +115,17 @@ function avance_avatar(){
         }
     }else{
         avc_monde = -avc_avat;
-        // console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             anim_monde();  
         } 
     }
 }
 function anim_monde(){
-    $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais);
+    $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais); // déplacement du monde
     for (var j = 1; j <= Avatmonde.inc; j++) {
         if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
              $("."+ Avatmonde["inc"+j]["nom"] + " , #bulle_" + Avatmonde["inc"+j]["nom"]).animate({left: '+='+avc_monde+'px'},delais);
-             tab_pos_rel[j] = $("."+ Avatmonde["inc"+j]["nom"]).css("left");
-            //  console.log("avat "+ j +" : " + tab_pos_rel[j]);
+             tab_pos_rel[j] = $("."+ Avatmonde["inc"+j]["nom"]).css("left"); // deplacement des autres avatars
         } 
     }
     setTimeout(eregistre_monde, delais*1.5);
