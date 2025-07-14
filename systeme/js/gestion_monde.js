@@ -47,7 +47,7 @@ function affichageavatarmonde(){
         img_avat += "<div class=\"bulle\" id=\"bulle_" + Avatmonde["inc"+j]["nom"] + "\"></div></div>";
         $("#monde").append(img_avat);
 
-        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && Avatar_actif.indic != j) {
+        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[j]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[j]<1145))) && Avatar_actif.indic != j) {
             posit_avat_css = pos_avt_ancien[j];
         }else  posit_avat_css = tab_pos_rel[j];
 
@@ -59,9 +59,9 @@ function affichageavatarmonde(){
             left: posit_avat_css + 'px',
         });	
 
-        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[i]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[i]<1145))) && Avatar_actif.indic != j) {
+        if ((((tab_pos_rel[j]<-110) && (tab_pos_rel[j]<1145)) || ((pos_avt_ancien[j]<-110) && (pos_avt_ancien[j]<1145))) && Avatar_actif.indic != j) {
         let = av_avat = - (pos_avt_ancien[j] - tab_pos_rel[j]);
-            $("." + Avatmonde["inc"+i]["nom"] + " , #bulle_" + Avatmonde["inc"+i]["nom"]).animate({left: tab_pos_rel[i] + av_avat + 'px'},delais);
+            $("." + Avatmonde["inc"+j]["nom"] + " , #bulle_" + Avatmonde["inc"+j]["nom"]).animate({left: tab_pos_rel[j] + av_avat + 'px'},delais);
         }
 
     }
@@ -105,6 +105,7 @@ function avance_avatar(){
         // console.log("dans la fenetre!")
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
+        console.log("deplacement mon  et avatar, pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             Avatar_actif.pos_rel =  pos_avatar + avc_avat;
             $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
@@ -112,7 +113,9 @@ function avance_avatar(){
         }
     }else{
         avc_monde = -avc_avat;
-        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
+        console.log("deplacement monde , pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
+        
+        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ // erreur ca doit etre inferieur à 0
             anim_monde();  
         } 
     }
@@ -130,9 +133,9 @@ function anim_monde(){
 function eregistre_monde(){
     pos_monde = $("#img-monde").position().left;
     let pos_avatar_actif = Math.round(parseInt(Avatar_actif.pos_rel)+ Math.abs(pos_monde));		
-    console.log("position reel de l'avatar "+Avatar_actif.pos_rel);	
+/*     console.log("position reel de l'avatar "+Avatar_actif.pos_rel);	
     console.log("position du monde "+pos_monde);
-    console.log("position corigé de l'avatar "+pos_avatar_actif);
+    console.log("position corigé de l'avatar "+pos_avatar_actif); */
     
     cal_tmp_monde();
     $.post("systeme/php/control_avatar.php",{
@@ -141,6 +144,6 @@ function eregistre_monde(){
         age_mond_rtr : Avatmonde.inc0,
     },
     function(data){
-        console.log(data);
+        // console.log(data);
     });
 }
