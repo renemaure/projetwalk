@@ -1,6 +1,6 @@
 // jQuery(document).ready(function($){
-	const fin_recul = 250; // position mini de l'avatar
-	const fin_avanc = 950; //position max de l'avatar 
+	const fin_recul = 350; // position mini de l'avatar
+	const fin_avanc = 550; //position max de l'avatar 
 	let fin_decor = -3450; // position max du decor
 	let deb_decor = 0; // position de debut du decor
 	let avc_monde = 0; // nombre de pixel d'avance du monde
@@ -14,7 +14,6 @@
 	let pos_monde; // actif
 	var nom_avatar;  /* nom du notre personnage */
 	let recalcul; //rien
-	let pos_z = "1";
 	// var pos_avat;
 	const marg_main = parseInt($("main").css('margin-left'));
 	let largeur_monde = 1200;
@@ -66,8 +65,7 @@
 	let indc_max;
 	let corps_avat;
 	let prems = true;
-	 let posit_avat_css;
-	 let pos_avt_ancien = new Array();
+	let pos_avt_ancien = new Array();
 
 			/* nouvelle fetch en test juilet 2024 
 				modification par pasacl ajout d'un appel de la fonction AffichePermanent()

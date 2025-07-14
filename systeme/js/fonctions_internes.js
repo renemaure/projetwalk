@@ -72,7 +72,11 @@ function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,p
 et ajout nombres d'avatar sur le monde */
 function DonneesMonde() {
 $("#monde").removeClass("monde_flex");  // a commenté la fontion exacte pascal au 15/06/2025
-$("#monde").append("<img id=\"img-monde\" src=\"images/decor/decor.png\">");	
+const monde = document.getElementById("monde");
+const imgMonde = document.createElement("img");
+imgMonde.id = "img-monde";
+imgMonde.src = "images/decor/decor.png";
+monde.appendChild(imgMonde);
 $("#img-monde").css({left: pos_monde+'px',display: "block"});
 affichage("infos_monde", text_jon["text7"]);
 affichage("infos_base", text_jon["text8"]);
