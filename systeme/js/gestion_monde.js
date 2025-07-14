@@ -99,10 +99,10 @@ function avance_souris(){
     avance_avatar();
 }
 function avance_avatar(){
-    /* let test01 = Math.abs(pos_avatar) + Math.abs(avc_avat);
-     console.log("postion de l'avatar"+  pos_avatar +" + avance  de l'avatar "+ avc_avat + " = " + test01 ) */
-    if (Math.abs(pos_avatar) + Math.abs(avc_avat) <fin_avanc && Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){
-        // console.log("dans la fenetre!")
+    let test01 = Math.abs(pos_avatar) + Math.abs(avc_avat);
+     console.log("postion de l'avatar"+  pos_avatar +" + avance  de l'avatar "+ avc_avat + " = " + test01 )
+    if (test01 < fin_avanc && test01 > fin_recul){
+        console.log("dans la fenetre!")
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
         console.log("deplacement mon  et avatar, pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)

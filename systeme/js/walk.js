@@ -1,6 +1,6 @@
 // jQuery(document).ready(function($){
 	const fin_recul = 350; // position mini de l'avatar
-	const fin_avanc = 550; //position max de l'avatar 
+	const fin_avanc = 850; //position max de l'avatar 
 	let fin_decor = -3450; // position max du decor
 	let deb_decor = 0; // position de debut du decor
 	let avc_monde = 0; // nombre de pixel d'avance du monde
