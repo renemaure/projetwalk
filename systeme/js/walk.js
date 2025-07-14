@@ -142,7 +142,7 @@
 					affichage("infos_monde","");// efface les textes
 					affichage("infos_base", "");
 					affichage("monde", "");
-					etape();
+					// etape();
 				} 
 			},'json');
 			
