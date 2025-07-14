@@ -12,9 +12,7 @@ $tab = 20;
 	for($hh=0; $hh<=$tt; $hh++)
 	{
 		$tabmodif[$hh] = trim($tabmodif[$hh]);
-		
-		if ($tabmodif[$hh])	
-		{
+		if ($tabmodif[$hh]){
 		if (substr($tabmodif[$hh],0,2)=="DD")
 		{	$tab = $tab + 5;	
 			if($hh!=0)echo("</ul>\r\n");

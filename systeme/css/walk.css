@@ -118,9 +118,10 @@ header h1 {
     /* border-left: 1px solid var(--blanc);
     border-right: 1px solid var(--blanc); */
 }
-.titre_from{
+.titre_from {
     text-align: center;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 #zon_conex , #zon_enreg , #infos_base {
     width:50%;
@@ -174,6 +175,7 @@ label {
     margin: 0 auto;
     width: 50%;
     text-align: center;
+    margin-top: 10px;
 }
 #inscrip_index{
     padding-top: 2rem; 
@@ -293,6 +295,7 @@ label {
     margin-bottom: .5rem;
     line-height: 1.2;
     margin-top: 0;
+    text-align: center;
 }
 /* nouv popup regle et infos */
 
@@ -319,9 +322,15 @@ label {
     width: 84%;
     margin: 0 auto 3rem auto;
     box-shadow: 0.5rem 1em var(--ombre);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: .25rem;
     background-color: var(--grisblanc);
+}
+.resolut {
+    background: #7de57d69;
+}
+.noresolut {
+    background: #da707069;
 }
 .btn_cookie {
     position: absolute;

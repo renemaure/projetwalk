@@ -10,14 +10,15 @@
 	$repjs="../donnees/texterreur.json";
 	$json = file_get_contents($repjs);
 	$liens = json_decode($json, true);
-	$erreur = array("erreur"=>"","valid"=>"");
+	$erreur = array("erreur"=>"","valid"=>"","message"=>"");
 	$timestamp_expire = time() + (3600*24*365); 
-	$verifnom = "ok";
-	$nom_BDD = "avatar";
-	$etape = "1";
-	$valide = "mauvais";
+	// $verifnom = "ok";
+	// $nom_BDD = "avatar";
+	// $etape = "1";
+	// $valide = "mauvais";
 	$date_vue =  date('d/m/Y à H:i:s'); // Date de la visite
 	/* code pour se logger */
+
 	if (isset($_POST['nom_log']))
 	{
 		$result_compt = $laison->query("SELECT nom , passe , etape FROM avatar");
@@ -45,16 +46,29 @@
 	if (isset($_POST['nom_ins'])) 
 	{
 		$nom_ins =  htmlspecialchars($_POST['nom_ins']);
-		$result_compt = $laison->query("SELECT nom , passe , etape FROM avatar");
-		while ($data = $result_compt->fetch(PDO::FETCH_ASSOC))
-    	{
-        	if ($nom_ins == $data['nom'] )
+		$erreur["message"] ="nombre de lettre dans le nom : ". strlen($nom_ins);
+
+		/* modif du 14/07/2025 ajout comptage des lettres du nom doit etre compris entre 5 et 15 */
+		if (strlen($nom_ins) <5 || strlen($nom_ins)>15){
+			$verifnom = "mauvais";
+			$locat = "nom trop petit ou trop long";
+			$erreur["message"] = $locat ."et nombre de lettre dans le nom : ". strlen($nom_ins);
+		}
+		
+		if ($verifnom == "ok") {
+			$result_compt = $laison->query("SELECT nom , passe , etape FROM avatar");
+			while ($data = $result_compt->fetch(PDO::FETCH_ASSOC))
 			{
-				$verifnom = "mauvais";
-				$locat = "nom déjà utilisé";
-				break;
+				if ($nom_ins == $data['nom'] )
+				{
+					$verifnom = "mauvais";
+					$locat = "nom déjà utilisé";
+					$erreur["message"] = $locat;
+					break;
+				}
 			}
 		}
+		
 		if ($verifnom == "ok")
 		{	
 			$erg_date = date("d/m/Y");
@@ -62,18 +76,19 @@
 			$pass = htmlspecialchars($_POST['pass_ins']);
 			if(preg_match('#^(([a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+\.?)*[a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+)@(([a-z0-9-_]+\.?)*[a-z0-9-_]+)\.[a-z]{2,}$#i',str_replace('&amp;','&',$email)))
 			{
-				$locat = "ok";
+				// $locat = "ok";
 				$requete = "INSERT INTO $nom_BDD (nom, mail, passe, identifiant, erg_date, etape) VALUES ('$nom_ins', '$email', '$pass', '', '$erg_date','1')";
 				$result_bdd = $laison->query($requete); 
 				// include ("enregistre_cookie.php");
 				setcookie('nom',$nom_ins, $timestamp_expire, '/'); 
 				setcookie('etap',$etape, $timestamp_expire, '/'); 
+				$erreur["valid"] = "ok";
 			}
 			else  $locat = "mail invalide";
 			
 		}
 		$erreur["erreur"] = $locat;
-		$erreur["valid"] = $locat;
+		$erreur["valid"] = "mauvais";
 	}
 
 	/* enregistremet du tirage */

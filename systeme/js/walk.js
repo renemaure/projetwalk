@@ -131,13 +131,16 @@
 				nom_log: form_nom_log,
 				pass_log: form_passe_log,
 			}, function(connex){
-				// console.log(connex["valid"]);
+				console.log(connex);
 				if (connex["valid"] !="ok") {
 					affichage("retour_log",connex["erreur"]);
 					document.getElementById("envoi_log").textContent=(`Recommençez`);
+					// document.getElementById("civil").reset();
+					// etape();
 				}
 				else{
 					affichage("infos_monde","");// efface les textes
+					affichage("infos_base", "");
 					affichage("monde", "");
 					etape();
 				} 
@@ -149,7 +152,7 @@
 		let form_nom_erg = document.getElementById("nom_ins").value;
 		let form_mail_erg = document.getElementById("mail_ins").value;
 		let form_pass_erg = md5(document.getElementById("pass_ins").value);
-		TestAffichInfo("test si la fonction marche valeur revoyer nom entré",form_pass_erg);
+		// TestAffichInfo("test si la fonction marche valeur revoyer nom entré",form_pass_erg);
 		$.post("systeme/php/gestion_logger.php",{
 			nom_ins: form_nom_erg,
 			pass_ins: form_pass_erg,
@@ -161,6 +164,7 @@
 				document.getElementById("envoi_ins").textContent=(`Recommençez`);
 			}else {
 				affichage("infos_monde","");
+				console.log(connex)
 				etape();
 			}
 		},'json');
@@ -359,12 +363,17 @@
 	function ouvreregles() {
 		popup("affiche_regles","flex");
 		affichage("affiche_regles",text_jon["structure4"]);
-		affichage("boite01",text_jon["texte13"]); 
-		affichage("boite02",text_jon["texte14"]);
+		affregles()
+		affichage("aside_regles",text_jon["texte15"])
 		affichage("date_block",text_jon["date"])
 		affichage("version_block", text_jon["version"])
 		affichage("beta_block",text_jon["phase"])
-		// affichage("corps_regles",text_jon["texte13"]);
-
-		
+	}
+	function affregles() {
+		affichage("boite01",text_jon["texte13"]); 
+		affichage("boite02",text_jon["texte14"]);
+	}
+	function bugmodif() {
+		affichage("boite01",text_jon["aff_modif"]); 
+		affichage("boite02",text_jon["aff_bugs"]);
 	}

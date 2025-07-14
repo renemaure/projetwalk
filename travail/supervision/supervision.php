@@ -1,9 +1,9 @@
-<?php  include("../php/get-util.php");
+<?php  include("bin/php/get-util.php");
 $super_header = file("bin/navigation.txt");
  ?>
 
 <html>
-<!-- Date de création: 09/03/2013 -->
+<!-- Date de crï¿½ation: 09/03/2013 -->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <title><?php echo(trim($chm_lanceur[3])) ?></title>
@@ -11,11 +11,11 @@ $super_header = file("bin/navigation.txt");
   <meta name="keywords" content="">
   <meta name="author" content="collectif 11880">
   <meta name="generator" content="WebExpert 6">
-  <link rel="StyleSheet" type="text/css" href="http://www.swart-walk.com/bin/css/master.css">  
-  <link rel="StyleSheet" type="text/css" href="http://www.swart-walk.com/bin/css/supervision.css">  
+  <link rel="StyleSheet" type="text/css" href="bin/css/master.css">  
+  <link rel="StyleSheet" type="text/css" href="bin/css/supervision.css">  
 </head>
 <body>
-<?php include("../webmaster/fichiers/super_master.php"); ?>
+<?php include("bin/php/super_master.php"); ?>
 <div id = "global">	 
 <header>	
 <h1><?php echo(trim($chm_lanceur[3])) ?></h1> 
@@ -24,9 +24,9 @@ $super_header = file("bin/navigation.txt");
 </header>
 
 <?php
-include("../php/base_donnees.php");
+// include("../php/base_donnees.php");
 
-$resultat = mysql_query ("SELECT * FROM avatar"); 
+// $resultat = mysql_query ("SELECT * FROM avatar"); 
 ?>
 
 <table border=1 cellpadding=2 cellspacing=0 bgcolor=#FFFFFF bordercolor=#ae206c id="tab_princ"> 

@@ -44,10 +44,17 @@ td.caret {
 #tab_princ td  , #tab_donne td  {font-size:9pt; text-align:center;} 
 
 #tab_princ td  a , #tab_donne td a {color:#000000;}
-
-
-.bug-titre  {position:absolute; top: 0px; font:bold 16px; height:36px; background: #FFFFFF; width:460px; left:0px; text-align:center;} 
-
+.bug-titre {
+    position: absolute;
+    top: 0px;
+    height: 36px;
+    background: #FFFFFF;
+    width: 460px;
+    left: 0px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
 #tab-modif, #tab-bug {
     background: none repeat scroll 0 0 #FFCCFF;
     height: 450px;
