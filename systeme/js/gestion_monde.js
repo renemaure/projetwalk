@@ -100,12 +100,12 @@ function avance_souris(){
 }
 function avance_avatar(){
     let test01 = Math.abs(pos_avatar) + Math.abs(avc_avat);
-     console.log("postion de l'avatar"+  pos_avatar +" + avance  de l'avatar "+ avc_avat + " = " + test01 )
+    //  console.log("postion de l'avatar"+  pos_avatar +" + avance  de l'avatar "+ avc_avat + " = " + test01 )
     if (test01 < fin_avanc && test01 > fin_recul){
-        console.log("dans la fenetre!")
+        // console.log("dans la fenetre!")
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
-        console.log("deplacement mon  et avatar, pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
+        // console.log("deplacement mon  et avatar, pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             Avatar_actif.pos_rel =  pos_avatar + avc_avat;
             $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
@@ -113,7 +113,7 @@ function avance_avatar(){
         }
     }else{
         avc_monde = -avc_avat;
-        console.log("deplacement monde , pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
+        // console.log("deplacement monde , pos_monde : " +pos_monde + " avc_monde : " +  avc_monde + " et avc_avat : " +avc_avat)
         
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ // erreur ca doit etre inferieur à 0
             anim_monde();  
