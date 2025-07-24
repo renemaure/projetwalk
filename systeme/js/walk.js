@@ -50,7 +50,7 @@
 	let tirage_pk;
 	let tirage_age;
 	let tirage_not;
-	let text_jon = new Array(50);
+	let text_jon = new Array();
 	let corps_png = "";
 	let avatar_png= Array(15).fill("vide.png");
 	let memoir_png;
@@ -66,6 +66,7 @@
 	let corps_avat;
 	let prems = true;
 	let pos_avt_ancien = new Array();
+	
 
 			/* nouvelle fetch en test juilet 2024 
 				modification par pasacl ajout d'un appel de la fonction AffichePermanent()
@@ -119,6 +120,8 @@
 
 	function connextionMonde(text_jon){
 		affichage("monde", text_jon["structure3"]);
+		let structure = document.createElement('section')
+		
 		affichage("infos_monde", text_jon["text2"]);
 		affichage("infos_base", text_jon["text3"]);
 	}
