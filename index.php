@@ -50,6 +50,7 @@
 			<div id="info_cookie"> <!-- bulle info --></div>	
 			<div id="affiche_regles"><!--popup regles et infos--></div>	
 			<div id="action_avatar"><!--popup  action de 'azvatar actif--></div>	
+			<div id="zonne_area"></div>
 			<footer>
 				Création projetX 2013 /2025 – Version <span id="foot_version"></span> au <span id ="foot_date"></span> en phase <span id="foot_phase"></span> <a href="mailto:thewalk@projetx.art">thewalk@projetx.art</a>
 				

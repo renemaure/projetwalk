@@ -3,6 +3,7 @@ function recupdonnemonde() {
     $.post("systeme/php/gestion_avatar.php",
         function(recup_donnees){
             Avatmonde = recup_donnees;
+            console.log(Avatmonde)
             if (prems) {
                 donneeavataractif();
             }else{

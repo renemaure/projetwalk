@@ -74,10 +74,16 @@ function DonneesMonde() {
 $("#monde").removeClass("monde_flex");  // a commenté la fontion exacte pascal au 15/06/2025
 const monde = document.getElementById("monde");
 const imgMonde = document.createElement("img");
+// imgMonde.usemap = "#boutique"
 imgMonde.id = "img-monde";
-imgMonde.src = "images/decor/decor.png";
+
+imgMonde.src = "images/decor/"+text_jon["img_decor"]+".png"; // ajout d'une variable sur le nom de l'image du décor 20/07/2025
+
+console.log(imgMonde)
 monde.appendChild(imgMonde);
-$("#img-monde").css({left: pos_monde+'px',display: "block"});
+$("#img-monde").attr("usemap","#boutique");
+affichage("zonne_area", text_jon["map_boutique"])
+$("#img-monde").css({left: pos_monde+'px',display: "block"})
 affichage("infos_monde", text_jon["text7"]);
 affichage("infos_base", text_jon["text8"]);
 let nbr_avatar_mond = Avatmonde.inc +" avatars";
@@ -183,6 +189,14 @@ function test(){
 		}
 	var valeur = document.querySelector('input[name=recup_age]:checked').value;
 } */
+
+function boutiquewalk() {
+	console.log("fondctionne la boutique")
+	affichage("monde", text_jon["img_bout_walk"])
+	affichage("zonne_area", text_jon["map_porte_boutique"])
+	
+	
+}
 
 
 
