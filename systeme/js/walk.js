@@ -66,6 +66,9 @@
 	let corps_avat;
 	let prems = true;
 	let pos_avt_ancien = new Array();
+	let structure;
+	let inter_avatar = false;
+	let inter_nom_avat
 	
 
 			/* nouvelle fetch en test juilet 2024 
@@ -118,10 +121,10 @@
 
 					/* ETAPE 0 */
 
-	function connextionMonde(text_jon){
-		affichage("monde", text_jon["structure3"]);
-		let structure = document.createElement('section')
-		
+	function connextionMonde(){
+	/* 	structureDouble('titre5','titre6')
+		document.getElementById("zon_conex").append(text_jon["structure3"]) */
+		affichage("monde",text_jon["structure3"] );
 		affichage("infos_monde", text_jon["text2"]);
 		affichage("infos_base", text_jon["text3"]);
 	}

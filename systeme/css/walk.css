@@ -381,14 +381,13 @@ footer a {
 .bulle {
     top: 107px;
     width: 150px;
-    height: 100px;
-    /* left:inherit; */
+    height: 78px;
     background: #bae1ec;
     position: absolute;
     border-radius: 10px;
     z-index: 11;
     display: none;
-   
+    padding: 10px;
 }
 .bulle:before {
     content: "";
@@ -430,9 +429,8 @@ footer a {
 
 #tab_accesoire , #tab_accesoire td{
     margin: 0 auto;
-    
     border: 1px solid #32a1ce;
-    /* border-collapse: separate; */
+   
 }
 #affich_age_monde, #affich_heur_monde, #affich_txt_avat{
     font-family: digital;
@@ -446,10 +444,6 @@ footer a {
     position: relative;
     text-align: center;
 }
-/* #txt_age {
-    bottom: 5px;
-    position: relative;
-} */
 #affiche_monde > div {
     border: 2px solid  var(--bleu);
     border-radius: 5px;

@@ -18,7 +18,7 @@
         $query2 = "UPDATE donnees_monde SET ans = '$ans',  mois = '$mois', jours = '$jours', heurs = '$heures', minutes = '$minutes', secondes = '$secondes' WHERE id = 1";
         $result_bdd = $laison->query($query2);
         $retour =  $retour_age["ans"];
-        echo $query2;
+        echo $query1;
 
 
         // ECHO "retour phpb $pos_avat et $nom_avat";;

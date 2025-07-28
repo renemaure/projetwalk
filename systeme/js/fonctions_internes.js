@@ -31,7 +31,25 @@ function AffichageHeader(text_jon){
   let hearder = text_jon["titre"];
   if (getcookie("etap")>0) hearder =  hearder + text_jon["bouton5"]  + text_jon["bouton1"];
 	affichage("header", hearder);
-  
+}
+function ajout_html(element,id,classe) {
+	structure = document.createElement(element)
+	if(id) structure.id = id
+	if(classe) structure.className = classe
+}
+function structureDouble(titre1,titre2) {
+		ajout_html('section','zon_conex')
+		monde.appendChild(structure)
+		ajout_html('h3','titre_conex','titre_from')
+		zon_conex.appendChild(structure)
+		ajout_html('div','zon_form','separ_monde')
+		monde.appendChild(structure)
+		ajout_html('section','zon_enreg')
+		monde.appendChild(structure)
+		ajout_html('h3','titre_from','titre_from')
+		zon_enreg.appendChild(structure)
+		affichage("titre_conex",text_jon[titre1])
+		affichage("titre_from",text_jon[titre2])
 }
 
 function setCookie(name, value, expires, path, domain, secure) {
@@ -74,28 +92,30 @@ function DonneesMonde() {
 $("#monde").removeClass("monde_flex");  // a commenté la fontion exacte pascal au 15/06/2025
 const monde = document.getElementById("monde");
 const imgMonde = document.createElement("img");
-// imgMonde.usemap = "#boutique"
 imgMonde.id = "img-monde";
-
 imgMonde.src = "images/decor/"+text_jon["img_decor"]+".png"; // ajout d'une variable sur le nom de l'image du décor 20/07/2025
-
-console.log(imgMonde)
+affichage("monde",text_jon['zone_souris'])
 monde.appendChild(imgMonde);
+
 $("#img-monde").attr("usemap","#boutique");
 affichage("zonne_area", text_jon["map_boutique"])
 $("#img-monde").css({left: pos_monde+'px',display: "block"})
 affichage("infos_monde", text_jon["text7"]);
 affichage("infos_base", text_jon["text8"]);
-let nbr_avatar_mond = Avatmonde.inc +" avatars";
+// let nbr_avatar_mond = Avatmonde.inc +" avatars";
 affichage("affich_txt_avat",Avatmonde.inc);
-affichage("aff_nom_avat",strUcFirst(Avatar_actif.nom)); 
-affichage("aff_age_avat", Avatar_actif.age +" ans"); 
-affichage("aff_physiq_avat", Avatar_actif.phys + " sur 6"); 
-affichage("aff_intell_avat", Avatar_actif.intl + " sur 6"); 
-affichage("aff_charis_avat", Avatar_actif.chari + " sur 6"); 
-affichage("aff_beaute_avat", Avatar_actif.beau + " sur 12"); 
-affichage("aff_pw_avat", Avatar_actif.pwalk); 
 
+/* affichage des donnée de l'avatar actif a deplacer dan une fonctiona part */
+
+}
+function affichedonavatactif() {
+	affichage("aff_nom_avat",strUcFirst(Avatar_actif.nom)); 
+	affichage("aff_age_avat", Avatar_actif.age +" ans"); 
+	affichage("aff_physiq_avat", Avatar_actif.phys + " sur 6"); 
+	affichage("aff_intell_avat", Avatar_actif.intl + " sur 6"); 
+	affichage("aff_charis_avat", Avatar_actif.chari + " sur 6"); 
+	affichage("aff_beaute_avat", Avatar_actif.beau + " sur 6"); 
+	affichage("aff_pw_avat", Avatar_actif.pwalk); 
 }
 
 function QuiterMonde(text_jon){
@@ -191,11 +211,37 @@ function test(){
 } */
 
 function boutiquewalk() {
-	console.log("fondctionne la boutique")
-	affichage("monde", text_jon["img_bout_walk"])
+	// eregistre_monde()	
+	affichage("monde",'')
+	ajout_html('img','boutique_walk')
+	structure.src ="images/boutique/boutique_walk.png"
+	monde.appendChild(structure)
+	document.getElementById('boutique_walk').setAttribute("usemap", "#boutique_walk")
 	affichage("zonne_area", text_jon["map_porte_boutique"])
-	
-	
+	ajout_html('img','avatar_actif','avatar')
+	structure.src ="images/avatar/"+Avatar_actif.nom+".png"
+	monde.appendChild(structure)
+	ajout_html('id','zone_souris')
+	monde.appendChild(structure)
+	document.getElementById("avatar_actif").style.left="610px"
+	/* 
+	<div id="zone_souris" onclick="avance_souris()">
+	<div id="maurice" class="souris" onclick="affpopupactif()"><img class="avatar maurice" src="images/avatar/maurice.png" style="left: 500px; z-index: 8;"><div class="bulle" id="bulle_maurice" style="left: 500px;"></div></div>
+	*/
+	/* let aff_avat_ctif = "<img class=\"avatar " +  Avatar_actif.nom + "\" src=\"images/avatar/" +  Avatar_actif.nom + ".png\">"
+	console.log( aff_avat_ctif)
+	affichage("monde",aff_avat_ctif) */
+
+}
+
+function sortirboutique() {
+	console.log("fondctionne sortir boutique")
+	// const element = document.getElementById("boutique_walk");
+	// element.remove(); // supprime le div avec l'identifiant 'div-02'
+	affichage("monde",'')
+	recupdonnemonde()
+		/* affichage("zonne_area", '') */
+	// recupdonnemonde()
 }
 
 
