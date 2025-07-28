@@ -27,7 +27,7 @@ function popup(balise,sens){
 function affichage(idelm,dataaff){
   document.getElementById(idelm).innerHTML = dataaff;
 }
-function AffichageHeader(text_jon){
+function AffichageHeader(){
   let hearder = text_jon["titre"];
   if (getcookie("etap")>0) hearder =  hearder + text_jon["bouton5"]  + text_jon["bouton1"];
 	affichage("header", hearder);

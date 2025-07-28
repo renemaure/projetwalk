@@ -1,7 +1,7 @@
 {
 "titre" : "<h1>The Walk - un monde presque permanent</h1>",
-"version" : "2.3.3.0",
-"date" : "23/07/2025",
+"version" : "2.3.4.0",
+"date" : "28/07/2025",
 "phase" : "beta",
 "fich_dep" : "fichiers/accueil.html",
 "txt_cntr1" : "Pour déplacer votre avatar",
@@ -55,7 +55,7 @@
 
 "tirage" : "<div id =\"creation\"><label><select id=\"physi\" class=\"box\" onchange=\"changePhysique()\"></select><span class=\"gras\">Le physique :</span> la force, l'endurance.</label><label><select id=\"intel\" class=\"box\" onchange=\"changeIntelligence()\"></select><span class=\"gras\"> L’intellect : </span>l'intelligence, la beauté.</label><label><select id=\"charis\" class=\"box\" onchange=\"changeCharisme()\"></select><span class=\"gras\"> Le charisme : </span> la prise de décision.</label><div id =\"tirage_age\"><input type=\"radio\" id=\"ratioage1\" name=\"recup_age\" value=\"jeune\" /><label for=\"ratioage1\">Age jeune</label><input type=\"radio\" id=\"cratioage2\" name=\"recup_age\" value=\"adulte\"  checked/><label for=\"ratioage2\">Age adulte</label><input type=\"radio\" id=\"ratioage3\" name=\"recup_age\" value=\"vieux\"/><label for=\"ratioage3\">Age vieux</label></div><button id=\"don_caract\" class=\"bouton\" onclick=\"afficheCaracteristique()\">Soumettre</button><p id=\"reste\"></p></div>",
 
-"aff_modif" : "<h4 class =\"bug-titre\">infos sur les modifs</h4><div id=\"tab-modif\"><p>Modifs du 14/07/2025 <ul type=\"disc\"><li>création de l'onglet modification</li></ul></p><p>Modifs du 22/07/2025 <ul type=\"disc\"><li>Intégration de la boutique Walk</li></ul></p></div>",
+"aff_modif" : "<h4 class =\"bug-titre\">infos sur les modifs</h4><div id=\"tab-modif\"><p>Modifs du 14/07/2025 <ul type=\"disc\"><li>création de l'onglet modification</li></ul></p><p>Modifs du 22/07/2025 <ul type=\"disc\"><li>Intégration de la boutique Walk</li></ul></p><p>Modifs du 28/07/2025 <ul type=\"disc\"><li>ntégration de la première interaction entre l’avatar actif et les autre avatar dans les bulles de dialogues</li></ul></p></div>",
 "aff_bugs" : "<h4 class =\"bug-titre\">infos sur les bugs</h4><div id=\"tab-modif\"><p>Bug du 14/07/2025 <ul type=\"disc\"><li  class=\"resolut\">erreur de varaible et de calcul dans le déplacements des avatars<pan>Résolut</span></li><li class=\"noresolut\">Empecher de ce conecter au même avatar lors qu'il es déjà en ligne <pan>Non résolut</span></li><li class=\"resolut\">lors de la création de l'avatar obliger d'entrer un nom entre 5 et 15 lettres! <pan>Résolu le 14/07/2025</span></li></ul></p></div>",
 
 "creatavat" : "<div id=\"nav_avatar\"></div><div id =\"zone_img_avatar\"></div><div id =\"couleur\"></div>",

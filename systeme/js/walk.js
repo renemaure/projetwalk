@@ -7,43 +7,19 @@
 	const delais = 5000;// délais d'animation
 	const pas = 150; // pas d'avance avec bouton
 	const decalage_monde = 500; // decalage du monde au demarage pour la position de l'avatar
-	
-	var clas_avatar = ""; // donne une class à chaque avatar
-	var avc_mond; // rien
-	var pos_avatar;
-	let pos_monde; // actif
-	var nom_avatar;  /* nom du notre personnage */
-	let recalcul; //rien
-	// var pos_avat;
-	const marg_main = parseInt($("main").css('margin-left'));
-	let largeur_monde = 1200;
+	const marg_main = parseInt($("main").css('margin-left')); // margin de la balise <main></main> 
+	const largeur_monde = 1200; // largeure du monde ne sert pas pour le moment
+	const indc_coul = 1; // couleur de base du corps de l'avatar
 
-	/* déclaration des tableau données des avatars */ 
-	let tab_pos_avat = []; //nons des avatars
-	let tab_pos_ind = []; //position absolu des avatars dans le monde
+	let avc_avat; // nombre de pixel que doit faire l'avatar actif
+	let pos_avatar;//position rel de l'avatar actif pour simplifier les calculs
+	let pos_monde; //position du monde à l'ouverture par rapport a l'avatar actif
 	let tab_pos_rel =[]; // position affiché relative des avatars dans le monde
-	// let tab_etap_avat = [];//etape des avatars enregistrés inutile!
-	let tab_phy = [];//tableau de la force des avatars 30/06/2024
-	let tab_char = [];//tableau de la force des avatars 30/06/2024
-	let tab_intel = [];//tableau de la force des avatars 30/06/2024
-	let tab_beaute = [];//tableau de la force des avatars 30/06/2024
-	let tab_vital = [];//tableau de la force des avatars 30/06/2024
-	let tab_conf = [];//tableau de la force des avatars 30/06/2024
-	let tab_pwalk = [];//tableau de la force des avatars 30/06/2024
-
-	let avc_avat; // nombre de pixel que doit faire notre avatar
-	let indc_avatar; // l'indice de notre avatar dans les tableaux de données
-
-	var decor = 1; // rien
-	var etap; // etape de création
-	let indc_coul = 1; // couleur de base du corps de l'avatar
-	var max_rept = 10 ;
-	var indice_img = 1; //ne sert plus
-	let tab_cool = Array(max_rept); // tableau la ref de la couleur de chaque png de l'avatar
-	var intel = 3;
-	var physi = 3;
-	var charis = 3;
-	var rest_piont = 5;
+	let etap; // etape de création
+	let intel = 3;
+	let physi = 3;
+	let charis = 3;
+	let rest_piont = 5;
 	let tirage_beau;
 	let tirage_conf;
 	let tirage_vita;
@@ -69,8 +45,29 @@
 	let structure;
 	let inter_avatar = false;
 	let inter_nom_avat
-	
 
+	// var clas_avatar = ""; // donne une class à chaque avatar
+	// var avc_mond; // rien
+	// var nom_avatar;  /* nom du notre personnage */
+	// let recalcul; //rien
+	// var pos_avat;
+	/* déclaration des tableau données des avatars */ 
+	// let tab_pos_avat = []; //nons des avatars
+	// let tab_pos_ind = []; //position absolu des avatars dans le monde	
+	// let tab_etap_avat = [];//etape des avatars enregistrés inutile!
+	/* let tab_phy = [];//tableau de la force des avatars 30/06/2024
+	let tab_char = [];//tableau de la force des avatars 30/06/2024
+	let tab_intel = [];//tableau de la force des avatars 30/06/2024
+	let tab_beaute = [];//tableau de la force des avatars 30/06/2024
+	let tab_vital = [];//tableau de la force des avatars 30/06/2024
+	let tab_conf = [];//tableau de la force des avatars 30/06/2024
+	let tab_pwalk = [];//tableau de la force des avatars 30/06/2024 */
+	// let indc_avatar; // l'indice de notre avatar dans les tableaux de données
+	// var decor = 1; // rien
+	/* var max_rept = 10 ;
+	var indice_img = 1; //ne sert plus
+	let tab_cool = Array(max_rept); // tableau la ref de la couleur de chaque png de l'avatar */
+	
 			/* nouvelle fetch en test juilet 2024 
 				modification par pasacl ajout d'un appel de la fonction AffichePermanent()
 				permetant l'affichage des textes permanant du site
@@ -86,7 +83,6 @@
 		} 
 	)
 
-
 	/* test d'un fetch avec envoi de données  04/08/2024*/
 /* 	fetch(`${urlBase}/js-ajax/exemple/toLower.php`, {method: "POST", body: data}) // le body corespond au texte à envoyer
 	.then(response => response.json())
@@ -96,7 +92,7 @@
 	
 		/*  */
 	function etape(){
-		AffichageHeader(text_jon);
+		AffichageHeader();
 		document.getElementById("monde").classList.add("monde_flex");// a voir si utile icic pascal au 15/06/2025
 		if(getcookie("nom")){
 			nom_avatar = getcookie("nom");
@@ -109,13 +105,12 @@
 					ImageAvatar();
 					break;
 				case "3":
-					// $.post("systeme/php/gestion_avatar.php",acccemonde,'json');
 					recupdonnemonde();
 					break;
 				default:
-					connextionMonde(text_jon);
+					connextionMonde();
 			}
-		}else	connextionMonde(text_jon);
+		}else	connextionMonde(t);
 	}
 	/* fin test fetch juillet 2024 */
 
