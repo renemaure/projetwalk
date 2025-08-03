@@ -101,9 +101,9 @@ function avance_souris(){
     pos_monde = $("#img-monde").position().left;
     pos_avatar = Avatar_actif.pos_rel;
     avc_avat = event.pageX - marg_main - Avatar_actif.pos_rel - 55;
-    avance_avatar()
+    calcul_avance()
 }
-function avance_avatar(){
+function  calcul_avance(){
     if (pos_avatar + avc_avat <fin_avanc && pos_avatar + avc_avat > fin_recul){
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
