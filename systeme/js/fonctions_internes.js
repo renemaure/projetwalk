@@ -62,12 +62,11 @@ function setCookie(name, value, expires, path, domain, secure) {
 function strUcFirst(a) {
 	return (a+'').charAt(0).toUpperCase() + (a+'').substr(1);
   }
-	/* etape 0 conection et enregistrement nouvel avatar */
 
-  /* nouvelle fonction pour afficher les données textes qui sont permanente sur tout le site */
+  /* Affiche les textes permanents sur tout le site */
 function AffichePermanent() {
-  affichage("info-erg", text_jon["text1"]);
-  affichage("info_cookie", text_jon["text5"]);
+  affichage("info-erg", text_jon["text_navigateur"]);
+  affichage("info_cookie", text_jon["info_cookie"]);
   affichage("foot_version",text_jon["version"]);
   affichage("foot_date",text_jon["date"]);
   affichage("foot_phase",text_jon["phase"]);

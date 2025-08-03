@@ -1,12 +1,12 @@
 // jQuery(document).ready(function($){
-	const fin_recul = 350; // position mini de l'avatar
-	const fin_avanc = 850; //position max de l'avatar 
+	const fin_recul = 400; // position mini de l'avatar
+	const fin_avanc = 750; //position max de l'avatar 
 	let fin_decor = -3450; // position max du decor
 	let deb_decor = 0; // position de debut du decor
 	let avc_monde = 0; // nombre de pixel d'avance du monde
 	const delais = 5000;// délais d'animation
 	const pas = 150; // pas d'avance avec bouton
-	const decalage_monde = 500; // decalage du monde au demarage pour la position de l'avatar
+	const decalage_monde = 600; // decalage du monde au demarage pour la position de l'avatar
 	const marg_main = parseInt($("main").css('margin-left')); // margin de la balise <main></main> 
 	const largeur_monde = 1200; // largeure du monde ne sert pas pour le moment
 	const indc_coul = 1; // couleur de base du corps de l'avatar
@@ -93,7 +93,7 @@
 		/*  */
 	function etape(){
 		AffichageHeader();
-		document.getElementById("monde").classList.add("monde_flex");// a voir si utile icic pascal au 15/06/2025
+		document.getElementById("monde").classList.add("monde_flex")
 		if(getcookie("nom")){
 			nom_avatar = getcookie("nom");
 			etap = getcookie("etap");
@@ -110,18 +110,16 @@
 				default:
 					connextionMonde();
 			}
-		}else	connextionMonde(t);
+		}else	connextionMonde();
 	}
 	/* fin test fetch juillet 2024 */
 
 					/* ETAPE 0 */
 
 	function connextionMonde(){
-	/* 	structureDouble('titre5','titre6')
-		document.getElementById("zon_conex").append(text_jon["structure3"]) */
-		affichage("monde",text_jon["structure3"] );
-		affichage("infos_monde", text_jon["text2"]);
-		affichage("infos_base", text_jon["text3"]);
+		affichage("monde",text_jon["structure_etape0"] );
+		affichage("infos_monde", text_jon["selogger"]);
+		affichage("infos_base", text_jon["inscrtiption"]);
 	}
 
 	/* fonction logger au monde en mode test 04/05/2024 */
@@ -136,8 +134,7 @@
 				if (connex["valid"] !="ok") {
 					affichage("retour_log",connex["erreur"]);
 					document.getElementById("envoi_log").textContent=(`Recommençez`);
-					// document.getElementById("civil").reset();
-					// etape();
+					document.getElementById("civil").reset();
 				}
 				else{
 					affichage("infos_monde","");// efface les textes
@@ -363,18 +360,24 @@
 
 	function ouvreregles() {
 		popup("affiche_regles","flex");
-		affichage("affiche_regles",text_jon["structure4"]);
+		affichage("affiche_regles",text_jon["structure_regles_infos"]);
 		affregles()
-		affichage("aside_regles",text_jon["texte15"])
+		affichage("aside_regles",text_jon["version_regles"] + text_jon["menu_regles"])
+		// affichage("aside_regles",text_jon["menu_regles"])
 		affichage("date_block",text_jon["date"])
 		affichage("version_block", text_jon["version"])
 		affichage("beta_block",text_jon["phase"])
 	}
 	function affregles() {
 		affichage("boite01",text_jon["texte13"]); 
-		affichage("boite02",text_jon["texte14"]);
+		affichage("boite02","");
+		
 	}
 	function bugmodif() {
 		affichage("boite01",text_jon["aff_modif"]); 
 		affichage("boite02",text_jon["aff_bugs"]);
+	}
+	function blogregles() {
+		affichage("boite01",text_jon["texte14"]);
+		affichage("boite02","");
 	}

@@ -17,8 +17,9 @@ function donneeavataractif(){
     for (var i = 1; i <= Avatmonde.inc; i++) {
         if (getcookie("nom") == Avatmonde["inc"+i]["nom"]){
                 Avatar_actif = new Avatar(Avatmonde["inc"+i]["nom"],Avatmonde["inc"+i]["pos_dep"],0,Avatmonde["inc"+i]["charis"],Avatmonde["inc"+i]["intel"],Avatmonde["inc"+i]["physq"],Avatmonde["inc"+i]["pwalk"],Avatmonde["inc"+i]["age"],Avatmonde["inc"+i]["beaute"],i); 
-               
-                pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));//position du monde
+               /*lodif du calcul de position du monde si l'avatar est en dessous du decalage 2/08/2025 */
+                if (parseInt(Avatar_actif.pos_abs)<=decalage_monde)  pos_monde = 0
+               else   pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));//position du monde
        }
         tab_pos_rel[i] = pos_monde + parseInt(Avatmonde["inc"+i]["pos_dep"]); // recup des positions absolut des avatars
     }
@@ -93,17 +94,17 @@ $(".btrecul").click(function(){
 
 function affpopupactif() {
     popup("action_avatar","block");
-    affichage("action_avatar",text_jon["bouton6"]);
+    affichage("action_avatar",text_jon["structures6"]);
+    // affichage("action_avatar",text_jon["bouton6"]);
 }
 function avance_souris(){
     pos_monde = $("#img-monde").position().left;
     pos_avatar = Avatar_actif.pos_rel;
     avc_avat = event.pageX - marg_main - Avatar_actif.pos_rel - 55;
-    avance_avatar();
+    avance_avatar()
 }
 function avance_avatar(){
-    let test01 = Math.abs(pos_avatar) + Math.abs(avc_avat);
-    if (test01 < fin_avanc && test01 > fin_recul){
+    if (pos_avatar + avc_avat <fin_avanc && pos_avatar + avc_avat > fin_recul){
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
@@ -111,9 +112,11 @@ function avance_avatar(){
             $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
             anim_monde();
         }
-    }else{
+    }
+    else{
         avc_monde = -avc_avat;
-        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ // erreur ca doit etre inferieur à 0
+        console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
+        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             anim_monde();  
         } 
     }
