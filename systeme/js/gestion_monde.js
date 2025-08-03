@@ -104,21 +104,8 @@ function avance_souris(){
     calculAvance()
 }
 function  calculAvance(){
-    if (pos_avatar + avc_avat <fin_avanc && pos_avatar + avc_avat > fin_recul){
-        avc_monde = -avc_avat/2;
-        avc_avat = avc_avat/2;
-        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
-            Avatar_actif.pos_rel =  pos_avatar + avc_avat;
-           avanceAvatar()
-            anim_monde();
-        }
-    }
-    else{
-        avc_monde = -avc_avat;
-        // console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
-        if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
-            anim_monde();  
-        } 
+   if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ // erreur ca doit etre inferieur à 0
+          anim_monde() //test   
     }
 }
 function avanceAvatar() {
