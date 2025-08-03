@@ -106,31 +106,39 @@ function avance_souris(){
 function  calculAvance(){
     avc_monde = -avc_avat;
     if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ 
-        console.log("postion du monde : "+ parseInt(pos_monde + avc_monde))
-        console.log("postion de l'avatar : "+ parseInt(pos_avatar + avc_avat))
-        if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){
-            // console.log("dans la boucle de la zonne deplacement avatar")
+        console.log("postion du monde 1: "+ parseInt(pos_monde + avc_monde))
+        console.log("postion de l'avatar 1: "+ parseInt(pos_avatar + avc_avat))
+        if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){      
             avc_monde = -avc_avat/2;
             avc_avat = avc_avat/2;
             avanceAvatar()
-            anim_monde() 
+            animeMonde()
         }
-        // anim_monde() 
+        else animeMonde()        
+    } else {
+        //  console.log("dans la boucle de la zonne deplacement avatar")
+         pos_monde = $("#img-monde").position().left;
+         let test = (pos_avatar -  Math.abs(pos_monde)) 
+        console.log("postion de l'avatar : "+ test +" et valeur de fin_decor : " + fin_decor)
+        if ( test < deb_decor || test > fin_decor) {
+            avanceAvatar()
+        }   
     }
+    Avatar_actif.rel = $("."+Avatar_actif.nom).position().left;
+    setTimeout(eregistre_monde, delais*1.1);
 }
 function avanceAvatar() {
      $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
 }
-function anim_monde(){
+function animeMonde(){
     $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais); // déplacement du monde
-    for (var j = 1; j <= Avatmonde.inc; j++) {
+      for (var j = 1; j <= Avatmonde.inc; j++) {
         if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
              $("."+ Avatmonde["inc"+j]["nom"] + " , #bulle_" + Avatmonde["inc"+j]["nom"]).animate({left: '+='+avc_monde+'px'},delais);
              tab_pos_rel[j] = $("."+ Avatmonde["inc"+j]["nom"]).css("left"); // deplacement des autres avatars
         } 
     }
-    Avatar_actif.rel = $("."+Avatar_actif.nom).position().left;
-    setTimeout(eregistre_monde, delais*1.1);
+    
 }
 function eregistre_monde(){
     pos_monde = $("#img-monde").position().left;
@@ -173,8 +181,6 @@ function eregistre_monde(){
     testbulle()
 }
 function testbulle() {
-    /* bulle_bernard */
-   
     if (inter_avatar) {
          document.getElementById("bulle_"+inter_nom_avat).style.display="block"
     }else{
