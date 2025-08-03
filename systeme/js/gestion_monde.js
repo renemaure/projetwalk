@@ -104,8 +104,11 @@ function avance_souris(){
     calculAvance()
 }
 function  calculAvance(){
-   if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ // erreur ca doit etre inferieur à 0
-          anim_monde() //test   
+    avc_monde = -avc_avat;
+    if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ 
+        console.log("postion minimum du monde : "+ parseInt(pos_monde + avc_monde))
+        
+        anim_monde() //test   
     }
 }
 function avanceAvatar() {
