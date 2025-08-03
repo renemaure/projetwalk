@@ -101,25 +101,28 @@ function avance_souris(){
     pos_monde = $("#img-monde").position().left;
     pos_avatar = Avatar_actif.pos_rel;
     avc_avat = event.pageX - marg_main - Avatar_actif.pos_rel - 55;
-    calcul_avance()
+    calculAvance()
 }
-function  calcul_avance(){
+function  calculAvance(){
     if (pos_avatar + avc_avat <fin_avanc && pos_avatar + avc_avat > fin_recul){
         avc_monde = -avc_avat/2;
         avc_avat = avc_avat/2;
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             Avatar_actif.pos_rel =  pos_avatar + avc_avat;
-            $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
+           avanceAvatar()
             anim_monde();
         }
     }
     else{
         avc_monde = -avc_avat;
-        console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
+        // console.log("avc_monde : " + avc_monde + "/ pos_monde : " + pos_monde);
         if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){
             anim_monde();  
         } 
     }
+}
+function avanceAvatar() {
+     $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
 }
 function anim_monde(){
     $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais); // déplacement du monde
