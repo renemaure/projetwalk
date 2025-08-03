@@ -107,13 +107,15 @@ function  calculAvance(){
     avc_monde = -avc_avat;
     if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ 
         console.log("postion du monde : "+ parseInt(pos_monde + avc_monde))
-        // console.log("postion de l'avatar : "+ parseInt(Math.abs(pos_avatar) + Math.abs(avc_avat)))
-        console.log("postion de l'avatar sans l'inverse : "+ parseInt(pos_avatar + avc_avat))
+        console.log("postion de l'avatar : "+ parseInt(pos_avatar + avc_avat))
         if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){
-            console.log("dans la boucle de la zonne deplacement avatar")
-            // anim_monde() //test
+            // console.log("dans la boucle de la zonne deplacement avatar")
+            avc_monde = -avc_avat/2;
+            avc_avat = avc_avat/2;
+            avanceAvatar()
+            anim_monde() 
         }
-        anim_monde() 
+        // anim_monde() 
     }
 }
 function avanceAvatar() {
