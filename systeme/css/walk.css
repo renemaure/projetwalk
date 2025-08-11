@@ -74,11 +74,14 @@ header h1 {
     overflow: hidden;
     position: relative;
 }
-.monde_flex, #creat_avatar {
+.monde_flex, #creat_avatar, #zonne_table {
     display: flex;
     flex-direction: row;
-    /* height: inherit; */
     justify-content: space-around;
+}
+#zon1-erg, #zon2-erg {
+    margin: 57px 0 0 30px;
+    width: 50%;
 }
 #nav_avatar, #couleur {
     position: relative;
@@ -424,7 +427,7 @@ footer a {
 .dessin {
     position: absolute;
     left: 194px;
-    top: 43px;
+    top: 35px;
 }
 #nav_avatar .opt_des{
     cursor: pointer;

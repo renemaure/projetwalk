@@ -1,7 +1,7 @@
 // jQuery(document).ready(function($){
 	const fin_recul = 300; // position mini de l'avatar
 	const fin_avanc = 900; //position max de l'avatar 
-	let fin_decor = -3500; // position max du decor
+	let fin_decor = -4100; // position max du decor
 	let deb_decor = 0; // position de debut du decor
 	let avc_monde = 0; // nombre de pixel d'avance du monde
 	const delais = 5000;// délais d'animation
@@ -46,6 +46,8 @@
 	let inter_avatar = false;
 	let inter_nom_avat
 
+	
+
 	// var clas_avatar = ""; // donne une class à chaque avatar
 	// var avc_mond; // rien
 	// var nom_avatar;  /* nom du notre personnage */
@@ -87,7 +89,7 @@
 /* 	fetch(`${urlBase}/js-ajax/exemple/toLower.php`, {method: "POST", body: data}) // le body corespond au texte à envoyer
 	.then(response => response.json())
 	.then(result => {
-		document.getElementById('consolef1p').innerHTML = result.text;
+		document.getElementById('consolef1p').innerHTML = result.text;``
 	}) */
 	
 		/*  */
@@ -247,14 +249,17 @@
 	}
 
 
-				/* ETAPE 2 création avatar*/
+				/* ETAPE 2 création de l'image de l'avatar*/
 	
 	function ImageAvatar(){
 		affichage("monde", text_jon["structure2"]);
-		affichage("titre_conex",text_jon["titre2"]);
+		affichage("titre_conex",text_jon["titre7"]);
+		affichage("titre_zon_enreg",text_jon["titre2"])
 		affichage("creat_avatar",text_jon["creatavat"])
-		affichage("nav_avatar",text_jon["text6"]);
+		
 		affichage("valid_avatar",text_jon["bouton2"])
+		affichage("zonne_table",text_jon["createnreg"])
+		affichage("zon1-erg",text_jon["text6"]);
 		CouleurCorpsAvatar();/* affiche le tableau des couleurs */
 		coul_corps(); /* affiche corps etde la tete avec la couleur par defaut*/
 	}
@@ -300,7 +305,7 @@
 			col_coul_tab ++;
 		}
 		html += "</table>";
-		affichage("couleur",html);
+		affichage("zon2-erg",html);
 	}
 
 	$("#monde").on("click",".carre",function(){

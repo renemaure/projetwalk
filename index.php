@@ -27,7 +27,7 @@
 				
 			</header>
 			<section id="monde" >
-				<!-- <div id="zone_souris" onclick="avance_souris()"></div>	 -->
+				
 			</section>
 			<section id="control">
 				<p id="info-erg">

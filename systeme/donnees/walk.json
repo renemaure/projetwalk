@@ -1,7 +1,7 @@
 {
 "titre" : "<h1>The Walk - un monde presque permanent</h1>",
-"version" : "2.3.4.36",
-"date" : "02/08/2025",
+"version" : "2.3.4.53",
+"date" : "04/08/2025",
 "phase" : "beta",
 "fich_dep" : "fichiers/accueil.html",
 "txt_cntr1" : "Pour déplacer votre avatar",
@@ -11,11 +11,11 @@
 
 "map_boutique" : "<map name=\"#boutique\"><area shape=\"rect\" coords=\"3045,165,3166,281\" href=\"#\" onclick=\"boutiquewalk() \" alt=\" \" /></map>",
 "map_porte_boutique" : "<map name=\"boutique_walk\"><area href=\"#\" coords=\"589,19,747,320\" shape=\"rect\" onclick=\" sortirboutique()\"></map>",
-"zone_souris" : "<div id=\"zone_souris\" onclick=\"avance_souris()\"></div>",
+
 "text_navigateur" : "Votre navigateur doit accepter les cookies, sinon il ne se passera rien! <button id=\"popup_cookie\" onclick=\"popup('info_cookie','block')\"> Infos sur les cookies</button>",
 "selogger" : "<p class=\"texte\">Bonjour, si vous êtes déjà inscrit et que vous découvrez cette page, c’est que vos cookies nom et étape ont été supprimé.<br><br>Vous devez donc vous loggez de nouveau avec le nom de votre avatar et votre mot de passe pour accéder à The Walk, le monde presque permanent.</p>",
 "inscrtiption" : "<p class=\"texte\">Si vous n’êtes pas encore inscrit, bienvenue dans The Walk, le monde presque permanent!<br><br>Pour rejoindre The walk, vous devez vous enregistrer en entrant le nom de votre avatar, compris entre 5 et 15 caractères, puis votre mai et enfin un mot de passe. Ensuite vous passerai a l’étape 1 consistant à définir les caractéristique de votre avatar.</p>",
-"text4" : "<h3 class=\"titre_from\">Etape 2 : Création de votre avatar</h3><div class=\"zonne_txt\"><p>Merci pour votre enregistrement, et bienvenue dans The Walk, le monde presque permanent.</p><p>Maintenant, vous est à l’étape 1, vous devez créer votre avatar pour pouvoir puisse évoluer dans The Walk, le monde presque permanent.</p></div>",
+"text4" : "<h3 class=\"titre_from\">Etape 2 : Création de votre avatar</h3><div class=\"zonne_txt\"><p>Merci de votre enregistrement dans The Walk, le monde presque permanent. Maintenant, vous est à l’étape 1, vous devez créer votre avatar et définir ses 3 caractéristiques, le physique, l’intellect et le charisme, ainsi que l’age de votre avatar. Ensuite vous passerez à l’épate 2</p></div>",
 "info_cookie" : "<p>The Walk utilise deux cookies només, nom et étape. Ils sont indispensables pour que votre avatar évolue correctement dans The Walk. Ces deux cookies sont uniquement déclarer lors de la création de votre avatar.</p><p>Le cookie \"nom\" contient le nom de votre avatar<br>Le cookie \"etape\" renseigne l’état d’avancement de votre avatar</p><p>Ces cookies sont conservés un an et uniquement sur votre navigateur. ils ne servent en aucune façon à une quelconque campagne de publicité sur internet.</p><button class=\"btn_cookie\" onclick=\"popup('info_cookie','none')\">Fermer</button>",
 "text6" : "Pour créer l’image de votre avatar, vous devez choisir la couleur de son corps en cliquant sur les pavés de couleurs.",
 "text7" : "<div id=\"affiche_monde\">\n\r<div id=\"zone_1\"><p class=\"text_mond\"><span id = \"txt_age\">the Walk a </span><span id=\"affich_age_monde\"></span></p></div><div id=\"zone_2\"><p class=\"text_mond\"></P></div><div id=\"zone_3\"><p class=\"text_mond\"><span id = \"txt_heurs\">Il est actuelement </span><span id=\"affich_heur_monde\"></span></p></div><div id=\"zone_4\"><p class=\"text_mond\"><span id=\"affich_txt_avat\"></span><span id = \"txt_avat\"> avatars psésents dans the Walk</span></p></div></div>",
@@ -33,7 +33,7 @@
 
 
 "structure1" : "<section id=\"zon_conex\">\r\n\t<h3 id=\"titre_conex\" class=\"titre_from\"></h3><div id=\"zon_form\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"></section>",
-"structure2" : "<section id=\"zon_conex\">\r\n\t<h3 id=\"titre_conex\" class=\"titre_from\"></h3><div id=\"creat_avatar\"></div><div id=\"valid_avatar\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"><h3 id=\"titre_zon_enreg\" class=\"titre_from\"></h3><div =\"zonne_table\"></div></section>",
+"structure2" : "<section id=\"zon_conex\">\r\n\t<h3 id=\"titre_conex\" class=\"titre_from\"></h3><div id=\"creat_avatar\"></div><div id=\"valid_avatar\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"><h3 id=\"titre_zon_enreg\" class=\"titre_from\"></h3><div id=\"zonne_table\"></div></section>",
 "structure6" : "<div id=\"retour_log\" class=\"retour_erreur\"></div><form id=\"inscrip_index\"><label for=\"nom_log\">Entrez le nom de votre pseudo</label><input id=\"nom_log\"  maxlength=\"40\" type=\"text\" required placeholder><label for=\"passe_log\">Entrez votre mot de passe</label><input id=\"passe_log\"  maxlength=\"20\" type=\"text\" required placeholder><button type=\"button\" id=\"envoi_log\" class=\"bouton\" onclick=\"seLoggerMonde()\">Continuez</button></form>",
 "structure5" : "<div id=\"retour_ins\" class=\"retour_erreur\"></div><form id =\"civil\"><label for=\"nom_ins\">Entrez le nom de votre pseudo</label><input id=\"nom_ins\" maxlength=\"40\" type=\"text\" required placeholder><label for=\"mail-ins\">Entrez votre mail</label><input id=\"mail_ins\" maxlength=\"40\" type=\"email\" required placeholder><label for=\"pass_ins\">Entrez votre mot de passe</label><input id=\"pass_ins\"  maxlength=\"40\" type=\"text\" required placeholder><button type=\"button\" id=\"envoi_ins\" class=\"bouton\" onclick=\"enregistreMonde()\">Continuez</button></form></section>",
 "structure_regles_infos" : "<div id=\"corps_regles\" class=\"new_col-8\"><div id=\"boite01\" class=\"boite12\"></div><div id=\"boite02\" class=\"boite12\"></div></div></div><aside id=\"aside_regles\" class=\"new_col-4\"></aside>",
@@ -46,6 +46,7 @@
 "titre4" : " de votre avatar",
 "titre5" : "Pour accèder au monde si vous étes deja inscrit",
 "titre6" : "Inscription pour pouvoir entrer dans le monde",
+"titre7" : "Etape 2",
 "bouton1" : "<button id=\"quit_monde\" onclick=\"QuiterMonde()\" >Quiter le monde</button>",
 "bouton2" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"Basedefavatar()\">Validez</button>",
 "bouton3" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"optionImageAvatar()\">Validez</button>",
@@ -61,6 +62,7 @@
 "aff_bugs" : "<h4 class =\"bug-titre\">infos sur les bugs</h4><div id=\"tab-modif\"><p>Bug du 14/07/2025 <ul type=\"disc\"><li  class=\"resolut\">erreur de varaible et de calcul dans le déplacements des avatars<pan>Résolut</span></li><li class=\"noresolut\">Empecher de ce conecter au même avatar lors qu'il es déjà en ligne <pan>Non résolut</span></li><li class=\"resolut\">lors de la création de l'avatar obliger d'entrer un nom entre 5 et 15 lettres! <pan>Résolu le 14/07/2025</span></li></ul></p></div>",
 
 "creatavat" : "<div id=\"nav_avatar\"></div><div id =\"zone_img_avatar\"></div><div id =\"couleur\"></div>",
+"createnreg" : "<div id=\"zon1-erg\"></div><div id=\"zon2-erg\"></div>",
 
 "ref_chem":{
             "indc1" : "corps",
