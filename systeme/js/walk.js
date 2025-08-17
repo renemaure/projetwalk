@@ -46,6 +46,8 @@
 	let inter_avatar = false;
 	let inter_nom_avat
 
+	let position_souris;
+
 	
 
 	// var clas_avatar = ""; // donne une class à chaque avatar
@@ -74,6 +76,9 @@
 				modification par pasacl ajout d'un appel de la fonction AffichePermanent()
 				permetant l'affichage des textes permanant du site
 			*/
+
+	
+	
 	fetch('systeme/donnees/walk.json')
   	.then( response => {
     return response.json();
@@ -118,11 +123,7 @@
 
 					/* ETAPE 0 */
 
-	function connextionMonde(){
-		affichage("monde",text_jon["structure_etape0"] );
-		affichage("infos_monde", text_jon["selogger"]);
-		affichage("infos_base", text_jon["inscrtiption"]);
-	}
+
 
 	/* fonction logger au monde en mode test 04/05/2024 */
 		function seLoggerMonde(){
