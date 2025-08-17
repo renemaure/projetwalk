@@ -81,6 +81,7 @@ function affichageavatarmonde(){
         }
     } */
 
+
 /* pas utiliser pour le moment */
 /* $(".btavanc").click(function(){
     avc_avat = pas;
@@ -96,19 +97,17 @@ function affpopupactif() {
     affichage("action_avatar",text_jon["structures6"]);
     // affichage("action_avatar",text_jon["bouton6"]);
 }
-/* modification du code pour recuperer la position de la souris avec un evenement le 08/08/2025 */
 function avance_souris(){
-    const imgMonde = document.getElementById("img-monde")
-    const poSouris = document.getElementById("zone_souris")
-    pos_monde = imgMonde.style.left
+    pos_monde = $("#img-monde").position().left;
     pos_avatar = Avatar_actif.pos_rel;
-    poSouris.addEventListener("mousemove",(e)=>{
-        console.log(e.pageX);
-        
-        avc_avat = e.pageX - marg_main - pos_avatar - 55;
-    })
+    avc_avat = event.pageX - marg_main - Avatar_actif.pos_rel - 55;
+    calculAvance()
+}
+function  calculAvance(){
     avc_monde = -avc_avat;
     if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ 
+        console.log("postion du monde 1: "+ parseInt(pos_monde + avc_monde))
+        console.log("postion de l'avatar 1: "+ parseInt(pos_avatar + avc_avat))
         if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){      
             avc_monde = -avc_avat/2;
             avc_avat = avc_avat/2;
@@ -117,20 +116,20 @@ function avance_souris(){
         }
         else animeMonde()        
     } else {
-        pos_monde = $("#img-monde").position().left;
-        let test = (pos_avatar -  Math.abs(pos_monde)) 
+        //  console.log("dans la boucle de la zonne deplacement avatar")
+         pos_monde = $("#img-monde").position().left;
+         let test = (pos_avatar -  Math.abs(pos_monde)) 
+        console.log("postion de l'avatar : "+ test +" et valeur de fin_decor : " + fin_decor)
         if ( test < deb_decor || test > fin_decor) {
             avanceAvatar()
         }   
     }
-    
-    setTimeout(eregistre_monde, delais*1.5);
+    Avatar_actif.rel = $("."+Avatar_actif.nom).position().left;
+    setTimeout(eregistre_monde, delais*1.1);
 }
-
 function avanceAvatar() {
      $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
 }
-
 function animeMonde(){
     $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais); // déplacement du monde
       for (var j = 1; j <= Avatmonde.inc; j++) {
@@ -164,9 +163,7 @@ function eregistre_monde(){
                 tab_pos_rel[j] = $("."+Avatmonde["inc"+j]["nom"]).position().left  
             }
         }
-        console.log(tab_pos_rel);
-        Avatar_actif.rel = document.querySelector("."+Avatar_actif.nom).style.left
-     console.log("position de ."+Avatar_actif.nom +"  : "+ Avatar_actif.pos_rel)
+    //  console.log("position avatar actif : "+ Avatar_actif.pos_rel)
     for (let j = 1; j <= Avatmonde.inc; j++) { 
         if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
             if ((Avatar_actif.pos_rel -55<= tab_pos_rel[j])  && (Avatar_actif.pos_rel +200 >= tab_pos_rel[j]) || (Avatar_actif.pos_rel-55>= tab_pos_rel[j])  && (Avatar_actif.pos_rel -200 <= tab_pos_rel[j])) {
@@ -185,12 +182,10 @@ function eregistre_monde(){
 }
 function testbulle() {
     if (inter_avatar) {
-        document.getElementById("bulle_"+inter_nom_avat).style.display="block"
-        let text = "bonjour je m'apelle " + inter_nom_avat
-        affichage("bulle_"+inter_nom_avat,text)
-    }/* else{
+         document.getElementById("bulle_"+inter_nom_avat).style.display="block"
+    }else{
         document.getElementById("bulle_"+inter_nom_avat).style.display="none"
-    } */
-    // let text = "bonjour je m'apelle " + inter_nom_avat
-    // affichage("bulle_"+inter_nom_avat,text)
+    }
+    let text = "bonjour je m'apelle " + inter_nom_avat
+    affichage("bulle_"+inter_nom_avat,text)
 }
