@@ -1,6 +1,6 @@
 {
 "titre" : "<h1>The Walk - un monde presque permanent</h1>",
-"version" : "2.3.4.65",
+"version" : "2.3.4.67",
 "date" : "24/08/2025",
 "phase" : "beta",
 "fich_dep" : "fichiers/accueil.html",
@@ -54,6 +54,7 @@
 "bouton1" : "<button id=\"quit_monde\" onclick=\"QuiterMonde()\" >Quiter le monde</button>",
 "titre_regles" : "Régles tirage aptitudes principales",
 "titre_regles2" : "Les Régles des aptitudes secondaires",
+"titre_ap_seconds" : "Calcul des aptitudes secondaires",
 "bouton2" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"Basedefavatar()\">Validez</button>",
 "bouton3" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"optionImageAvatar()\">Validez</button>",
 "bouton4" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"creatImageavat()\">Validez</button>",
