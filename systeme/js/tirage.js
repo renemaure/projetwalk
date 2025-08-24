@@ -14,6 +14,7 @@
 		gesoption("physi",rest_piont,physi);
 		gesoption("intel",rest_piont,intel);
 		gesoption("charis",rest_piont,charis);
+		type_age = document.querySelector('input[name=recup_age]:checked').value;
 	} 
 
 	function changePhysique(){
@@ -37,8 +38,7 @@
         document.querySelector("#zon_enreg h3").innerHTML = text_jon["titre_ap_seconds"]
         document.getElementById("creat_avatar").style.display="flex"
         affichage("creat_avatar",text_jon["structure_aptitudes_seond"]);
-		type_age = document.querySelector('input[name=recup_age]:checked').value;
-		// console.log("type age  : "+ type_age);
+	
 		tirage_beau = Math.ceil((physi + intel) / 2);
 		tirage_conf= Math.ceil((intel+ charis) / 2);
 		tirage_vita= Math.ceil(( physi + charis) / 2);
