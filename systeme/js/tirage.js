@@ -16,6 +16,20 @@
 		gesoption("charis",rest_piont,charis);
 	} 
 
+	function changePhysique(){
+		physi = parseInt($("#physi").val());
+		console.log("phy : "+ physi);
+		rest_piont =  calcul_point("physi",rest_piont,physi);
+	}
+	function changeIntelligence(){
+		intel = parseInt($("#intel").val());
+		rest_piont =  calcul_point("intel",rest_piont,intel);
+	}
+	function changeCharisme(){
+		charis = parseInt($("#charis").val());
+		rest_piont =  calcul_point("charis",rest_piont,charis);
+	}
+
     
 	function afficheCaracteristique(){
         affichage("zon_form"," ");
