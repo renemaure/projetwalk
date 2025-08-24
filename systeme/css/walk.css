@@ -79,6 +79,12 @@ header h1 {
     flex-direction: row;
     justify-content: space-around;
 }
+#creat_avatar h4{
+    margin: 0;
+}
+#creat_avatar p, #zone_img_avatar h4{
+    margin: 20px 0 0 0;
+}
 #zon1-erg, #zon2-erg {
     margin: 57px 0 0 30px;
     width: 50%;

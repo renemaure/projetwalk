@@ -121,68 +121,12 @@
 	}
 	/* fin test fetch juillet 2024 */
 
-					/* ETAPE 0 */
+				
 
 
 
-	/* fonction logger au monde en mode test 04/05/2024 */
-		function seLoggerMonde(){
-			let form_nom_log = document.getElementById("nom_log").value;
-			let form_passe_log = md5(document.getElementById("passe_log").value);
-			$.post("systeme/php/gestion_logger.php",{
-				nom_log: form_nom_log,
-				pass_log: form_passe_log,
-			}, function(connex){
-				console.log(connex);
-				if (connex["valid"] !="ok") {
-					affichage("retour_log",connex["erreur"]);
-					document.getElementById("envoi_log").textContent=(`Recommençez`);
-					document.getElementById("civil").reset();
-				}
-				else{
-					affichage("infos_monde","");// efface les textes
-					affichage("infos_base", "");
-					affichage("monde", "");
-					etape();
-				} 
-			},'json');
-			
-		}
-	/* nouvelle fonction pour s'enregistrer sur lemonde  modif du 04/08/2024 */
-	function enregistreMonde(){
-		let form_nom_erg = document.getElementById("nom_ins").value;
-		let form_mail_erg = document.getElementById("mail_ins").value;
-		let form_pass_erg = md5(document.getElementById("pass_ins").value);
-		// TestAffichInfo("test si la fonction marche valeur revoyer nom entré",form_pass_erg);
-		$.post("systeme/php/gestion_logger.php",{
-			nom_ins: form_nom_erg,
-			pass_ins: form_pass_erg,
-			mail_ins: form_mail_erg,
-		}, function(connex){
-			// console.log(connex);
-			if (connex["valid"] !="ok") {
-				affichage("retour_ins",connex["erreur"]);
-				document.getElementById("envoi_ins").textContent=(`Recommençez`);
-			}else {
-				affichage("infos_monde","");
-				console.log(connex)
-				etape();
-			}
-		},'json');
-	}
+	
 
-					/* ETAPE 1 tirage nouvel avatar*/
-	function tirage(){
-		affichage("monde", text_jon["structure1"]);
-		affichage("titre_conex",text_jon["titre1"])
-		affichage("zon_form",text_jon["tirage"]);
-		affichage("infos_monde",text_jon["text4"]);
-		affichage("infos_base",text_jon["text9"]);
-		affichage("zon_enreg",text_jon["text10"]);
-		gesoption("physi",rest_piont,physi);
-		gesoption("intel",rest_piont,intel);
-		gesoption("charis",rest_piont,charis);
-	} 
 
 	function changePhysique(){
 		physi = parseInt($("#physi").val());
@@ -196,37 +140,6 @@
 	function changeCharisme(){
 		charis = parseInt($("#charis").val());
 		rest_piont =  calcul_point("charis",rest_piont,charis);
-	}
-
-	function afficheCaracteristique(){
-		type_age = document.querySelector('input[name=recup_age]:checked').value;
-		// console.log("type age  : "+ type_age);
-		tirage_beau = Math.ceil((physi + intel) / 2);
-		tirage_conf= Math.ceil((intel+ charis) / 2);
-		tirage_vita= Math.ceil(( physi + charis) / 2);
-		tirage_pk = physi + intel +  charis + rest_piont;
-		switch (type_age){
-			case "jeune":
-				tirage_age = 16 + tirage_beau;
-				break;
-			case "adulte":
-				tirage_age = 30 + tirage_vita;
-				break;
-			case "vieux":
-				tirage_age = 50 + tirage_conf;
-				break;
-			default:
-		}
-		tirage_not = Math.ceil((physi + intel + charis ) / 3);
-		affichage("phy", physi);
-		affichage("int", intel);
-		affichage("ch", charis);
-		affichage("aff_beaute_avat", tirage_beau);
-		affichage("conf", tirage_conf);
-		affichage("vita", tirage_vita);
-		affichage("pk", tirage_pk);
-		affichage("nt", tirage_not);
-		affichage("age", tirage_age + "ans");
 	}
 
 	function enregistre_avat() {

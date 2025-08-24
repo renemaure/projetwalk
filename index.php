@@ -59,6 +59,7 @@
 		<script src="systeme/js/md5.js"></script>
 		<SCRIPT SRC="systeme/js/walk.js"></SCRIPT>
 		<SCRIPT SRC="systeme/js/conection.js"></SCRIPT>
+		<SCRIPT SRC="systeme/js/tirage.js"></SCRIPT>
 		<SCRIPT SRC="systeme/js/gestion_monde.js"></SCRIPT>
 		<script src="systeme/js/fonctions_internes.js"></script>
 		<script src="systeme/js/tests.js"></script>
