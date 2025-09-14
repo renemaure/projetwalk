@@ -33,16 +33,20 @@
 
     
 	function afficheCaracteristique(){
-        affichage("zon_form"," ");
+       
         document.querySelector("#zon_conex h3").innerHTML = text_jon["titre_regles2"]
-        document.querySelector("#zon_enreg h3").innerHTML = text_jon["titre_ap_seconds"]
+		affichage("zon_form",text_jon["cal_aptitude_second"]);
+		document.querySelector("#zon_enreg h3").innerHTML = text_jon["titre_ap_seconds"]
         document.getElementById("creat_avatar").style.display="flex"
         affichage("creat_avatar",text_jon["structure_aptitudes_seond"]);
+		affichage("valid_app",text_jon["bouton7"])
 	
 		tirage_beau = Math.ceil((physi + intel) / 2);
 		tirage_conf= Math.ceil((intel+ charis) / 2);
 		tirage_vita= Math.ceil(( physi + charis) / 2);
 		tirage_pk = physi + intel +  charis + rest_piont;
+		
+		
 		switch (type_age){
 			case "jeune":
 				tirage_age = 16 + tirage_beau;
@@ -66,3 +70,24 @@
 		affichage("nt", tirage_not);
 		affichage("age", tirage_age + "ans");
 	}
+
+		function enregistre_avat() {
+			// console.log("bouton déclenché");
+		$.post("systeme/php/gestion_logger.php",{
+			charisme : charis,
+			intellligence : intel,
+			physique : physi,
+			nom_avatar : nom_avatar,
+			beaute : tirage_beau,
+			vitalite : tirage_vita,
+			confiance :  tirage_conf,
+			pointk : tirage_pk,
+			notoriete : tirage_not,
+			age : tirage_age,
+		},
+		function(data){
+			console.log(data);
+			etape();
+		});	
+	}
+

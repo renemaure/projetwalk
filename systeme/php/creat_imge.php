@@ -4,7 +4,8 @@
     $retour="";
     $timestamp_expire = time() + (3600*24*365); 
     $etape = "3";
-    $nom_BDD = "avatar";
+    $nom_BDD = "img_avatar";
+    $nomavat = $_COOKIE['nom'];
    
     if (!empty($_POST['avatar_png']) ) // Si la variable existe on lance le traitement du formulaire if (isset($_GET['util']))
     {       
@@ -30,7 +31,7 @@
         }
         ImagePng($image, "../../images/avatar/".$_COOKIE['nom'].".png");
         setcookie('etap',$etape, $timestamp_expire, '/'); 
-        $nomavat = $_COOKIE['nom'];
+        
         $query = "UPDATE $nom_BDD SET  etape = '$etape' WHERE nom = '$nomavat'";
         $result_bdd = $laison->query($query);
 

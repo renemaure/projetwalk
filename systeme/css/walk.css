@@ -94,6 +94,14 @@ header h1 {
     top: 25px;
     width: 25%;
 }
+#couleur{
+    top: 70px;
+}
+#couleur li {
+    cursor: pointer;
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
 .avatar{
     position: absolute;
 	top: 224px;
@@ -135,8 +143,12 @@ header h1 {
 #zon_conex , #zon_enreg , #infos_base {
     width:50%;
 }
-#zon_conex , #zon_enreg{
+#zon_conex, #zon_enreg {
     background-color: var(--gris-blanc);
+    overflow: auto;
+}
+#zon_form{
+    padding: 0 5px;
 }
 #infos_monde , #infos_base{
     background-color: var(--blanc_bleu);
@@ -257,11 +269,13 @@ label {
     flex-direction: row;
     position: relative;
 }
-#infos_monde {
+#infos_monde, #infos_base {
     padding: 0 10px;
     overflow: hidden;
-    width: 47%;
-    border-left: 20px solid var(--bleu);
+    width: 47%;   
+}
+#infos_monde{
+     border-left: 20px solid var(--bleu);
 }
 #infos_base{
     border-right: 20px solid var(--bleu);

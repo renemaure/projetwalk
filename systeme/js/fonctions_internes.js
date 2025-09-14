@@ -85,7 +85,7 @@ function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,p
 		this.indic = don_ondic;
 }
 
-/* nouvelle fonction permet d'afficher les données du monde et de l'avatar en phase test par pascal au 15/06/2025 aff_pw_avat
+/* nouvelle fonction permet d'afficher les données du monde et de l'avatar  par pascal au 15/06/2025 aff_pw_avat
 et ajout nombres d'avatar sur le monde */
 function DonneesMonde() {
 $("#monde").removeClass("monde_flex");  // a commenté la fontion exacte pascal au 15/06/2025
@@ -94,30 +94,18 @@ const zoneSouris = document.createElement("div")
 zoneSouris.id = "zone_souris"
 zoneSouris.setAttribute("onclick","avance_souris()")
 monde.appendChild(zoneSouris);
-
-
 const imgMonde = document.createElement("img");
 imgMonde.id = "img-monde";
 imgMonde.src = "images/decor/"+text_jon["img_decor"]+".png"; // ajout d'une variable sur le nom de l'image du décor 20/07/2025
 imgMonde.setAttribute("usemap","#boutique")
 monde.appendChild(imgMonde);
-
-console.log(monde);
-
-
-
-// $("#img-monde").attr("usemap","#boutique");
 affichage("zonne_area", text_jon["map_boutique"])
 $("#img-monde").css({left: pos_monde+'px',display: "block"})
 affichage("infos_monde", text_jon["text7"]);
 affichage("infos_base", text_jon["text8"]);
-// let nbr_avatar_mond = Avatmonde.inc +" avatars";
 affichage("affich_txt_avat",Avatmonde.inc);
-
-
-/* affichage des donnée de l'avatar actif a deplacer dan une fonctiona part */
-
 }
+
 function affichedonavatactif() {
 	affichage("aff_nom_avat",strUcFirst(Avatar_actif.nom)); 
 	affichage("aff_age_avat", Avatar_actif.age +" ans"); 
@@ -159,7 +147,7 @@ function cal_tmp_monde() {
 	let recup_minut = parseInt(Avatmonde["inc0"]["minutes"]);
 	let recup_heure = parseInt(Avatmonde["inc0"]["heurs"]);
 	recup_secon =  recup_secon + 10;
-	console.log("avant calcul minutes : "+ Avatmonde["inc0"]["minutes"] +" secondes : "+ recup_secon)
+	// console.log("avant calcul minutes : "+ Avatmonde["inc0"]["minutes"] +" secondes : "+ recup_secon)
 	if (recup_secon>= 60) {
 		recup_secon = recup_secon-60;
 		recup_minut = recup_minut + 1;
@@ -172,13 +160,13 @@ function cal_tmp_monde() {
 	Avatmonde["inc0"]["secondes"] =  recup_secon;
 	Avatmonde["inc0"]["minutes"] =  recup_minut;
 	Avatmonde["inc0"]["heurs"] =  recup_heure;
-	console.log("minutes : "+ Avatmonde["inc0"]["minutes"] +"secondes : "+ Avatmonde["inc0"]["secondes"])
+	console.log(Avatmonde["inc0"]["minutes"] + "minutes  et " +  Avatmonde["inc0"]["secondes"] +" secondes")
 	affichHeurMond();
 }
 function affichHeurMond() {
 	age_monde = Avatmonde["inc0"]["ans"]+ " ans " + Avatmonde["inc0"]["mois"] + " mois et " + Avatmonde["inc0"]["jours"] + " jours";
     heur_monde = Avatmonde["inc0"]["heurs"]+ " heures " + Avatmonde["inc0"]["minutes"] + " minutes"
-    console.log("age monde : " + age_monde );
+    // console.log("age monde : " + age_monde );
     affichage("affich_age_monde", age_monde);
     affichage("affich_heur_monde", heur_monde); 
 }

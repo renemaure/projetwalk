@@ -9,7 +9,7 @@
 	const decalage_monde = 600; // decalage du monde au demarage pour la position de l'avatar
 	const marg_main = parseInt($("main").css('margin-left')); // margin de la balise <main></main> 
 	const largeur_monde = 1200; // largeure du monde ne sert pas pour le moment
-	const indc_coul = 1; // couleur de base du corps de l'avatar
+	let indc_coul = 1; // couleur de base du corps de l'avatar
 
 	let avc_avat; // nombre de pixel que doit faire l'avatar actif
 	let pos_avatar;//position rel de l'avatar actif pour simplifier les calculs
@@ -121,36 +121,6 @@
 	}
 	/* fin test fetch juillet 2024 */
 
-				
-
-
-
-	
-
-
-
-
-	function enregistre_avat() {
-			// console.log("bouton déclenché");
-		$.post("systeme/php/gestion_logger.php",{
-			charisme : charis,
-			intellligence : intel,
-			physique : physi,
-			nom_avatar : nom_avatar,
-			beaute : tirage_beau,
-			vitalite : tirage_vita,
-			confiance :  tirage_conf,
-			pointk : tirage_pk,
-			notoriete : tirage_not,
-			age : tirage_age,
-		},
-		function(data){
-			console.log(data);
-			etape();
-		});	
-	}
-
-
 				/* ETAPE 2 création de l'image de l'avatar*/
 	
 	function ImageAvatar(){
@@ -162,6 +132,8 @@
 		affichage("valid_avatar",text_jon["bouton2"])
 		affichage("zonne_table",text_jon["createnreg"])
 		affichage("zon1-erg",text_jon["text6"]);
+		affichage("infos_monde",text_jon["texte15"])
+		affichage("infos_base",text_jon["texte16"])
 		CouleurCorpsAvatar();/* affiche le tableau des couleurs */
 		coul_corps(); /* affiche corps etde la tete avec la couleur par defaut*/
 	}
@@ -169,22 +141,25 @@
 	function Basedefavatar() {
 		affichage("nav_avatar",text_jon["texte11"]);
 		affichage("titre_zon_enreg",text_jon["titre4"]);
+		affichage("infos_monde",text_jon["texte17"])
 		indc_val = 3;
-		indc_max = 6;
-		OptionCreatAvatar();
+		indc_max = 5;
+		OptionCreatAvatar();// affiche la liste
 		affichage("valid_avatar",text_jon["bouton3"])
 		affichepng(reper_png); /* lanc e le tableau des differentes options d'hanillement */
-		console.log(avatar_png);
+		// console.log(avatar_png);
 	}
 	function optionImageAvatar() {
+		reper_png = "7"
 		affichage("nav_avatar",text_jon["texte12"]);
 		affichage("titre_zon_enreg",text_jon["titre5"]);
+		affichage("infos_monde",text_jon["texte18"])
 		indc_val = 7;
 		indc_max = 10;
 		OptionCreatAvatar();
 		affichage("valid_avatar",text_jon["bouton4"])
 		affichepng(reper_png);	
-		console.log(avatar_png);
+		// console.log(avatar_png);
 	}
 	function OptionCreatAvatar(){
 		let html = "<ul>";
@@ -216,6 +191,7 @@
 	});	
 
 	function coul_corps(){
+		avatar_png[0] = nom_avatar
 		avatar_png[1] = "corps/" + (text_jon["corps"]["deb_corps"] + indc_coul) + ".png";
 		avatar_png[2] = "tete/" + (text_jon["tete"]["deb_tete"] + indc_coul) + ".png";
 		dessin_avatar(avatar_png);
@@ -246,8 +222,9 @@
 		for (let index_png = 1 ; index_png <= avatar_png.length-1; index_png++) {
 				corps_avat = corps_avat + "<img src=\"images/creation_avatar/"+ avatar_png[index_png]+"\" class ='dessin'/>";
 		}
-		// console.log(avatar_png[1]);
-		$("#zone_img_avatar").html(corps_avat);
+		// $("#zone_img_avatar").html(corps_avat);
+		affichage("zone_img_avatar",corps_avat);
+		console.log(avatar_png);
 		
 	}
 
