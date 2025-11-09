@@ -41,6 +41,7 @@
 		<script src="systeme/js/md5.js"></script>
 		<SCRIPT SRC="systeme/js/conection.js"></SCRIPT>
 		<SCRIPT SRC="systeme/js/tirage.js"></SCRIPT>
+		<script src="systeme/js/image_avatar.js"></script>
 		<SCRIPT SRC="systeme/js/gestion_monde.js"></SCRIPT>
 		<script src="systeme/js/avatar-actif.js"></script>
 		<script src="systeme/js/tests.js"></script>
