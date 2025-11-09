@@ -1,7 +1,5 @@
 
-
-
-					/* ETAPE 1 tirage nouvel avatar*/
+					/* ETAPE 1 tirage  nouvel avatar*/
 	function tirage(){
 		affichage("monde", text_jon["structure_tirage"]);
         document.querySelector("#zon_conex h3").innerHTML = text_jon["titre_tirage"]
@@ -16,7 +14,6 @@
 		gesoption("charis",rest_piont,charis);
 		type_age = document.querySelector('input[name=recup_age]:checked').value;
 	} 
-
 	function changePhysique(){
 		physi = parseInt($("#physi").val());
 		console.log("phy : "+ physi);
@@ -30,10 +27,7 @@
 		charis = parseInt($("#charis").val());
 		rest_piont =  calcul_point("charis",rest_piont,charis);
 	}
-
-    
 	function afficheCaracteristique(){
-       
         document.querySelector("#zon_conex h3").innerHTML = text_jon["titre_regles2"]
 		affichage("zon_form",text_jon["cal_aptitude_second"]);
 		document.querySelector("#zon_enreg h3").innerHTML = text_jon["titre_ap_seconds"]
@@ -45,8 +39,6 @@
 		tirage_conf= Math.ceil((intel+ charis) / 2);
 		tirage_vita= Math.ceil(( physi + charis) / 2);
 		tirage_pk = physi + intel +  charis + rest_piont;
-		
-		
 		switch (type_age){
 			case "jeune":
 				tirage_age = 16 + tirage_beau;
@@ -59,7 +51,8 @@
 				break;
 			default:
 		}
-		tirage_not = Math.ceil((physi + intel + charis ) / 3);
+		/* notorieté calcul moyenne  fois 10 au 21/09/2025 */
+		tirage_not =((physi + intel + charis ) / 3)*10;
 		affichage("phy", physi);
 		affichage("int", intel);
 		affichage("ch", charis);
@@ -71,8 +64,7 @@
 		affichage("age", tirage_age + "ans");
 	}
 
-		function enregistre_avat() {
-			// console.log("bouton déclenché");
+	function enregistre_avat() {
 		$.post("systeme/php/gestion_logger.php",{
 			charisme : charis,
 			intellligence : intel,

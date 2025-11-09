@@ -1,13 +1,9 @@
 {
 "titre" : "<h1>The Walk - un monde presque permanent</h1>",
-"version" : "2.3.4.75",
-"date" : "07/09/2025",
-"phase" : "beta",
-"fich_dep" : "fichiers/accueil.html",
-"txt_cntr1" : "Pour déplacer votre avatar",
+"version" : "2.4.4.00",
+"date" : "28/09/2025",
+"phase" : "Tests",
 "img_decor" : "decor_2025",
-"image_monde" : "<img  usemap=\"#boutique\" id=\"img-monde\" src=\"images/decor/decor_2025.png\">",
-"img_bout_walk" : "<img usemap=\"#boutique_walk\" id=\"boutique_walk\"src=\"images/boutique/boutique_walk.png\">",
 
 "map_boutique" : "<map name=\"#boutique\"><area shape=\"rect\" coords=\"3045,165,3166,281\" href=\"#\" onclick=\"boutiquewalk() \" alt=\" \" /></map>",
 "map_porte_boutique" : "<map name=\"boutique_walk\"><area href=\"#\" coords=\"589,19,747,320\" shape=\"rect\" onclick=\" sortirboutique()\"></map>",
@@ -19,7 +15,7 @@
 "info_cookie" : "<p>The Walk utilise deux cookies només, nom et étape. Ils sont indispensables pour que votre avatar évolue correctement dans The Walk. Ces deux cookies sont uniquement déclarer lors de la création de votre avatar.</p><p>Le cookie \"nom\" contient le nom de votre avatar<br>Le cookie \"etape\" renseigne l’état d’avancement de votre avatar</p><p>Ces cookies sont conservés un an et uniquement sur votre navigateur. ils ne servent en aucune façon à une quelconque campagne de publicité sur internet.</p><button class=\"btn_cookie\" onclick=\"popup('info_cookie','none')\">Fermer</button>",
 "text6" : "Choisissez la couleur de votre avatar en cliquant sur les pavés de couleurs, puis validez",
 "text7" : "<div id=\"affiche_monde\">\n\r<div id=\"zone_1\"><p class=\"text_mond\"><span id = \"txt_age\">the Walk a </span><span id=\"affich_age_monde\"></span></p></div><div id=\"zone_2\"><p class=\"text_mond\"></P></div><div id=\"zone_3\"><p class=\"text_mond\"><span id = \"txt_heurs\">Il est actuelement </span><span id=\"affich_heur_monde\"></span></p></div><div id=\"zone_4\"><p class=\"text_mond\"><span id=\"affich_txt_avat\"></span><span id = \"txt_avat\"> avatars psésents dans the Walk</span></p></div></div>",
-"text8" : "<table id=\"info_avatar\"><tbody><tr><td><span class =\"gr\">Nom:</span> <span id=\"aff_nom_avat\"></span></td><td><span class =\"gr\"> Age:</span> <span id=\"aff_age_avat\"></span> </td><td><span class =\"gr\"> Beauté : </span><span id=\"aff_beaute_avat\"></span></td><td><span class =\"gr\"> Points Walk : </span><span id=\"aff_pw_avat\"></span></td></tr><tr><td><span class =\"gr\"> Physique: </span><span id=\"aff_physiq_avat\"></span></td><td   colspan =\"2\"> <span class =\"gr\"> Intelligence: </span><span id=\"aff_intell_avat\"></span></td><td><span class =\"gr\"> Charisme: </span><span id=\"aff_charis_avat\"></span></td></tr><tr><td  colspan =\"3\"><textarea id=\"dialog_avat\" rows=\"5\" cols=\"46\">discution:</textarea><button>s'exprimer</button></td><td id =\"ctrl_diag\"><fieldset><legend>actions</legend><div><input type=\"radio\" name=\"reflextion\" id=\"huey\" value=\"huey\" checked /><label for=\"huey\">pensée</label></div><div><input type=\"radio\" id=\"dewey\" name=\"reflextion\" value=\"dewey\" /><label for=\"dewey\">discution</label></div><div><input type=\"radio\" name=\"reflextion\" id=\"louie\" value=\"louie\" /><label for=\"louie\">A tutête</label></div></fieldset></td></tr></tbody></table>",
+"text8" : "<table id=\"info_avatar\"><tbody><tr><td><span class=\"gr tab10g\">Nom:</span> <span id=\"aff_nom_avat\"></span></td><td><span class =\"gr tab10g\"> Age:</span> <span id=\"aff_age_avat\"></span> </td><td><span class =\"gr tab10g\"> Beauté : </span><span id=\"aff_beaute_avat\"></span></td><td><span class =\"gr tab10g\"> Points Walk : </span><span id=\"aff_pw_avat\"></span></td></tr><tr><td><span class =\"gr tab10g\"> Physique: </span><span id=\"aff_physiq_avat\"></span></td><td> <span class =\"gr tab10g\"> Intelligence: </span><span id=\"aff_intell_avat\"></span></td><td><span class =\"gr tab10g\"> Charisme: </span><span id=\"aff_charis_avat\"></span></td><td><span class =\"gr tab10g\">Notoriété: </psan><span id=\"aff_not_avat\"></span> </td></tr><tr><td id=\"photo_avat\"></td><td colspan =\"2\" id=\"zondialogavat\"></td><td id =\"ctrl_diag\"></td></tr></tbody></table><button class=\"btn_cookie\" onclick=\"popup('action_avatar','none')\">Fermer</button>",
 "text9" : "<h3 class=\"titre_from\">Etape 1 : Principe  Création de votre avatar</h3><div class=\"zonne_txt\"><p>Votre avatar procède, au départ, 3 points dans chacune des aptitudes. Vous disposez de 5 points à répartir celons votre choix. En sachant, que chaque point rajouté dans une aptitude, cout deux points. Cependant si vous diminuer d’un point une aptitude, cela vous rajoute 1 point aux points de départ. Tout point restant sera utilisé ultérieurement !</p></div>",
 "text10" : "<h3 class=\"titre_from\">Les caractéristiques de votre avatar</h3><div id=\"creat_avatar\">\r\n<div id=\"nav_avatar\"><h4 class=\"titre_from\">Aptitudes<br>principlales</h4><p>Physique : <span id=\"phy\"></span></p><p>Intellect : <span id=\"int\"></span></p><p>Charisme : <span id=\"ch\"></span></p></div><div id =\"zone_img_avatar\"><h4 class=\"titre_from\">Aptitudes<br>secondaires</h4><p>Beauté : <span id=\"aff_beaute_avat\"></span></p><p>Confiance : <span id=\"conf\"></span></p><p>Vitalité : <span id=\"vita\"></span></p></div><div id =\"couleur\"><h4 class=\"titre_from\">Points divers</h4><p>Points Walk : <span id=\"pk\"></span></p><p>Notorièté :<span id=\"nt\"></span></p><p>Age : <span id=\"age\"></span></p></div></div><button id=\"etape3\" class=\"bouton\" onclick=\"enregistre_avat()\">Etape 3</button><h3 class=\"titre_from\">Infos données avatar</h3><div class=\"zonne_txt\"><p>Les aptitudes secondaires sont calculées à partir des aptitudes principales. Les points Walk correspond à la somme des aptitudes et du ou point de création restant.</p></div>",
 "structure_aptitudes_seond" : "<div id=\"nav_avatar\"><h4 class=\"titre_from\">Aptitudes<br>principlales</h4><p>Physique : <span id=\"phy\"></span></p><p>Intellect : <span id=\"int\"></span></p><p>Charisme : <span id=\"ch\"></span></p></div><div id =\"zone_img_avatar\"><h4 class=\"titre_from\">Aptitudes<br>secondaires</h4><p>Beauté : <span id=\"aff_beaute_avat\"></span></p><p>Confiance : <span id=\"conf\"></span></p><p>Vitalité : <span id=\"vita\"></span></p></div><div id =\"couleur\"><h4 class=\"titre_from\">Points divers</h4><p>Points Walk : <span id=\"pk\"></span></p><p>Notorièté :<span id=\"nt\"></span></p><p>Age : <span id=\"age\"></span></p></div>",
@@ -34,7 +30,7 @@
 "texte16" : "<h3 class=\"titre_from\">Étape 2 : Principe de création de l’avatar</h3><p>Votre avatar est créée en superposant plusieurs images en png, comme des calques dans les logiciels photos, images emprunter à un veux site Coréen de chat du type MSM et disparu de puis longtemps dont nous n’avons plus de références. Avec ce principe vous pouvez modifier et personnaliser votre avatar  presque indéfiniment tout au long de l’aventure.</p>",
 "texte17" : "<h3 class=\"titre_from\">Étape 2 : Création de votre avatar</h3><p>Diapo 2 : Maintenant vous devez définir le physique de votre avatar, à savoir ; sa bouche, ses yeux et ses cheveux. Précision, dans The Walt, un monde presque permanent, il n’y a pas de genre pré-défini, libre a vous de créée votre avatar comme bon vous semble.</p>",
 "texte18" : "<h3 class=\"titre_from\">Étape 2 : Création de votre avatar</h3><p>Enfin à la diapo 3, vous devez définir la tenue de votre avatar, mais ne vous inquiétez pas, vous pourrez modifier ultérieurement la tenue de votre avatar dans les boutiques du monde. Maintenant  choisirez un une chemise, un pantalon ou une robe et des chaussures.</p>",
-
+"texte19" : "<h2 class=\"cnt red\">Cette zone est actuellement en travaux !<br>Bientôt vous aurez des nouvelles du monde !</h2>",
 
 
 
@@ -47,7 +43,6 @@
 "structures6" : "<table id=\"inter_avatar_actif\"><tbody><tr><td id=\"titre_inter_avat\" colspan=\"3\">Choix des interattractions entre avatars</td></tr><tr><td><ol><li>reponses rencontre avatar actif</li><li>description avatar actif</li></ol></td><td id=\"deb_choix_inter\"><p>début de la reponse</p><select><option selected value=\"0\">Bonjour je m'apelle</option><option value=\"1\">1Qu'est qu tu veut</option><option value=\"3\">J'suis occupé</option><option value=\"4\">3 Désolé j'ai rien a dire</option></select></td><td id=\"fin_choix_inter\"><p>fin de la reponse</p><select><option selected value=\"0\">et toi?</option><option value=\"1\">reviens tout a l'heure</option><option value=\"3\">cool on peut discuter un peu</option><option value=\"4\">laisse moi s'il te plait</option></select></td></tr><tr><td>ici autre chose</td><td>Ici aussi autre chose</td><td>une nouvelle zone</td></tr></tbody></table><button class=\"btn_cookie\" onclick=\"popup('action_avatar','none')\">Fermer</button>",
 
 "titre_tirage" : "Les aptitudes de votre avatar",
-"itre_ap_seconds" : "",
 "titre2" : "Choisissez la couleur de votre avatar",
 "titre3" : "L'aparence de votre avatar",
 "titre4" : " de votre avatar",
@@ -86,6 +81,7 @@
             "nbr_corps" : 12,
             "deb_corps" : 10194,
             "chem_corps" : "corps",
+            "1" : "corps",
             "col_table" : 4,
             "coul_corps" :{
                         "coul1" :"FFCCCC",
@@ -106,6 +102,7 @@
     "nbr_corps" : 12,
     "deb_tete"  : 10206,
     "chem_tete" : "tete",
+    "2" : "tete",
     "col_table" : 4,
     "coul_tete" :{
                 "coul1" :"FFCCCC",
@@ -124,6 +121,8 @@
 },
 "rept" : {
             "max" : 6,
+            "ind1" : "corps",
+            "ind2" : "tete",
             "ind3" : "bouche",
             "txt3" :"La bouche",
             "ind4" : "yeux",
@@ -144,6 +143,12 @@
             "txt11" : "test divers",
             "ind12" : "chapeaux"
 
+},
+"reponse" : {
+            "nbr" : 3,
+            "1" : "Bonjour je m'apelle ",
+            "2" : "Je ne crois pas vous connaître",
+            "3" : "Je n'ai pas le temps de vous parler"
 }
 
 }

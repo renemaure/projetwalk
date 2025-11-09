@@ -5,8 +5,11 @@
         $pos_avat = $_POST['pos_avat_actif'];
         $nom_avat = $_POST['nom_avat_actif'];
         $retour_age = $_POST['age_mond_rtr'];
+        $notoriete = $_POST['notoriete'];
+        $age = $_POST['modifage'];
 
-        $query1 = "UPDATE avatar SET pos_dep = '$pos_avat' WHERE nom = '$nom_avat'";
+      /* ajout de compteur pour la notorité au 21/09/2025 */
+        $query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age' WHERE nom = '$nom_avat'";
         $result_bdd = $laison->query($query1);
         $ans =  $retour_age["ans"];
         $mois =  $retour_age["mois"];
@@ -19,11 +22,6 @@
         $result_bdd = $laison->query($query2);
         $retour =  $retour_age["ans"];
         echo $query1;
-
-
-        // ECHO "retour phpb $pos_avat et $nom_avat";;
-
-        
      }
 
 ?>

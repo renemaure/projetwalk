@@ -21,6 +21,9 @@
 .cnt { text-align: center;}
 .gr { font-weight: bold;}
 .souris{cursor: pointer;}
+.red{color: var(--rouge);}
+.tab10g{padding-left: 10px;}
+.vert{background-color: var(--vert) !important;}
 body{
     margin: 0;  
     width: 100%;
@@ -32,10 +35,10 @@ p {
     margin:0 0 0 0;
 }
 main {
-    height: 620px;
+    /* height: 620px; */
     width: 1200px;
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 30px auto 0 auto;
     z-index: 1;
     background-color: var(--blanc);
 }
@@ -264,14 +267,14 @@ label {
 #interface{
     background-color: var(--bleu_ciel);
     width: inherit;
-    height: 215px;
+    height: 235px;
     display: flex;
     flex-direction: row;
     position: relative;
 }
 #infos_monde, #infos_base {
-    padding: 0 10px;
-    overflow: hidden;
+    padding: 15px 10px 0 10px;
+    overflow: auto;
     width: 47%;   
 }
 #infos_monde{
@@ -544,6 +547,18 @@ footer a {
 }
 #ctrl_diag fieldset{
     border: none;
+}
+#potoavat {
+    position: absolute;
+    left: 45px;
+    top: 125px;
+}
+#cadre_photo{
+    width: 100%;
+}
+#list_option {
+    /* margin: 0 0 0 0; */
+    padding: 0 0 0 20px;
 }
 
 

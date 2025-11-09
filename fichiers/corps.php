@@ -9,7 +9,6 @@
 	$html = "<h3 id=\"titre_zon_enreg\" class=\"titre_from\">".$des_avat["rept"]["txt". $indice].$des_avat["titre4"]."</h3><div=\"zonne_table\"><table id=\"tab_accesoire\">\r\n<tr>";
 		$Depoints= "../";
 		$lien ="images/creation_avatar/$rep_png/";
-		// $lien2 = "images/creation_avatar/corps/";
 		$repet = opendir($Depoints.$lien); // dossier objets	 
 		$tabo = 1;
 		$taimg[] = array();
@@ -17,16 +16,16 @@
 		{	
 			if ($fichier !="." and $fichier !="..")
 			{
-			$taimg[$tabo] = trim($fichier);  
-			$tabo ++;
+				$taimg[$tabo] = trim($fichier);  
+				$tabo ++;
 			}
 		} 
 		$total = count($taimg); // nombre de photos presente dans la galerie
 		$lig = 1;
-		// for ($ph = 1; $ph<=$total-1; $ph=$ph+20)
 		for ($ph = 1; $ph<=$total-1; $ph++)
 		{ 
-			$html .= "<td><img src=\"$lien$taimg[$ph]\" border=\"0\" width=\"70\" height=\"70\"  class=\"opt_img souris\" value = \"$rep_png/$taimg[$ph]\"></td>";
+			// modif tableau habillement enlever le .png a la fin pour value que le nom de l'image le 28/09/2025
+			$html .= "<td><img src=\"$lien$taimg[$ph]\" border=\"0\" width=\"70\" height=\"70\"  class=\"opt_img souris\" value = \"".substr($taimg[$ph],0,-4)."\"></td>";
 			if ( $lig == 6)
 			{ 
 				$html .="</tr><tr>\n\r"; 

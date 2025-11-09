@@ -72,7 +72,7 @@ function AffichePermanent() {
   affichage("foot_phase",text_jon["phase"]);
 }
 
-function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,pnt_age,pnt_beaut,don_ondic){
+function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,pnt_age,pnt_beaut,don_ondic, pnt_not){
 		this.nom = nom_avt;
 		this.pos_abs = pos_dep;
 		this.pos_rel = posrel;
@@ -83,6 +83,7 @@ function Avatar(nom_avt,pos_dep,posrel,cart_char,cart_intl,cart_phys,pnt_pwalk,p
 		this.age = pnt_age;
     	this.beau = pnt_beaut;
 		this.indic = don_ondic;
+		this.noto = pnt_not
 }
 
 /* nouvelle fonction permet d'afficher les données du monde et de l'avatar  par pascal au 15/06/2025 aff_pw_avat
@@ -102,20 +103,9 @@ monde.appendChild(imgMonde);
 affichage("zonne_area", text_jon["map_boutique"])
 $("#img-monde").css({left: pos_monde+'px',display: "block"})
 affichage("infos_monde", text_jon["text7"]);
-affichage("infos_base", text_jon["text8"]);
+affichage("infos_base", text_jon["texte14"]);
 affichage("affich_txt_avat",Avatmonde.inc);
 }
-
-function affichedonavatactif() {
-	affichage("aff_nom_avat",strUcFirst(Avatar_actif.nom)); 
-	affichage("aff_age_avat", Avatar_actif.age +" ans"); 
-	affichage("aff_physiq_avat", Avatar_actif.phys + " sur 6"); 
-	affichage("aff_intell_avat", Avatar_actif.intl + " sur 6"); 
-	affichage("aff_charis_avat", Avatar_actif.chari + " sur 6"); 
-	affichage("aff_beaute_avat", Avatar_actif.beau + " sur 6"); 
-	affichage("aff_pw_avat", Avatar_actif.pwalk); 
-}
-
 function QuiterMonde(text_jon){
 		$.post("systeme/php/gestion_logger.php",{
 			sortir_monde : "ok",
@@ -146,21 +136,30 @@ function cal_tmp_monde() {
 	let recup_secon = parseInt(Avatmonde["inc0"]["secondes"]);
 	let recup_minut = parseInt(Avatmonde["inc0"]["minutes"]);
 	let recup_heure = parseInt(Avatmonde["inc0"]["heurs"]);
-	recup_secon =  recup_secon + 10;
+	let recup_jours = parseInt(Avatmonde["inc0"]["jours"])
+	recup_secon =  recup_secon + ecart_temp;
 	// console.log("avant calcul minutes : "+ Avatmonde["inc0"]["minutes"] +" secondes : "+ recup_secon)
 	if (recup_secon>= 60) {
 		recup_secon = recup_secon-60;
 		recup_minut = recup_minut + 1;
+		// ajoute 1 a notoriété
+		Avatar_actif.noto ++
 	}
 	if (recup_minut>= 60) {
 		recup_minut = recup_minut-60;
 		recup_heure = recup_heure + 1;
-		/* affichage visuel lze monde bouge */
+	}
+	if (recup_heure>= 24) {
+		recup_heure = recup_minut-24;
+		recup_jours = recup_jours + 1;
+		//ajout age +1 
+		Avatar_actif.age ++
 	}
 	Avatmonde["inc0"]["secondes"] =  recup_secon;
 	Avatmonde["inc0"]["minutes"] =  recup_minut;
 	Avatmonde["inc0"]["heurs"] =  recup_heure;
-	console.log(Avatmonde["inc0"]["minutes"] + "minutes  et " +  Avatmonde["inc0"]["secondes"] +" secondes")
+	Avatmonde["inc0"]["jours"] = recup_jours
+	console.log(Avatmonde["inc0"]["minutes"] + " minutes  et " +  Avatmonde["inc0"]["secondes"] +" secondes")
 	affichHeurMond();
 }
 function affichHeurMond() {

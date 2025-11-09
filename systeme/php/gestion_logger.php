@@ -71,7 +71,8 @@
 			if(preg_match('#^(([a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+\.?)*[a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+)@(([a-z0-9-_]+\.?)*[a-z0-9-_]+)\.[a-z]{2,}$#i',str_replace('&amp;','&',$email)))
 			{
 				$locat = "ok";
-				$requete = "INSERT INTO $nom_BDD (nom, mail, passe, identifiant, erg_date, etape) VALUES ('$nom_ins', '$email', '$pass', '', '$erg_date','1')";
+				/* modification au 21/09/2025: supression de l'identifiant dans la requette  */
+				$requete = "INSERT INTO $nom_BDD (nom, mail, passe, erg_date, etape) VALUES ('$nom_ins', '$email', '$pass', '$erg_date','1')";
 				$erreur["message"] = $requete;
 				$result_bdd = $laison->query($requete); 
 				// include ("enregistre_cookie.php");
