@@ -2,7 +2,7 @@
 function affpopupactif() {
     popup("action_avatar","block");
     // affichage("action_avatar",text_jon["structures6"]);
-    affichage("action_avatar",text_jon["text8"]);
+    affichage("action_avatar",text_jon["structure_popup_avatar"]);
     affichage("aff_nom_avat",strUcFirst(Avatar_actif.nom)); 
 	affichage("aff_age_avat", Avatar_actif.age +" ans"); 
 	affichage("aff_physiq_avat", Avatar_actif.phys + " sur 6"); 
