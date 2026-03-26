@@ -1,10 +1,17 @@
 {
-	"logger_err":"Mot de passe ou pseudo invalide!",
-	"speudo_err":"D&eacute;sol&eacute;, mais ce speudo est d&eacute;j&agrave; prit!",
-	"mail_err":"Votre mail est invalide",
-	"nom_err":"Votre speudo doit avoir entre 4 et 20 caract&egrave;res",
+	"logger_err":"Votre  mot de passe ou votre pseudo sont invalide! il nous est donc impossible de vous connecter au monde, nous en somme désolé",
+
+	"speudo_err":"Désolé mais le pseudo que vous avez choisi  est  déjà prit par un infâme garnement ! Veillez vous en choisir un nouveau ! Nous le dénoncerons en place publique",
+
+	"mail_err":"Veillez nous excuser ; mais nous pensons que le mail fourni n’est pas trop valide ! Cela pourrait être utile en cas de perte de mot de passe, bien à vous !",
+
+	"nom_err":"Le pseudo que vous avez rentré doit avoir entre 4 et 20 caractères! En effet trop petit il est imprononçable et trop long il devient difficile de l’épeler!",
+
 	"pass_err":"Votre mot de passe doit avoir entre 6 et 12 caract&egrave;res",
+
 	"envoi_err":"Une erreur s&aposest produite pendant l&apos;envoi du mail",
+
 	"perdu_err":"Ce mail est inconnu dans notre base de donn&eacute;e!",
+
 	"code_post_dtb":"le code postal"
 }

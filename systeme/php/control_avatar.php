@@ -1,15 +1,22 @@
 <?php
      include_once 'base_donnees.php';
-     
+   /*
+      enregistrement des données de l'avatar actif en fin de tour de jeu
+      ajout au 21/09/2025  d'un enregistrement pour la notorité 
+      modif au 15/03/2026 decode le json $retour_age en tableau associatif car envoyer en fetch
+      modif au 26/03/2026 supression de la variable $memoire et modification de la requette
+      sql en suprimant l'enregistrement memoire car traitée dans un autre code
+   */
      if (!empty($_POST['nom_avat_actif'])){
         $pos_avat = $_POST['pos_avat_actif'];
         $nom_avat = $_POST['nom_avat_actif'];
-        $retour_age = $_POST['age_mond_rtr'];
+        $retour_age = (json_decode($_POST['age_mond_rtr'], true)); 
         $notoriete = $_POST['notoriete'];
         $age = $_POST['modifage'];
-
-      /* ajout de compteur pour la notorité au 21/09/2025 */
-        $query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age' WHERE nom = '$nom_avat'";
+        $reponse  = $_POST['reponse'];
+        //$memoire = $_POST['memoire'];
+        //$query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age', num_reponse ='$reponse', memoire_jour ='$memoire' WHERE nom = '$nom_avat'";
+         $query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age', num_reponse ='$reponse', WHERE nom = '$nom_avat'";
         $result_bdd = $laison->query($query1);
         $ans =  $retour_age["ans"];
         $mois =  $retour_age["mois"];
@@ -22,6 +29,24 @@
         $result_bdd = $laison->query($query2);
         $retour =  $retour_age["ans"];
         echo $query1;
+     }
+     /* 
+      nouveau code le 26/03/2026 permet d'enregistrer les interactions en avatras pour le moment
+      la mémoire
+     */
+     if (!empty($_POST['nom_avat_nj'])) {
+         $nom_avat = $_POST['nom_avat_act'];
+         $memoire_actif = $_POST['memoire'];
+
+         $nom_avat_nj = $_POST['nom_avat_nj'];
+         $memoire_nj = $_POST['mem_avt_nj'];
+
+         $query1 = "UPDATE avatar SET memoire_jour ='$memoire_actif' WHERE nom = '$nom_avat'";
+         $result_bdd = $laison->query($query1);
+
+         $query2 = "UPDATE avatar SET memoire_jour ='$memoire_nj' WHERE nom = '$nom_avat_nj'";
+         $result_bdd1 = $laison->query($query2);
+         echo $query1;
      }
 
 ?>

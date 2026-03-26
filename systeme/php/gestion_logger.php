@@ -16,7 +16,8 @@
 	$nom_BDD = "avatar";
 	$etape = "1";
 	$valide = "mauvais";
-	$date_vue =  date('d/m/Y à H:i:s'); // Date de la visite
+	//$sortir_monde ="";
+	
 	/* code pour se logger */
 	if (isset($_POST['nom_log']))
 	{
@@ -48,17 +49,15 @@
 		$result_compt = $laison->query("SELECT nom , passe , etape FROM avatar");
 		if (strlen($nom_ins) <5 || strlen($nom_ins)>15){
 			$verifnom = "mauvais";
-			$locat = "nom trop petit ou trop long";
-			$erreur["message"] = $locat ."et nombre de lettre dans le nom : ". strlen($nom_ins);
+			$locat = $liens['nom_err'];
 		}
-		
 		if ($verifnom == "ok") {
 			while ($data = $result_compt->fetch(PDO::FETCH_ASSOC))
 			{
 				if ($nom_ins == $data['nom'] )
 				{
 					$verifnom = "mauvais";
-					$locat = "nom déjà utilisé";
+					$locat = $liens['speudo_err'];
 					break;
 				}
 		}
@@ -73,13 +72,14 @@
 				$locat = "ok";
 				/* modification au 21/09/2025: supression de l'identifiant dans la requette  */
 				$requete = "INSERT INTO $nom_BDD (nom, mail, passe, erg_date, etape) VALUES ('$nom_ins', '$email', '$pass', '$erg_date','1')";
-				$erreur["message"] = $requete;
+				//$erreur["message"] = $requete;
 				$result_bdd = $laison->query($requete); 
 				// include ("enregistre_cookie.php");
 				setcookie('nom',$nom_ins, $timestamp_expire, '/'); 
 				setcookie('etap',$etape, $timestamp_expire, '/'); 
+
 			}
-			else  $locat = "mail invalide";
+			else  $locat = $liens['mail_err'];
 			
 		}
 		$erreur["erreur"] = $locat;
@@ -99,23 +99,39 @@
 		$confiance = $_POST["confiance"];
 		$notoriete = $_POST["notoriete"];
 		$age = $_POST["age"];
+		$memoire = $_POST["memoire"];
 		$etape = 2;
 		/* CHAMP DE LA bdd /  */
-		$query = "UPDATE $nom_BDD SET physq = '$physique', intel = '$intellligence', charis = '$charisme', pwalk = '$points_walk', etape = '$etape' , age = '$age', beaute = '$beaute', vitalite = '$vitalite', confiance = '$confiance', notoriete = '$notoriete', WHERE nom = '$nom_avatar'";
+		$query = "UPDATE $nom_BDD SET physq = '$physique', intel = '$intellligence', charis = '$charisme', pwalk = '$points_walk', etape = '$etape' , age = '$age', beaute = '$beaute', vitalite = '$vitalite', confiance = '$confiance', notoriete = '$notoriete', memoire_jour = '$memoire' WHERE nom = '$nom_avatar'";
     	$result_bdd = $laison->query($query);
 		setcookie('etap',$etape, $timestamp_expire, '/'); 
 		$erreur["etap"] = $query;
 	}
 
-
 	if (isset($_POST['sortir_monde'])) {
 		// Commence par supprimer la valeur du cookie
+		$sortir_monde = $_POST['sortir_monde'];
+		$table_avat = $_COOKIE['nom']."_visite";
+		include("precscence_avat.php");
 		unset($_COOKIE['nom']);
 		unset($_COOKIE['etap']);
 		// Puis désactive le cookie en lui fixant 
 		// une date d'expiration dans le passé
 		setcookie('nom', '', time() - 4200, '/');
 		setcookie('etap', '', time() - 4200, '/');
+		setcookie('heure_entrer','', time() - 4200, '/'); 
+		setcookie('date_entrer','', time() - 4200, '/'); 
+	}
+
+		/* verification md5 entrée tabbord 28/02/2026 */
+	if (isset($_POST['cde_tabord'])) {
+		$verif_md5 = $_POST["cde_tabord"];
+		// $erreur = $verif_md5;
+		$result_md5 = $laison->query("SELECT pass_tabbord FROM 	donnees_monde");
+		$data = $result_md5->fetch(PDO::FETCH_ASSOC);
+		if ($data["pass_tabbord"] == $verif_md5) {
+			$erreur["valid"]='ok';
+		}else $erreur["valid"]='mauvais';
 	}
 	echo json_encode($erreur);
 	$laison=NULL;	

@@ -16,7 +16,7 @@
         $retour =  $avatar_png; // pour test
 
                 /* procédure enregistrement base de donnée */
-            $requete = "INSERT INTO $nom_BDD (nom, corps, tete, bouche, yeux, cheveux, lunette, pantalon, chemise, robe, chaussure) VALUES ( '$avatar_png[0]', '$avatar_png[1]', '$avatar_png[2]','$avatar_png[3]','$avatar_png[4]','$avatar_png[5]','$avatar_png[6]','$avatar_png[7]','$avatar_png[8]','$avatar_png[9]','$avatar_png[10]')";
+            $requete = "INSERT INTO $nom_BDD (nom, corps, tete,coul_corps, bouche, yeux, cheveux, lunette, pantalon, chemise, robe, chaussure) VALUES ( '$avatar_png[0]', '$avatar_png[1]', '$avatar_png[2]','$avatar_png[3]','$avatar_png[3]','$avatar_png[5]','$avatar_png[6]','$avatar_png[7]','$avatar_png[8]','$avatar_png[9]','$avatar_png[10]','$avatar_png[11]')";
 				// $erreur["message"] = $requete;
 				$result_bdd = $laison->query($requete); 
 

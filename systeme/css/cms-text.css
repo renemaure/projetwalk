@@ -1,0 +1,151 @@
+/*module de getion cms de texte 
+pour les sites gérer par le collectif*/	
+
+:root {
+    --blanc: #ffffff;
+    --gris-clr:  #d9dce5;
+    --bleu_vert : #99FFFF;
+    --bleu : #002143;
+    --rouge : #ff0000;
+    --vert : #66CC33;
+    --bleu_ciel :  #99ccff;
+    --blanc_bleu : #eaebef;
+    --gris-blanc: #f4fdff;
+    --gris : #999;
+    --ombre: rgba(52, 58, 64, 0.15);
+    --grisblanc: #f8f9fa;
+    --bordeaux: #C00000;
+    --purple : purple;
+    --mauve: #a78abe;
+    --bleublanc: #ced4e5;
+    --bleu_clr: #e8ebf5;
+}
+.tab10g{padding-left: 10px;}
+.vert{background-color: var(--vert) !important;}
+.mt5{margin-top: 5px;}
+.block{display: block;}
+
+
+ 
+.f8 {font-size: 8pt;}   
+
+.font9 , .f9   {font-size: 9pt;}  
+
+.font10 , .f10 {font-size: 10pt;} 
+
+.f11 {font-size: 11pt;}  
+								 
+.font12 , .f12 {font-size:12pt;} 
+
+.f13 {font-size: 13pt;} 
+
+.font14 , .f14 {font-size:14pt; } 
+
+.f15 {font-size: 15pt;} 
+
+.font16 , .f16 {font-size:16pt;}  	
+
+.f17 {font-size:17pt;} 
+
+.f18 {font-size:18pt;} 
+
+.f20 {font-size:20pt;} 
+
+.times { font-family: Times New Roman;}
+
+.arial-black, .arialb {font-family: arial black;}   
+
+.arial {font-family: arial;} 
+
+.verdana {font-family:verdana;}
+
+/* fonte écriture à la main (recuperer la fonte sur mon bus amoi)*/
+/* @font-face {
+    font-family: "fonte_main";
+	src: url('main.ttf');
+}
+.main {font-family:  fonte_main;} */
+
+/* couleurs */
+ 
+.blanc {color:#FFFFFF;}
+
+.noir {color:#000000;}
+
+.mauve {color:#6D3489;}
+
+.sable {color:#FFCC66;} 	  
+
+.rouge {color:#FF0000;}
+.red{color: var(--rouge);}
+
+.fushia {color: #AE206C;}
+
+.vert {color: #006600;}
+
+.gris {color: #797979;}
+
+/* mise en forme */
+
+.italique,.i {font-style: italic;}	
+
+.gras, .g, .gr {font-weight:bold;}
+
+.centrer, .cnt {text-align: center !important;}
+
+.justifier, .jst {text-align: justify;}
+
+.s {text-decoration: underline;}
+
+.gauche {text-align:left;}
+
+.droit {text-align:right;}
+
+.fdroit {float: right;}
+
+.fgauche {float: left;}
+
+.souris { cursor: pointer;}
+
+.colonne1 {position:absolute; top:90px; left:5px; width:45%;}
+
+.colonne2 {position:absolute; top:90px; left:55%;  width:45%;}	
+
+/*fond en couleur*/
+
+.bc_noir , .fnoir {background: none repeat scroll 0 0 #000000; }
+
+.bc_mauve , .fmauve {background: none repeat scroll 0 0 #AE206C;}
+
+.fblanc {background: background: none repeat scroll 0 0 #FFFFFF;}
+
+.absolu, .ab {position: absolute;} 
+
+.relatif , .re {position:relative;}
+ 
+.invisible , .inv {display:none;}
+
+.visible , .vis {display:inline;}
+
+.p5 {padding:5px;}	
+.pad , .p10 {padding:10px;}	
+.p15 {padding:15px;}	
+.p20 {padding:20px;}
+
+.ph10{padding-top: 10px;}
+.ph20{padding-top: 20px;}
+
+.pb10 {padding-bottom: 10px;}
+.pb20 {padding-bottom: 20px;}
+.pb30 {padding-bottom: 30px;}
+
+.z1 {z-index:1;}
+
+.z2 {z-index:2;}
+	
+.z3 {z-index:3;}
+
+
+
+
+

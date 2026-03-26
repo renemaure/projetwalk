@@ -1,57 +1,38 @@
-/* recupère les données du monde à l'ouverture du monde étape 1*/
+/* recupère les données du monde à l'ouverture du monde étape 3*/
+
 function recupdonnemonde() {
     fetch('systeme/php/gestion_avatar.php')
   	.then( response => {
     return response.json();
   	})
   	.then( recup_donnees =>{
-		Avatmonde = recup_donnees;
-        console.log(Avatmonde) 
+		Avatmonde = recup_donnees 
+        console.log(Avatmonde)
         donneeavataractif();
+        //console.log("position du monde au départ ligne 12 : " + pos_monde)
+        //console.log(text_jon["txt_reponse"])
+        DonneesMonde();
+        affichageavatarmonde()
     })
-}
-/* extrait les données de l'avatar actif etape 2 */
-function donneeavataractif(){
-    for (var i = 1; i <= Avatmonde.inc; i++) {
-        if (getcookie("nom") == Avatmonde["inc"+i]["nom"]){
-            Avatar_actif = new Avatar(Avatmonde["inc"+i]["nom"],Avatmonde["inc"+i]["pos_dep"],0,Avatmonde["inc"+i]["charis"],Avatmonde["inc"+i]["intel"],Avatmonde["inc"+i]["physq"],Avatmonde["inc"+i]["pwalk"],Avatmonde["inc"+i]["age"],Avatmonde["inc"+i]["beaute"],i,Avatmonde["inc"+i]["notoriete"]); 
-            /*modif au 02/08/2025: calcul de position du monde si l'avatar est en dessous du decalage  */
-            if (parseInt(Avatar_actif.pos_abs)<=decalage_monde)  pos_monde = 0
-            else   pos_monde = (decalage_monde-(parseInt(Avatar_actif.pos_abs)));
-       }
-    }
-    Avatar_actif.pos_rel = pos_monde + parseInt(Avatar_actif.pos_abs);/*  position reel de l'avatar actif dans le monde */
-    console.log(Avatar_actif);
-    DonneesMonde();
-    affichageavatarmonde();
-   
 }
 
 function affichageavatarmonde(){
     let pos_z = "1";
-    let posit_avat_css; 
     let coul_bull = "bulle"
-   	for (let j = 1; j <= Avatmonde.inc; j++) {    
-        let img_avat = "<div id=\"" + Avatmonde["inc"+j]["nom"] + "\""
-        if (Avatar_actif.indic == j){
-             img_avat += " class =\"souris\" onclick=\"affpopupactif()\"";
-            //  coul_bull += " vert"
-        }else coul_bull = "bulle"
-        pos_z =  Avatmonde["inc"+j]["vitalite"];
-        img_avat += " >";
-        img_avat += "<img class=\"avatar " + Avatmonde["inc"+j]["nom"] + "\" src=\"images/avatar/" + Avatmonde["inc"+j]["nom"] + ".png\">";
-        img_avat += "<div class=\""+coul_bull+"\" id=\"bulle_" + Avatmonde["inc"+j]["nom"] + "\"></div></div>";
-        $("#monde").append(img_avat);
-        posit_avat_css = pos_monde + parseInt(Avatmonde["inc"+j]["pos_dep"])
-        $("." + Avatmonde["inc"+j]["nom"]).css({
-            left: posit_avat_css + 'px',
-            zIndex: pos_z,
-        });
-        $("#bulle_" + Avatmonde["inc"+j]["nom"]).css({
-            left: posit_avat_css + 'px',
-        });	
-        affichHeurMond();
+   	for (let j = 1; j <= Avatmonde.inc; j++) {  
+        let n_avt =  Avatmonde[`inc${j}`]['nom']
+        let img_avat = `<div id=\"${n_avt}\"`
+        if (Avatar_actif.nom == n_avt) img_avat += " class =\"souris\" onclick=\"affpopupactif()\"";
+        pos_z =  Avatmonde["inc"+j]["vitalite"]
+        img_avat += " >"
+        img_avat += `<img class="avatar ${n_avt}" src="images/avatar/${n_avt}.png" alt="avatar">`;
+        img_avat += `<div class=\"${coul_bull}\" id=\"bulle_${n_avt}\"></div></div>`;
+        $("#monde").append(img_avat)
+        let posit_avat_css = pos_monde + parseInt(Avatmonde["inc"+j]["pos_dep"])
+        document.querySelector("." + n_avt).style.cssText = "left:" + posit_avat_css + "px; zIndex:"+pos_z+";"
+        document.querySelector("#bulle_" + n_avt).style.cssText = "left:" + posit_avat_css + "px;"
     }
+    
 }
 /* pas utiliser pour le moment */
 /* $(".btavanc").click(function(){
@@ -62,128 +43,155 @@ $(".btrecul").click(function(){
     avc_avat = -pas;
     avance_avatar();
 }); */
-
-function avance_souris(){
-    pos_monde = $("#img-monde").position().left;
+function avance_souris(e){
+    if (!activ_souris) return;
+    activ_souris = false;
     pos_avatar = Avatar_actif.pos_rel;
-    avc_avat = event.pageX - marg_main - Avatar_actif.pos_rel - 55;
-    calculAvance()
+    avc_avat = parseInt(e.pageX - marg_main - Avatar_actif.pos_rel - 55);
+    if (presence_monde) calculAvance();
+    else avBoutique(); // déplacement dans les boutiques
 }
 function  calculAvance(){
     avc_monde = -avc_avat;
-    if (pos_monde + avc_monde > fin_decor && pos_monde + avc_monde < deb_decor){ 
-        // console.log("postion du monde aprés calcul: "+ parseInt(pos_monde + avc_monde))
-        // console.log("postion de l'avatar si avance monde: "+ parseInt(pos_avatar + avc_avat))
-        if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){      
+    pos_fin_monde = parseInt((document.getElementById("img-monde").getBoundingClientRect().left) - 1200 - marg_main)
+    if (parseInt(pos_fin_monde + avc_monde)> fin_decor && parseInt(pos_monde + avc_monde) < deb_decor){ 
+            if ( Math.abs(pos_avatar) + Math.abs(avc_avat) < fin_avanc &&  Math.abs(pos_avatar) + Math.abs(avc_avat) > fin_recul){   
             avc_monde = -avc_avat/2;
             avc_avat = avc_avat/2;
-            avanceAvatar()
+            animeAvatar()
             animeMonde()
         }
         else animeMonde()        
     } else {
-        //  console.log("dans la boucle de la zonne deplacement avatar")
-        let test = (pos_avatar -  Math.abs(pos_monde)) 
-        console.log("postion de l'avatar : "+ test +" et valeur de fin_decor : " + fin_decor)
-        if ( test < deb_decor || test > fin_decor) {
-            avanceAvatar()
+        if ( parseInt(pos_avatar -  Math.abs(pos_monde)) < deb_decor || parseInt(pos_avatar -  Math.abs(pos_fin_monde)) > fin_decor) {
+            animeAvatar()
         }   
     }
-    Avatar_actif.pos_rel = $("."+Avatar_actif.nom).position().left;
-    // setTimeout(eregistre_monde, delais*1.1);
-    setTimeout( enregistrefontour, delais*1.1);
+    setTimeout( contactAvatars, delais*1.1);  
+    /*
+    temporitation pour attendre que le déplacement soit fini avant l'enregistrement des données ne pas toucher
+    */
 }
-function avanceAvatar() {
-     $("." + Avatar_actif.nom + " , #bulle_" + Avatar_actif.nom).animate({left: pos_avatar + avc_avat + 'px'},delais);
+function animeAvatar() {
+    document.querySelector(`.${Avatar_actif.nom}, #bulle_${Avatar_actif.nom}`).style.cssText = "transition: left " + delais + "ms; left:"+ parseInt(pos_avatar + avc_avat) +"px;"
 }
-function animeMonde(){
-    $("#img-monde").animate({left: '+='+ avc_monde +'px'},delais); // déplacement du monde
-      for (var j = 1; j <= Avatmonde.inc; j++) {
+function animeMonde(){     // Déplacement du monde
+    const imgMonde = document.getElementById("img-monde");
+    imgMonde.style.transition = `left ${delais}ms`;
+    imgMonde.style.left = (pos_monde + avc_monde) + 'px';
+    for (var j = 1; j <= Avatmonde.inc; j++) {    // Déplacement des avatars
         if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
-             $("."+ Avatmonde["inc"+j]["nom"] + " , #bulle_" + Avatmonde["inc"+j]["nom"]).animate({left: '+='+avc_monde+'px'},delais);
+            const elements = document.querySelectorAll(
+                "." + Avatmonde["inc"+j]["nom"] + ", #bulle_" + Avatmonde["inc"+j]["nom"]
+            );
+            elements.forEach(element => {
+                const currentLeft = parseInt(getComputedStyle(element).left)
+                element.style.transition = `left ${delais}ms`;
+                element.style.left = (currentLeft + avc_monde) + 'px';
+            });
         } 
     }
 }
-function eregistre_monde(){
-    pos_monde = $("#img-monde").position().left;
-    let pos_avatar_actif = Avatar_actif.pos_rel  +   Math.abs(pos_monde);
-    // console.log(Avatar_actif.pos_rel);
-    console.log("position absolu de l'avatar : "+ (Avatar_actif.pos_rel  +  Math.abs(pos_monde)))
-    // console.log(Avatar_actif);
-    cal_tmp_monde();
-    $.post("systeme/php/control_avatar.php",{
-        pos_avat_actif : pos_avatar_actif,
-        nom_avat_actif : Avatar_actif.nom,
-        age_mond_rtr : Avatmonde.inc0,
-        notoriete : Avatar_actif.noto,
-        modifage : Avatar_actif.age,
-    },
-    function(data){
-        console.log("retour enregistrement : " +data);
-       
-    });
-    // enregistrefontour()
-    }
-
-function enregistrefontour() {
-        for (var j = 1; j <= Avatmonde.inc; j++) {
-            if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
-                tab_pos_rel[j] = $("."+Avatmonde["inc"+j]["nom"]).position().left  
-            }
-        }
+function contactAvatars() {
+    Avatar_actif.pos_rel = parseInt($("."+Avatar_actif.nom).position().left)
     for (let j = 1; j <= Avatmonde.inc; j++) { 
         if (Avatar_actif.nom != Avatmonde["inc"+j]["nom"]){
-            if ((Avatar_actif.pos_rel -55<= tab_pos_rel[j])  && (Avatar_actif.pos_rel +180 >= tab_pos_rel[j]) || (Avatar_actif.pos_rel+55>= tab_pos_rel[j])  && (Avatar_actif.pos_rel -180 <= tab_pos_rel[j])) {
-                // console.log("l'avatar est " + Avatmonde["inc"+j]["nom"])
-                inter_avatar = true;
-	            inter_nom_avat = Avatmonde["inc"+j]["nom"] 
-                break
+            let calcul = parseInt($("."+Avatmonde["inc"+j]["nom"]).position().left) 
+            if ((Avatar_actif.pos_rel -50<= calcul)  && (Avatar_actif.pos_rel +140 >= calcul) || (Avatar_actif.pos_rel+50>= calcul)  && (Avatar_actif.pos_rel -140 <= calcul)) {
+			    inter_avatar = true; //drapeau contact avatars à true
+			    inter_nom_avat = Avatmonde["inc"+j]["nom"] 
+	        }
+            else{
+               gestion_barre_text("")
+               document.getElementById("bulle_"+Avatmonde["inc"+j]["nom"]).style.display="none"
             }
-            // else console.log("pas d'avatar ")
-            inter_avatar = false
-            document.getElementById("bulle_"+Avatmonde["inc"+j]["nom"]).style.display="none"
-            document.getElementById("bulle_"+Avatar_actif.nom).style.display="none"
-        }
+	    }
     }
-    if (inter_avatar) {
-         document.getElementById("bulle_"+inter_nom_avat).style.display="block"
-        let text = text_jon["reponse"][Avatmonde[inter_nom_avat]["num_reponse"]]
-        if (Avatmonde[inter_nom_avat]["num_reponse"] == "1") text += inter_nom_avat
-        affichage("bulle_"+inter_nom_avat,text)
-        /* activation de la bulle de l'avatar actif pour tests le 14/09/2025*/ 
-        // document.getElementById("bulle_"+Avatar_actif.nom).style.display="block"
-       
-    }
-    Nouvdonneemond()
+	if (inter_avatar) interactionAvatar()
+    else Nouvdonneemond()
 }
+function interactionAvatar(){
+    
 
-    function Nouvdonneemond() {
+    /* activation de la memoire de l'avatr actif en phase test au 11/11/2025 */
+    let nonconu =  Avatar_actif.memoire.find((element) => element == inter_nom_avat)
+    if (nonconu) avatarConnu()
+    else{
+        let indice = Avatar_actif.memoire.findIndex((element) => element == "vide")
+        if(indice>-1) nouvRencontre(indice)
+        else finMemoire() 
+    } 
+    console.log(Avatar_actif.memoire)
+	inter_avatar = false;
+}
+function Nouvdonneemond() {
     fetch('systeme/php/donneAvattourr.php')
   	.then( response => {
         return response.json();
   	    })
   	.then( datas =>{
 		Donneposabs = datas;
-        console.log(Donneposabs) 
         for (var j = 1; j <= Donneposabs.inc; j++){
-            if ((Avatar_actif.nom !=  Donneposabs["inc"+j]["nom"]) && (Donneposabs["inc"+j]["pos_dep"])!=Avatmonde["inc"+j]["pos_dep"] ) {
-                // console.log(Donneposabs["inc"+j]["nom"]);
+            if ((Avatar_actif.nom !=  Donneposabs["inc"+j]["nom"]) && (Donneposabs["inc"+j]["pos_dep"])!=Avatmonde["inc"+j]["pos_dep"] ) 
+	        {
                 let avc_fintour = - (Avatmonde["inc"+j]["pos_dep"] - Donneposabs["inc"+j]["pos_dep"])
-                console.log(avc_fintour);
                 $("."+ Donneposabs["inc"+j]["nom"] + " , #bulle_" + Donneposabs["inc"+j]["nom"]).animate({left: '+='+avc_fintour+'px'},delais);
                 Avatmonde["inc"+j]["pos_dep"] = Donneposabs["inc"+j]["pos_dep"]
             }
         }
-        if (Donneposabs["inc0"]["secondes"] > Avatmonde["inc0"]["secondes"]) {
-            Avatmonde["inc0"]["secondes"] = Donneposabs["inc0"]["secondes"]
+        if (Donneposabs["monde"]["secondes"] > data.secondes) {
+            data.secondes = Donneposabs["monde"]["secondes"]
         }
-         if (Donneposabs["inc0"]["minutes"] > Avatmonde["inc0"]["minutes"]) {
-            Avatmonde["inc0"]["minutes"] = Donneposabs["inc0"]["minutes"]
+         if (Donneposabs["monde"]["minutes"] > data.minutes) {
+            data.minutes = Donneposabs["monde"]["minutes"]
         }
-        if (Donneposabs["inc0"]["heurs"] > Avatmonde["inc0"]["heurs"]) {
-            Avatmonde["inc0"]["heurs"] = Donneposabs["inc0"]["heurs"]
+        if (Donneposabs["monde"]["heurs"] > data.heurs) {
+            data.heurs = Donneposabs["monde"]["heurs"]
         }
+        affichHeurMond()
         eregistre_monde()
-        // affichHeurMond()
     })
+}
+function eregistre_monde(){
+    pos_monde = parseInt($("#img-monde").position().left)
+    let pos_avatar_abs = parseInt(Avatar_actif.pos_rel  +   Math.abs(pos_monde))
+    Avatar_actif.pos_abs = pos_avatar_abs // mise a jour de la position absolu de l'avatar actif23/03/2026
+    
+    cal_tmp_monde();
+            /* envoie en fetch au lieu de jquery modifier Avatmonde.inc0 c'est un tableau en json si non cela ne fonctione pas fait le 15/03/2026 en phase test pour le moment ca fonctionne*/
+    fetch("systeme/php/control_avatar.php", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+        pos_avat_actif: pos_avatar_abs,
+        nom_avat_actif: Avatar_actif.nom,
+        age_mond_rtr: JSON.stringify(data),
+        notoriete: Avatar_actif.noto,
+        modifage: Avatar_actif.age,
+        reponse: Avatar_actif.repons
+    })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("retour enregistrement : " + data);
+        nouvtour();
+    })
+    .catch(error => {
+        console.error("Erreur :", error);
+    });
+    
+}
+function nouvtour(){
+	activ_souris = true
+    inter_nom_avat  = ""
+    console.log(Avatar_actif);
+
+	//activer le css cursor pour area boutique 	
+
+	//gestion_barre_text ("Le monde bouge, un nouveau tour commence")
+	   /* faire ici le test avec les boutiques si l'avatar actif est dans la zonne */
+            //  console.log("position abs de l'avatar : " + Avatar_actif.pos_abs)
+             // console.log("rencontre avatar " + inter_avatar )
 }

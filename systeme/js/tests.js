@@ -14,3 +14,11 @@ function AfficheData(data,valid){
     }
 
 }
+function essai_objet() {
+    console.log("test avatar")
+    // for (const [key, value] of Object.entries(Avatmonde)) {
+    for (const property in Avatmonde) {
+        console.log(`${property}: ${Avatmonde[property]}`);
+        console.log(Avatmonde[property]['nom'])
+    }
+}
