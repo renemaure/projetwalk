@@ -1,0 +1,1 @@
+export let texte =" ceci est un test d'affichage de module"

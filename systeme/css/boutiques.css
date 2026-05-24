@@ -1,0 +1,44 @@
+:root{
+    --posdep:25px;
+}
+
+/* régle pour toutes les positions*/
+#stok1, #stok2, #stok3, #stok4, #stok5, #stok6, #stok7, #stok8, #stok9, #stok10, #stok11, #stok12, #stok13,#stok14, #stok15, #stok16, #stok17, #stok18, #stok19, #stok20, #stok21, #stok22, #stok23, #stok24, #stok25, #stok26, #stok27, #stok28,.stok1 {
+    position: absolute;
+    /* cursor: pointer; */
+    z-index: 0;
+}
+/* régle pour toutes les positions étagères du haut */
+#stok1, #stok2, #stok3, #stok4, #stok5, #stok6, #stok7, #stok8, #stok9, #stok10, #stok21, #stok23, #stok25, #stok27,.stok1 {top: 174px;}
+/* régle pour toutes les positions étagères du bas */
+#stok11, #stok12, #stok13, #stok14, #stok15, #stok16, #stok17, #stok18, #stok19, #stok20, #stok22, #stok24, #stok26, #stok28 {top: 248px;}
+/*régle pour toutes les positions  1er étagères à gauche*/
+#stok1, #stok11,.stok1 { left: 25px;}
+/*régle pour toutes les positions  1er étagères à droite*/
+#stok2, #stok12 { left: 120px;}
+/*régle pour toutes les positions  2eme étagères à gauche*/
+#stok3, #stok13 { left: 218px;}
+/*régle pour toutes les positions  2eme étagères à droite*/
+#stok4, #stok14 { left: 335px;}
+/*régle pour toutes les positions  3eme étagères à gauche*/
+#stok5, #stok15 { left: 410px;}
+/*régle pour toutes les positions  3eme étagères à droite*/
+#stok6, #stok16 { left: 495px;}
+/*régle pour toutes les positions  4eme étagères à gauche*/
+#stok7, #stok17 { left: 865px;}
+/*régle pour toutes les positions  4eme étagères à droite*/
+#stok8, #stok18 { left: 950px;}
+/*régle pour toutes les positions  5eme étagères à gauche*/
+#stok9, #stok19 { left: 1050px;}
+/*régle pour toutes les positions  5eme étagères à droite*/
+#stok10, #stok20 { left: 1135px;}
+/* positions suplémentaire en option pour le syndic*/
+#stok21, #stok22 { left: 535px;}
+
+#stok23, #stok24 { left: 625px;}
+
+#stok25, #stok26 { left: 985px;}
+
+#stok27, #stok28 { left: 1005px;}
+
+

@@ -1,0 +1,131 @@
+/* regle commune infos cookie et regles walk */
+#info_cookie, #affiche_regles{
+    box-sizing: border-box;
+    position: absolute;
+    text-align: justify;
+    background-color: var(--blanc_bleu);
+    border: 3px solid var(--bleu);
+    padding: 12px;
+    display: none;
+    z-index: 20;
+    font-size: 1.1rem;   
+}
+/* debut régles pour popup regles walk */
+#affiche_regles {
+    width: 1200px;
+    height: 617px;
+    left: 0%;
+    top: 52px;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+.new_col, .new_col-8, .new_col-4 {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+/*     padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px; */
+}
+.new_col-8 {
+    flex: 0 0 66.666667%;
+    /* max-width: 66.666667%; */
+}
+.new_col-4 {
+    flex: 0 0 33.333333%;
+    /* max-width: 33.333333%; */
+}
+.boite12 {
+    position: relative;
+    width: 84%;
+    margin: 0 auto 3rem auto;
+    box-shadow: 0.5rem 1em var(--ombre);
+    padding: 1rem;
+    border-radius: .25rem;
+    background-color: var(--grisblanc);
+}
+.boite12 h4 {
+    color: var(--bordeaux);
+    /* font-style: italic; */
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    /* line-height: 1.2; */
+    margin-top: 0;
+    text-align: center;
+}
+#bt_sort_regl{
+    position: relative;
+    height: 80px; 
+}
+.boite12 ul{  margin: 5px 0 5px 0;}
+
+.resolut {
+    background: #7de57d69;
+}
+.noresolut {
+    background: #da707069;
+}
+
+/* regles pour popup info cookies */
+#info_cookie{
+    width: 757px;
+    height: 329px;
+    left: 17%;
+    top: 52px;
+}
+/* régles commune infos avatar et interaction avatar */
+#info_avatar, #inter_avatar_actif{
+    width: 100%;
+    position: relative;
+    height: 218px;
+    border-collapse: collapse;
+    border: 3px solid var(--purple);
+}
+/* regles pour la popup  regles avatar (option avatar)*/
+#action_avatar{
+    box-sizing: border-box;
+    position: absolute;
+    text-align: justify;
+    background-color: var(--blanc_bleu);
+    border: 3px solid var(--bleu);
+    padding: 12px;
+    display: none;
+    z-index: 20;
+    font-size: 1.1rem;
+    width: 757px;
+    height: 329px;
+    left: 17%;
+    top: 52px;
+}
+#info_avatar tbody td {
+    border: 1px solid var(--bleu) ;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+}
+#photo_avat {
+    position: relative;
+    height: 160px;
+}
+#avatar_photo {
+    top: 26px;
+    position: absolute;
+    left: 35PX;
+}
+#cadre_photo {
+    position: relative;
+    width: 78%;
+    top: 3px;
+}
+#zondialogavat label {
+    position: relative;
+    top: -80px;
+}
+#reponse_auto {
+    position: relative;
+    /* width: 335px; */
+    left: 5px;
+    top: -77px;
+}

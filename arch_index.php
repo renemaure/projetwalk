@@ -42,13 +42,11 @@
 			<section id="control"></section>
 			<section id="interface">
 				<article id="infos_monde">
-					<h3 class="titre_from"></h3>
-					<div class="zonne_txt"></div>
+					
 				</article>
 				<article class="separ_monde"></article>	
 				<article id="infos_base">
-					<h3 class="titre_from"></h3>
-					<div class="zonne_txt"></div>
+					
 				</article> 
 			</section>
 
@@ -59,8 +57,26 @@
 			<div id="zonne_area"></div>
 			<footer id="footer"> </footer>
 		</main>
+		<SCRIPT SRC="systeme/js/affichage_monde.js"></SCRIPT>
 		<script src="systeme/js/variables.js"></script>
+		<SCRIPT SRC="systeme/js/gestion_regles.js"></SCRIPT>
+		<script src="systeme/js/fonctions_internes.js"></script>
+		<script src="systeme/js/avatar-actif.js"></script>
 		<script src="systeme/js/md5.js"></script>
-		<SCRIPT type="module" SRC="systeme/js/walk.js"></SCRIPT>
+		<SCRIPT SRC="systeme/js/conection.js"></SCRIPT>
+		<SCRIPT SRC="systeme/js/tirage.js"></SCRIPT>
+		<script src="systeme/js/image_avatar.js"></script>
+		<SCRIPT SRC="systeme/js/gestion_monde.js"></SCRIPT>
+
+		<script src="systeme/js/tests.js"></script>
+		<script src="systeme/js/boutiques.js"></script>
+		<script src="systeme/js/databord.js"></script>
+		<script src="systeme/js/interaction_avatars.js"></script>
+		<script src="systeme/js/infos_base.js"></script>
+		<script src="systeme/js/temps_monde.js"></script>
+		<script src="systeme/js/popup_avatar.js"></script>
+		<script src="systeme/js/dialogue_retour.js"></script>
+		<SCRIPT SRC="systeme/js/walk.js"></SCRIPT>
+		
 	</body>
 </hml>

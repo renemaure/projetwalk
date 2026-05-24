@@ -1,0 +1,266 @@
+{
+"_commantaire_1" : "données permanentes",
+"titre_site" : "<h1>The Walk - un monde presque permanent</h1>",
+"text_cookie" : "<p id=\"info-erg\">Votre navigateur doit accepter les cookies, sinon il ne se passera rien! <button id=\"popup_cookie\" onclick=\"popup('info_cookie','block')\"> Infos sur les cookies</button></p>",
+
+"info_cookie" : "<p>The Walk utilise deux cookies només, nom et étape. Ils sont indispensables pour que votre avatar évolue correctement dans The Walk. Ces deux cookies sont uniquement déclarer lors de la création de votre avatar.</p><p>Le cookie \"nom\" contient le nom de votre avatar<br>Le cookie \"etape\" renseigne l’état d’avancement de votre avatar</p><p>Ces cookies sont conservés un an et uniquement sur votre navigateur. ils ne servent en aucune façon à une quelconque campagne de publicité sur internet.</p><button class=\"btn_cookie\" onclick=\"popup('info_cookie','none')\">Fermer</button>",
+"footer" : "Une création [nom], 2013 / [an] – Version [version] au [date] en phase [phase] <a href=\"mailto:[mail]\">[mail]</a><span id=\"tabbord\" onclick=\"securtabord()\"> ?</span>",
+"bouton_regles" : "<button id=\"regles\" onclick=\"ouvreregles()\" >Régles & Infos</button>",
+"bouton_quit" : "<button id=\"quit_monde\" onclick=\"QuiterMonde()\" >Quiter le monde</button>",
+
+"structure generique" : "<section id=\"zon_conex\">\r\n\t<h3 class=\"titre_from\"></h3><div id=\"retour_log\" class=\"retour_erreur\"></div><div id=\"affiche_conex\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"><h3 class=\"titre_from\"></h3><div id=\"retour_ins\" class=\"retour_erreur\"></div><div id=\"affiche_erg\"></div></section>",
+
+"structure_infos" : "<h3 class=\"titre_from\"></h3><div class=\"zonne_txt\"></div>",
+
+"_commantaire_2" : "données étape 0 logger enrgistrer",
+
+"structure_conex" : "<div id=\"inscrip_index\"><label for=\"nom_log\">Entrez le nom de votre pseudo</label><input id=\"nom_log\"  maxlength=\"40\" type=\"text\" required placeholder><label for=\"passe_log\">Entrez votre mot de passe</label><input id=\"passe_log\"  maxlength=\"20\" type=\"text\" required placeholder><button id=\"envoi_log\" class=\"bouton\" onclick=\"seLoggerMonde()\">Continuez</button></div>",
+
+"structure_civil" :"<div id =\"civil\"><label for=\"nom_ins\">Entrez le nom de votre pseudo</label><input id=\"nom_ins\" maxlength=\"40\" type=\"text\" required placeholder><label for=\"pass_ins\">Entrez votre mot de passe</label><input id=\"pass_ins\"  maxlength=\"40\" type=\"text\" required placeholder><label for=\"mail-ins\">Entrez votre mail</label><input id=\"mail_ins\" maxlength=\"40\" type=\"email\" required placeholder><button type=\"button\" id=\"envoi_ins\" class=\"bouton\" onclick=\"enregistreMonde()\">Continuez</button></div>",
+
+"titre_acces" :"Accès au monde si vous avez déjà un avatar",
+"titre_enrg" : "Inscription pour pouvoir évoluer dans le monde",
+
+"selogger" : "<p class=\"texte\">Bienvenu dans le monde minimaliste du Walk - Walking Art Linking Knowledge - ( Art de la dénébulation dans l’espace urbain contemporain), inspiré du monde du 8 bits, avec un coté bande dessinée et avec des réglés issus des jeux de rôles en lignes de type RPGP <br>Si vous êtes déjà inscrit vous pouvez vous loguez avec le nom de votre avatar et votre mot de passe pour accéder à The Walk, le monde presque permanent.</p>",
+
+"inscrtiption" : "<p class=\"texte\">Pour pouvoir interagir dans The walk, le monde presque permanent, vous devez vous enregistrer en entrant, un nom compris entre 5 et 15 caractères, définissant votre avatar, un mot de passe crypté en MK5,  permettant de garder votre anonymat complet, et un mail permettant de redéfinir un nouveau mot de passe.</p>",
+
+"_commantaire_3" : "données étape 1 tirage avatar",
+
+"structure_tirage" : "<section id=\"zon_conex\">\r\n\t<h3 class=\"titre_from\"></h3><div id=\"retour_log\" class=\"retour_erreur\"></div><div id=\"affiche_conex\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"><h3 class=\"titre_from\"></h3><div id=\"retour_ins\" class=\"retour_erreur\"></div><div id=\"affiche_erg\"></div></section>",
+
+"titre_tirage" : "Les aptitudes de votre avatar",
+"titre_regles_tirage" : "Règles pour le tirage des aptitudes principales",
+
+"tirage" : "<div id =\"creation\"><label><select id=\"physi\" class=\"box\" onchange=\"changePhysique()\"></select><span class=\"gras\">Le physique :</span> la force, l'endurance.</label><label><select id=\"intel\" class=\"box\" onchange=\"changeIntelligence()\"></select><span class=\"gras\"> L’intellect : </span>l'intelligence, la beauté.</label><label><select id=\"charis\" class=\"box\" onchange=\"changeCharisme()\"></select><span class=\"gras\"> Le charisme : </span> la prise de décision.</label><div id =\"tirage_age\"><input type=\"radio\" id=\"ratioage1\" name=\"recup_age\" value=\"jeune\" /><label for=\"ratioage1\">Age jeune</label><input type=\"radio\" id=\"cratioage2\" name=\"recup_age\" value=\"adulte\" checked /><label for=\"ratioage2\">Age adulte</label><input type=\"radio\" id=\"ratioage3\" name=\"recup_age\" value=\"vieux\"/><label for=\"ratioage3\">Age vieux</label></div><button id=\"don_caract\" class=\"bouton\" onclick=\"afficheCaracteristique()\">Soumettre</button><p id=\"reste\"></p></div>",
+
+"regles_aptitude" : "<p>Votre avatar possède 3 aptitudes principales:</p><p><span class=\"gras\">Le physique </span>: Cette aptitude permet à votre avatar de se déplacer dans le monde, de porter des objets et de se défendre contre d’autres avatars.</p><p><span class=\"gras\">L’intellect </span>: Cette aptitude  permet à votre avatar de se souvenir des lieux, des rencontres, des actions passées et à planifier des actions futures.</p><p><span class=\"gras\">Le charisme</span> : Cette aptitude permet a votre avatar d’interagir avec les autres avatars, avec plus ou moins d’assurance et d’affronter les actions du monde.</p>",
+
+"titre_monde_1" : "Etape 1 : Création de votre avatar",
+"text_monde_1" : "<p>Merci de votre enregistrement dans The Walk, le monde presque permanent, vous etes maintenant à l’étape 1. Vous devez choisir la tranche d’age de votre avatar puis définir ses 3 aptitudes, le physique, l’intellect.<br>Une vois validez le site calculera les aptitudes secondaires, puis vous pourrez passer à l’épate 2</p>",
+
+"titre_base_1" : "Etape 1 : Principe Création de votre avatar",
+"text_base_1" : "<p>Votre avatar procède, au départ, 3 points dans chacune des aptitudes. Vous disposez de 5 points à répartir celons votre choix. En sachant, que chaque point rajouté dans une aptitude, cout deux points. Cependant si vous diminuer d’un point une aptitude, cela vous rajoute 1 point aux points de départ. Tout point restant sera utilisé ultérieurement !</p>",
+
+"titre_regles_tirage2" : "Les Régles des aptitudes secondaires",
+
+"text_tirage_second" : "Les aptitudes secondaires sont calculées à partir des aptitudes principales. <ul><li><span class =\"gr\">La beauté :</span> moyenne de physique et intellect</li><li><span class =\"gr\">La confiance :</span> moyenne de intellect et charisme</li><li><span class =\"gr\">La vitalité :</span> de charisme et physique</li></ul></p><p>l’age est calculé en additionnant un age de départ à la tranche d’age choisit<ul><li>age jeune : 16 + beauté</li><li>age adulte : 30 + vitalité</li><li>age vieux : 50 + confiance</li></ul></p><p>Les points Walk ou PW sont calculés en additionnant toutes les aptitudes principales et en y ajoutant tout point de création non utilisé Ces points Walk servent de monnaie dans le monde.</p><p>Les points de notoriété, sont calculés en faisant la moyenne des points des aptitudes principales, ils permettent de connaître  la  notoriété de votre avatar et d’accéder aux ressources du monde.</p>",
+
+"titre_regles_seconds" : "Calcul des aptitudes secondaires",
+
+"texte_aptitudes_second" : "<div id=\"gauche_tirage\"><h4 class=\"titre_from\">Aptitudes<br>principlales</h4><p>Physique : <span id=\"phy\"></span></p><p>Intellect : <span id=\"int\"></span></p><p>Charisme : <span id=\"ch\"></span></p></div><div id =\"centre_tirage\"><h4 class=\"titre_from\">Aptitudes<br>secondaires</h4><p>Beauté : <span id=\"aff_beaute_avat\"></span></p><p>Confiance : <span id=\"conf\"></span></p><p>Vitalité : <span id=\"vita\"></span></p></div><div id =\"droit_tirage\"><h4 class=\"titre_from\">Points<br>divers</h4><p>Points Walk : <span id=\"pk\"></span></p><p>Notorièté :<span id=\"nt\"></span></p><p>Age : <span id=\"age\"></span></p><p>Mémoire : <span id=\"memoire\"></span></p></div>",
+
+
+"bouton7" : "<button id=\"tirage_caract\" class=\"bouton\" onclick=\"enregistre_avat()\">Validez</button>",
+
+"_commantaire_4" : "données étape 2 image avatar",
+
+"structure_img" : "<section id=\"zon_conex\">\r\n\t<h3 id=\"titre_conex\" class=\"titre_from\"></h3><div id=\"creat_avatar\"></div><div id=\"valid_avatar\"></div>\r\n</section>\r\n<section class=\"separ_monde\"></section>\r\n<section id=\"zon_enreg\"><h3 id=\"titre_zon_enreg\" class=\"titre_from\"></h3><div id=\"zonne_table\"></div></section>",
+
+"titre_img_conex_2a" : "Etape 2 : personalisez l'image de votre avatar",
+"titre_img_erg_2a" : "Choisissez la couleur de votre avatar",
+
+"creat_img_avat" : "<div id=\"nav_avatar\"></div><div id =\"zone_img_avatar\"></div><div id =\"couleur\"></div>",
+"bouton_conex_2a" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"Basedefavatar()\">Validez</button>",
+"creat_img_enreg" : "<div id=\"zon1-erg\"></div><div id=\"zon2-erg\"></div>",
+
+"text_enreg_2a" : "Choisissez la couleur de votre avatar en cliquant sur les pavés de couleurs, puis validez",
+
+"text_monde_2a" : "<h3 class=\"titre_from\">Étape 2 : Création de votre avatar</h3><p>Vous êtes enfin arrivé à l’&tape 2, la création de votre avatar. Étape divisée en 3 diapos, la première vous permet de définir la couleur de votre avatar. La seconde diapo permet de choisir l’apparence de votre avatar et enfin la troisième sa tenue.. Une fois les trois diapos validées vous pourrez enfin accéder au monde The Walk un monde presque permanent</p>",
+
+"text_base_2a" : "<h3 class=\"titre_from\">Étape 2 : Principe de création de l’avatar</h3><p>Votre avatar est créée en superposant plusieurs images en png, comme des calques dans les logiciels photos, images emprunter à un veux site Coréen de chat du type MSM et disparu de puis longtemps dont nous n’avons plus de références. Avec ce principe vous pouvez modifier et personnaliser votre avatar  presque indéfiniment tout au long de l’aventure.</p>",
+
+"text_conex_2b" : "<p>Pour poursuivre, cliquez dans la liste pour définir les yeux, la bouche et les cheveux de votre avatar. Une fois satisfait validez et passez à l'étape suivante.</p>",
+
+"titre_debut_enreg" : "Choisissez le type de ",
+"titre_fin_enreg" : " de votre avatar",
+
+"text_monde_2b" : "<h3 class=\"titre_from\">Étape 2 : Création de votre avatar</h3><p>Maintenant vous devez définir le physique de votre avatar, à savoir ; sa bouche, ses yeux et ses cheveux. Précision, dans The Walt, un monde presque permanent, il n’y a pas de genre pré-défini, libre a vous de créée votre avatar comme bon vous semble.</p>",
+"texte18" : "<h3 class=\"titre_from\">Étape 2 : Création de votre avatar</h3><p>Enfin à la diapo 3, vous devez définir la tenue de votre avatar, mais ne vous inquiétez pas, vous pourrez modifier ultérieurement la tenue de votre avatar dans les boutiques du monde. Maintenant  choisirez un une chemise, un pantalon ou une robe et des chaussures.</p>",
+
+"bouton_conex_2b" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"optionImageAvatar()\">Validez</button>",
+
+"text_conex_2c" : "<p>Pour terminer l'image de votre avatar, cliquez dans la liste des vetements à votre disposition. Une fois satisfait validez l'image de votre avatar</p>",
+
+"_commantaire_6" : "données bandeau textes central",
+
+"txt_presentation" : "[nom] bienvenu dans The Walk, le monde presque permanent. Nous somme a la version [version] au [date] en phase [phase]",
+"txt_memoire" : "votre mémoire est saturée, vous ne pouvez plus enregistrer de nouvelles infos",
+"txt_connaissance" : "vous connaissez déjà [nom_avatar]",
+"txt-mem-avt" : "Vous avez la possiblilté d'ajouter le nom de cet avatar à votre mémoire. voulez vous l'ajouter?<br><br> Cochez la case et validez",
+"info_txt_memoire" : "Il vous reste actuellement [nbr] espace(s) mémoire",
+"txt_ouvrepopup_avatar_gauche" : "Maintenant que vous êtes confortablement installé, vous avez la possibilité de consulter  et modifier le données de votre avatar.",
+"txt_ouvrepopup_avatar_droit" : "Cochez la case si vous souhaitez y accéder et validez avec le bouton.",
+"txt_memoire_boutiques" : "Vous avez la possibilité d'ajouter le nom de cette boutique à votre mémoire. Pour vous vous y rendre de nouveau directement.",
+"txt_question_memoires_lieux" : "Cochez la case « OUI » ou « NON » et validez",
+"txt_reponse" : "<input type=\"radio\" name=\"avt_valid\" id=\"avtmemy\" value=\"true\" /> <span class=\"\">OUI</span> <input type=\"radio\" name=\"avt_valid\"  id=\"avtmemn\" value=\"false\" /> <span class=\"\">NON</span>" ,
+"bouton_reponse" : "<button id=\"btn\">Validez votre choix</button>",
+"rep_true_mem" : "Maintenant vous connaissez [nom_avatar]",
+"txt_morale_nu" : "Désolez, mais votre avatar ne peux évoluer nu dans le monde, même avec une morale très surfaite !",
+"txt_nibouche_niyeux": "Désolez, mais votre avatar ne peut évoluer sans bouche ni yeux, les cheveux passe encore, quoi que...",
+"txt_en_traveaux" : "<h2 class=\"cnt red\">Cette zone est actuellement en travaux !<br>Bientôt vous aurez des nouvelles du monde ! Pour e moment les travailleurs sont à la tâche</h2>",
+
+"phrase_minute" : "[nom_avatar], le monde avance d'une nouvelle minute !",
+"phrase_heure" : "[nom_avatar], le monde vient d’avancer d’une nouvelle heure !",
+"phrase_jour" : "Exceptionnel, [nom_avatar] le monde vient de changer de jour, une nouvelle journée commence",
+"phrase_boutique" : "[nom_avatar], vous venez d’entrer dans la boutique du Walk, qui vous propose différents accessoires ! Cette boutique n’est pas encore fonctionnelle !",
+"phrase_syndic" : "[nom_avatar], vous êtes au syndicat d’initiative du Walk, qui vous donne accès à pleins d’infos sur le monde. Cet lieu n’est pas encore fonctionnel !",
+"phrase_officine" : "[nom_avatar], vous avez trouver l’officine du Walk, continué pour avoir accès aux données secrètes du monde. Cet lieu n’est pas encore fonctionnel !",
+
+"_commantaire_8": "données du monde étape 3",
+
+"txt_info_monde_3" : "<div id=\"affiche_monde\">\n\r<div id=\"zone_1\"><p class=\"text_mond\"><span id = \"txt_age\">the Walk a </span><span id=\"affich_age_monde\"></span></p></div><div id=\"zone_2\"><p class=\"text_mond\"></P></div><div id=\"zone_3\"><p class=\"text_mond\"><span id = \"txt_heurs\">Il est actuelement </span><span id=\"affich_heur_monde\"></span></p></div><div id=\"zone_4\"><p class=\"text_mond\"><span id=\"affich_txt_avat\"></span><span id = \"txt_avat\"> avatars psésents dans the Walk</span></p></div></div>",
+
+"structure_info_avatar_base" : "<table id='interaction_avatar'><tbody><tr><td id='trt_action_avatar' colspan ='2'></td></tr><tr><td id ='ctrl_text'></td><td id ='ctrl_diag'></td></tr><tr><td id='bout_action_gauch'></td><td id='bout_action_droit'></td></tr></tbody></table>",
+
+"zone_dialoque_avatar_monde" : "<textarea id=\"dialog_avat\">discution:</textarea>",
+"zone_radio_avatar_monde" : "<fieldset><legend>ACTION</legend><div><input type=\"radio\" name=\"reflextion\" id=\"huey\" value=\"huey\" checked /><label for=\"huey\">pensée</label></div><div><input type=\"radio\" id=\"dewey\" name=\"reflextion\" value=\"dewey\" /><label for=\"dewey\">discution</label></div><div><input type=\"radio\" name=\"reflextion\" id=\"louie\" value=\"louie\" /><label for=\"louie\">A tutête</label></div></fieldset>",
+"zone_liste_avatar_monde" : "<lu><li>liste 1</li><li>liste 2</li><li>liste 3</li><li>liste 4</li><li>liste 5</li>",
+
+"_commantaire_9": "données des regles en popup",
+
+"structure_regles_infos" : "<div id=\"corps_regles\" class=\"new_col-8\"><div id=\"boite01\" class=\"boite12\"></div><div id=\"boite02\" class=\"boite12\"></div></div></div><aside id=\"aside_regles\" class=\"new_col-4\"></aside>",
+
+"menu_regles" : "<div class=\"boite12\"><ol><li class=\"souris\" onclick=\"affinfos()\">Infos sur le monde</li><li class=\"souris\" onclick=\"affregles()\">Les régles du monde</li><li class=\"souris\" onclick=\"bugmodif()\">Bugs & modifs du monde</li ><li class=\"souris\" onclick=\"blogregles()\">Blog du monde</li><ol></div><div class=\"boite12\" id=\"bt_sort_regl\"><button class=\"btn_cookie\"onclick=\"popup('affiche_regles','none')\">Fermer la popup</button></div>",
+
+"txt_regles_info_01"  : "<h4 class=\"cnt\">Les régles de The Walk</h4><p>les règles dans  The Wakk, un monde presque permanent sont pour le moment en cours d’élaboration et toujours en changement. <br>Vous pouvez déplacer votre avatar dans le monde grâce à la souris et interagir avec les autres avatars ainsi qu’avec le monde.<br>il existe plusieurs lieux dans le monde accessibles en  déplaçant votre avatar au devant de la porte du lieu et en cliquant sur la zone avec la souris.</p><p>De nouvelles actions sont en cours de programmation et de nouvelles interactions sont prévues pour bientôt</p><p>si vous aussi vous voulez contribuer au monde avec des idées, du code, des dessins, vous êtes le ou la bienvenue, contactez nous a l’adresse mail  thewalk@projetx.art.</p>",
+
+"txt_regles_info_02" : "<h4 class=\"cnt\">Le monde bouge</h4><p>Le principe du monde presque permanent ce sont les avatars qui font avancer l’horloge du monde au rythme des déplacements des avatars, à savoir 10 secondes par tour de mouvement</p><p>Votre avatar aussi évolue avec le monde, il gagne 1 point de notoriété par heure et il prend un an de plus pour chaque jour passé dans dans le monde.</p>",
+
+"aff_modif" : "<h4 class =\"bug-titre\">infos sur les modifs</h4><div id=\"tab-modif\"><p>Modifs du 19/02/2026<ul type=\"disc\"><li>Amélioration : Le monde affiche, dans la barre centrale, le changement de minute, d’heure et de jour.</li><li>Amélioration : Le monde affiche, dans la barre centrale, le nom du lieu lorsque votre avatar entre dans ce lieu !.</li></ul></p><p>Modifs du 28/07/2025 <ul type=\"disc\"><li>Intégration de la première interaction entre l’avatar actif et les autres avatars dans les bulles de dialogues</li></ul></p><p>Modifs du 22/07/2025 <ul type=\"disc\"><li>Intégration de la boutique Walk dans le monde, non fonctionnelle !</li></ul></p></div>",
+
+"aff_bugs" : "<h4 class =\"bug-titre\">infos sur les bugs</h4><div id=\"tab-modif\"><p>Bug du 17/02/2026<ul type=\"disc\"><li  class=\"resolut\">Correction du bug empêchant par intermittence la connexion  au monde <pan class=\"i\">[Résolu]</span></li></ul></p><p>Bug du 14/07/2025<ul type=\"disc\"><li  class=\"resolut\">Erreur dans une variable et de calcul dans le déplacement des avatars <pan class=\"i\">[Résolu]</span></li><li class=\"noresolut\">Empêcher de ce connecter au même avatar lors qu'il es déjà en ligne ! <pan class=\"i\">[Non résolut]</span></li><li class=\"resolut\">Rendre bligatoire, lors de la création de l'avatar d'entrer un nom entre 5 et 15 lettres! class=\"i\">[Résolu] le 17/07/2025]</span></li></ul></p></div>",
+
+"presentation_monde" : "<h4 class=\"cnt\">Bienvenu dans  The Wakk</h4><p> un monde presque permanent, reste héroïque d’une structure permettant, il y a longtemps, la déambulation poétique urbaine, fruit de l’imagination de notre très cher ami Fabrizio.</p><br><p>The Walk a été créée et maintenu  par Pascal avec la contribution d’autres personnes ou structures conscient ou non. En premier lieu l’équipe du projet de l'application «Mon Bus A Moi» qui ont permis l’élaboration du moteur JavaScript faisant fonctionner le monde. Vincent est notre deuxième contributeur et bêta testeur, créateur et stockeur de RPG-maker, avec toujours ses idées insolites</p>",
+
+"popup_infos_monde" : "<h4 class=\"cnt\">Infos du monde The Walk</h4><p>Bonjour à toutes et tous ! De bien belles et grandes nouveautés !<br>Le monde est a ce jour, dimanche 9 novembre 2025 à la version 2.4.5 et en phase test. Et aujourd’hui vous avez enfin la possibilité de choisir la repose automatique de votre avatar lors de rencontre avec d’autres avatars non joueurs<br>d’autres nouveautés sont apparues discrètement en cours d’été, comme le déplacement des avatars non joueurs en fin de phase de votre déplacement. Sans oublier la refonte complète de la popup de gestion de votre avatar</p>",
+
+"_commantaire_10": "données perdues ou non utilisées",
+
+"structure_popup_avatar" : "<table id=\"info_avatar\"><tbody><tr id=\"ligne_tab_1\"></tr><tr id=\"ligne_tab_2\"></tr><tr><td id=\"photo_avat\"></td><td colspan =\"2\" id=\"zondialogavat\"></td><td id =\"txt_ctrl_diag\"></td></tr><tr id=\"ligne_tab_3\"></tr></tbody></table><button class=\"btn_cookie\" onclick=\"popup('action_avatar','none')\">Fermer</button>",
+"ligne_popup_1": "<td id='aff_physiq_avat'></td><td id='aff_intell_avat'></td><td id='aff_charis_avat'></td><td id='aff_pw_avat'></td>",
+"ligne_popup_2" : "<td><span class =\"gr\"> Beauté : </span><span id=\"aff_beaute_avat\"></span></td><td><span class =\"gr\"> Vitalité: </span><span id=\"aff_vitalit_avat\"></span></td><td><span class =\"gr\"> Confiance: </span><span id=\"aff_confiance_avat\"></span></td><td><span class =\"gr tab10g\">Notoriété: </span><span id=\"aff_not_avat\"></span> </td>",
+"ligne_popup_3" : "<td id=\"info_avt_bas1\"></td><td id=\"info_avt_bas2\" colspan =\"2\"></td><td id=\"info_avt_bas4\"></td>",
+"ligne_popup_4" : "<td id='info_avt_bas3' colspan ='4'></td>",
+
+"menu_popup_avat" : "<ol id ='list_menu_gene'><li class='souris' onclick='identiteAvatar()'>Identité avatar</li><li class='souris' onclick='dialAvatPasConnu()'>Dialogues Avatars</li><li class='souris' onclick='gestionMemoireAvat()'>Mémoire avatar</li><li>personnaliser avatar</li><li>Tenue avatar</li></ol>",
+"menu_diag_avt" : "<h3>Options dialogues</h3><ol id ='list_option_diag'><li class='souris' onclick='choixDialogue(0)'>Avatar pas connu</li><li class='souris' onclick='choixDialogue(1)'>Avatar connu</li><li class='souris' onclick='choixDialogue(2)'>Avatar non reconnu</li></ol>",
+
+"popup_photo_avat" : "<img id ='cadre_photo' src='images/cadre.png'><img id ='avatar_photo' src='images/avatar/[nomavat].png' id='potoavat'>",
+"popup_xt_ceation" : "<div class='cnt mt5'><span class='gr'>Avatar créée depuis le </span>[datecreat]</div>",
+"titre_interaction_avat" : "Réponse automatique interaction entre avatars",
+"titre_memoire_popup" : "Gestion de la memoire de votre avatar",
+"spangr" : "<span class=\"gr\">[texte]</span>",
+"menu_deroulant" : "<label for=\"reponse_auto\">[trtselect]</label><select id=\"reponse_auto\"><option value=\"\">--Choisissez une réponse automatique--</option>[zonne_index]</option></select></div>",
+
+"text10" : "<h3 class=\"titre_from\">Les caractéristiques de votre avatar</h3><div id=\"creat_avatar\">\r\n<div id=\"nav_avatar\"><h4 class=\"titre_from\">Aptitudes<br>principlales</h4><p>Physique : <span id=\"phy\"></span></p><p>Intellect : <span id=\"int\"></span></p><p>Charisme : <span id=\"ch\"></span></p></div><div id =\"zone_img_avatar\"><h4 class=\"titre_from\">Aptitudes<br>secondaires</h4><p>Beauté : <span id=\"aff_beaute_avat\"></span></p><p>Confiance : <span id=\"conf\"></span></p><p>Vitalité : <span id=\"vita\"></span></p></div><div id =\"couleur\"><h4 class=\"titre_from\">Points divers</h4><p>Points Walk : <span id=\"pk\"></span></p><p>Notorièté :<span id=\"nt\"></span></p><p>Age : <span id=\"age\"></span></p></div></div><button id=\"etape3\" class=\"bouton\" onclick=\"enregistre_avat()\">Etape 3</button><h3 class=\"titre_from\">Infos données avatar</h3><div class=\"zonne_txt\"><p>Les aptitudes secondaires sont calculées à partir des aptitudes principales. Les points Walk correspond à la somme des aptitudes et du ou point de création restant.</p></div>",
+
+"bouton6" : "<button class=\"btn_cookie\" onclick=\"popup('action_avatar','none')\">Fermer</button>",
+
+"presentation_popup" : "<h4 class=\"cnt\">Bienvenu dans  The Wakk</h4><p> un monde presque permanent, reste héroïque d’une structure permettant, il y a longtemps, la déambulation poétique urbaine, fruit de l’imagination de notre très cher ami Fabrizio.</p><p>The Walk est un monde presque permanent car il évolue uniquement quand les avatars font des actions comme ce déplacer. Il évolue de jours en jours. L’age du monde à était défini à toute première  version en démo de 2013. Le vrais lancement du monde date de 2021.</p>",
+
+"regles2" : "<h4 class=\"cnt\">Le monde bouge</h4><p>Le principe du monde presque permanent ce sont les avatars qui font avancer l’horloge du monde au rythme des déplacements des avatars, à savoir 10 secondes par tour de mouvement</p><p>Votre avatar aussi évolue avec le monde, il gagne 1 point de notoriété par heure et il prend un an de plus pour chaque jour passé dans dans le monde.</p>",
+"version_regles" : "<div id=\"boite03\" class=\"boite12\">Le monde The Walk est actuellement au <span id=\"date_block\"></span> à la version <span id=\"version_block\"></span> et en phase <span id=\"beta_block\"></span></div>",
+
+"structures6" : "<table id=\"inter_avatar_actif\"><tbody><tr><td id=\"titre_inter_avat\" colspan=\"3\">Choix des interattractions entre avatars</td></tr><tr><td><ol><li>reponses rencontre avatar actif</li><li>description avatar actif</li></ol></td><td id=\"deb_choix_inter\"><p>début de la reponse</p><select><option selected value=\"0\">Bonjour je m'apelle</option><option value=\"1\">1Qu'est qu tu veut</option><option value=\"3\">J'suis occupé</option><option value=\"4\">3 Désolé j'ai rien a dire</option></select></td><td id=\"fin_choix_inter\"><p>fin de la reponse</p><select><option selected value=\"0\">et toi?</option><option value=\"1\">reviens tout a l'heure</option><option value=\"3\">cool on peut discuter un peu</option><option value=\"4\">laisse moi s'il te plait</option></select></td></tr><tr><td>ici autre chose</td><td>Ici aussi autre chose</td><td>une nouvelle zone</td></tr></tbody></table><button class=\"btn_cookie\" onclick=\"popup('action_avatar','none')\">Fermer</button>",
+
+"titre3" : "L'aparence de votre avatar",
+"titre5" : "Pour accèder au monde si vous étes deja inscrit",
+"titre6" : "Inscription pour pouvoir entrer dans le monde",
+
+"bouton4" :"<button id=\"tirage_caract\" class=\"bouton\" onclick=\"creatImageavat()\">Validez</button>",
+
+"_commantaire_11": "données images coprs et habits avatar",
+
+"nbr_img" : 12,
+"col_table" : 4,
+"deb_tete"  : 10206,
+"deb_corps" : 10194,
+"couleurs" :{
+             "coul1" :"FFCCCC",
+             "nomcoul1" : "rose",
+             "coul2" :"FFCC74",
+             "nomcoul2" : "jaune",
+             "coul3" :"E5C093",
+             "nomcoul3" : "jaune-gris",
+             "coul4" :"996600",
+             "nomcoul4" : "marron-vert",
+             "coul5" :"999966",
+             "nomcoul5" : "vert pale",
+             "coul6" :"9999CC",
+             "nomcoul6" : "bleu-violet",
+             "coul7" :"F4BE9A",
+             "nomcoul7" : "rose pale",
+             "coul8" :"CC9D59",
+             "nomcoul8" : "gris-vert",
+             "coul9" :"CC0000",
+             "nomcoul9" : "rouge",
+             "coul10" :"F8DCCE",
+             "nomcoul10" : "blanc rosé",
+             "coul11" :"6799CC",
+             "nomcoul11" : "bleu",
+             "coul12" :"FF9902",
+             "nomcoul12" : "jaune"
+},
+"rept" : {
+            "max" : 6,
+            "ind1" : "coul_corps",
+            "txt1" : "couleur corps",
+            "ind2" : "corps",
+            "ind3" : "tete",
+            "ind4" : "bouche", 
+            "txt4" : "La bouche",
+            "ind5" : "yeux",
+            "txt5" : "Les yeux",
+            "ind6" : "cheveux",
+            "txt6" : "Les cheveux",
+            "ind7" : "lunettes",
+            "txt7" : "Les lunettes",
+            "ind8" : "pantalon",
+            "txt8" : "Les pantalons",
+            "ind9" : "chemises",
+            "txt9" : "Les chemises",
+            "ind10"  : "chaussures",
+            "txt10" : "Les chaussures",
+            "ind11" : "robes",
+            "txt11" : "Les robes",
+            "ind12" : "divers",
+            "txt12" : "test divers",
+            "ind13" : "chapeaux",
+            "txt13" : "Les chapeaux"
+
+},
+
+"_commantaire_12": "données textes reponses avatar",
+
+"rep_pasconnu" : {
+            "nbr" : 3,
+            "1" : "Bonjour je m'apelle [avatar]",
+            "2" : "Je ne crois pas vous connaître",
+            "3" : "Je n'ai pas le temps de vous parler"
+            },
+"rep_connu" : {
+            "nbr" : 3,
+            "1" : "Bonjour [avat-actif], comment allez-vous?",
+            "2" : "Je n’ai pas le temps de discuter de discuter",
+            "3" : "Vous etes sur que l’on se connaît?"
+            },
+"rep_oubli" : {
+                "1" : "j'ai completement oublié votre nom",
+                "2" : "repellez-moi qui vous etes",
+                "3" : "de toute mamière j'ai autre chose à faire"
+            },
+"donne-rep"   : {
+            "0" : "rep_pasconnu",
+            "1" : "rep_connu",
+            "2" : "rep_oubli"
+
+            },
+"trtselectphras" : {
+                    "0" : "Réponse première rencontre",
+                    "1" : "Réponse avatar connu",
+                    "2" : "Réponse avatar oublié"
+                }
+}
+
+

@@ -10,13 +10,14 @@
      if (!empty($_POST['nom_avat_actif'])){
         $pos_avat = $_POST['pos_avat_actif'];
         $nom_avat = $_POST['nom_avat_actif'];
+        $prescence = $_POST['prescence'];
         $retour_age = (json_decode($_POST['age_mond_rtr'], true)); 
         $notoriete = $_POST['notoriete'];
         $age = $_POST['modifage'];
         $reponse  = $_POST['reponse'];
-        //$memoire = $_POST['memoire'];
-        //$query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age', num_reponse ='$reponse', memoire_jour ='$memoire' WHERE nom = '$nom_avat'";
-         $query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age', num_reponse ='$reponse', WHERE nom = '$nom_avat'";
+        $memoireLieux = $_POST['memlieux'];
+        $positionReel = $_POST['positionReel'];
+         $query1 = "UPDATE avatar SET pos_dep = '$pos_avat', notoriete = '$notoriete', age = '$age', num_reponse ='$reponse', memoire_lieux ='$memoireLieux', pos_reel='$positionReel', prescence='$prescence' WHERE nom = '$nom_avat'";
         $result_bdd = $laison->query($query1);
         $ans =  $retour_age["ans"];
         $mois =  $retour_age["mois"];
@@ -24,8 +25,9 @@
         $heures = $retour_age["heurs"];
         $minutes = $retour_age["minutes"];
         $secondes = $retour_age["secondes"];
+        $tempsorigin = $retour_age["temp_origin"];
            // echo "Modification de la fiche entrée matériel reussi";  nom , pos_dep
-        $query2 = "UPDATE donnees_monde SET ans = '$ans',  mois = '$mois', jours = '$jours', heurs = '$heures', minutes = '$minutes', secondes = '$secondes' WHERE id = 1";
+        $query2 = "UPDATE donnees_monde SET ans = '$ans',  mois = '$mois', jours = '$jours', heurs = '$heures', minutes = '$minutes', secondes = '$secondes', temp_origin ='$tempsorigin' WHERE id = 1";
         $result_bdd = $laison->query($query2);
         $retour =  $retour_age["ans"];
         echo $query1;

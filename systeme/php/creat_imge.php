@@ -6,7 +6,7 @@
     $etape = "3";
     $nom_BDD = "img_avatar";
     $nomavat = $_COOKIE['nom'];
-    $repjs="../donnees/walk.json";
+    $repjs="../donnees/walk2026.json";
 	$json = file_get_contents($repjs);
 	$des_avat = json_decode($json, true);
    
@@ -16,16 +16,16 @@
         $retour =  $avatar_png; // pour test
 
                 /* procédure enregistrement base de donnée */
-            $requete = "INSERT INTO $nom_BDD (nom, corps, tete,coul_corps, bouche, yeux, cheveux, lunette, pantalon, chemise, robe, chaussure) VALUES ( '$avatar_png[0]', '$avatar_png[1]', '$avatar_png[2]','$avatar_png[3]','$avatar_png[3]','$avatar_png[5]','$avatar_png[6]','$avatar_png[7]','$avatar_png[8]','$avatar_png[9]','$avatar_png[10]','$avatar_png[11]')";
+            $requete = "INSERT INTO $nom_BDD (nom, corps, tete,coul_corps, bouche, yeux, cheveux, pantalon, chemise chaussure, robe ,lunette) VALUES ( '$avatar_png[0]', '$avatar_png[1]', '$avatar_png[2]','$avatar_png[3]','$avatar_png[3]','$avatar_png[5]','$avatar_png[6]','$avatar_png[7]','$avatar_png[8]','$avatar_png[9]','$avatar_png[10]','$avatar_png[11]')";
 				// $erreur["message"] = $requete;
 				$result_bdd = $laison->query($requete); 
 
 
            /* procedure d'enregistrement de l'image de l'avataer */     
-        $image = imagecreatefrompng("../../images/creation_avatar/".$des_avat["rept"]["ind1"]."/".$avatar_png["1"].".png"); 
+        $image = imagecreatefrompng("../../images/creation_avatar/".$des_avat["rept"]["ind2"]."/".$avatar_png["2"].".png"); 
         imagealphablending($image,true);
         imagesavealpha($image,TRUE);
-        for ($av = 2; $av<=10; $av ++)
+        for ($av = 3; $av<=9; $av ++)
         {
             if ($avatar_png[$av]!="vide") {
                 $source = imagecreatefrompng("../../images/creation_avatar/".$des_avat["rept"]["ind".$av]."/".$avatar_png[$av].".png"); 

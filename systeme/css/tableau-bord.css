@@ -1,0 +1,62 @@
+
+
+#form-bord {
+    background-color: #a78abe;
+    border: 1px solid #201962;
+    height: 380px;
+    width: 780px;
+    text-align: center;
+    font-family: verdana;
+    color: #ffffff;
+    margin: 5rem auto;
+}
+#form-bord input[type="password"] {
+    width: 200px;
+    font-size: 1.2rem;
+}
+#form-bord button{
+    height: 35px;
+}
+#form-bord section {
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: 50%;
+    font-size: 0.8rem;
+}
+#form-bord article {
+    font-style: italic;
+    padding-top: 2em;
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+.footer_tabbord, #mise_jour {
+    width: 99%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    border-spacing: 4px 0;
+}
+ .footer_tabbord thead th,#mise_jour thead th {
+    background-color: var(--mauve);
+    color: var(--blanc);
+    padding: 10px;
+} 
+ .footer_tabbord tbody td, #mise_jour tbody td {
+    height: 25px;
+}
+ .footer_tabbord tbody tr:nth-child(even), #mise_jour tbody tr:nth-child(even) {
+    background-color: var(--bleublanc);
+}
+ .footer_tabbord tbody tr:nth-child(odd), #mise_jour tbody tr:nth-child(odd)  {
+    background-color: var(--bleu_clr);
+}
+ .footer_tabbord tbody tr input, #mise_jour tbody tr input {
+    width: 150px;
+    border: none;
+}
+ .footer_tabbord input, #mise_jour input{
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    /* margin: 0; */
+}

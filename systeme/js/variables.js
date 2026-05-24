@@ -1,23 +1,29 @@
 	let fin_recul = 450; // position mini de l'avatar
 	let fin_avanc = 750; //position max de l'avatar 
-	let fin_decor; // position max du decor
-	let deb_decor = 0; // position de debut du decor
-	let avc_monde = 0; // nombre de pixel d'avance du monde
-	const delais = 5000;// délais d'animation
-	const pas = 150; // pas d'avance avec bouton
+	let fin_decor; // position max du decor donnée venant de la BDD
+	const deb_decor = 0; // position de debut du decor
+	const delais = 6000;// délais d'animation
+	let pas = 100; // pas d'avance avec les boutons
 	const decalage_monde = 600; // decalage du monde au demarage pour la position de l'avatar
 	const marg_main = parseInt($("main").css('margin-left')); // margin de la balise <main></main> 
-	const largeur_monde = 1200; // largeure du monde ne sert pas pour le moment
-	const ecart_temp = 10 // avance en secondes d'un tour de mouvement due l'avatar actif
-	const indic_noto = 10 // nombre de minutes pour augmenter la notoriété
+	const ecart_temp = 10 // avance en secondes pour un tour de jeu 6 tours pour 1 minute
+	const indic_noto = 10 // nombre de minutes pour augmenter la notoriété de 1
+	let regleData = new Object(); //json des textes des regles
+
+	let inter_nom_avat; //le nom de l'avatar non joueur en interaction avec l'avatar actif
+	let Avatar_actif; // objet des données de l'avatar actif
+	let pos_monde; //position du monde à l'ouverture par rapport a l'avatar actif
+	let boutiquePrescenceMonde = false // avatar actif devant une boutique au démarage 2026
+	let premierTour = true; // drapeau marquant le premier tour au lancement
+	let inter_avatar = false; // drapezu passe a true losuqe l'avatar actif rencontre un avatar non joueur
 
 	let indc_coul = 1; // couleur de base du corps de l'avatar
 
-	let avc_avat; // nombre de pixel que doit faire l'avatar actif
-	let pos_avatar;//position rel de l'avatar actif pour simplifier les calculs
-	let pos_monde; //position du monde à l'ouverture par rapport a l'avatar actif
-	let tab_pos_rel =[]; // position affiché relative des avatars dans le monde
-	let etap; // etape de création
+	let avc_avat; // nombre de pixel que doit faire l'avatar pour ce déplacer laisser en global!
+	let pos_avatar;//position rel de l'avatar actif pour simplifier les calculs en global !!
+	
+
+	let etap = 0; // etape de création modif 26/04/2025 la variable n'était pas définie
 	let intel = 3;
 	let physi = 3;
 	let charis = 3;
@@ -36,29 +42,39 @@
 	let reper_png = "3";
 	let bulle_avatar="";
 	let Avatmonde = new Object();
-	let pos_avat_monde = []; //position des avatars indexés dans le monde utilisé!!
-	// let age_monde;
-	// let heur_monde;
+	let data = new Array();
+
 	let type_age ="adulte";
 	let indc_val;
 	let indc_max;
 	let corps_avat;
-	let prems = true;
-	//let pos_avt_ancien = new Array();
+
 	let structure;
-	let inter_avatar = false;
-	var inter_nom_avat =""
+	
+	
 	let position_souris;
 	let activ_souris =true
 	let presence_monde = true
-	// let texte_barre_txt
+	let nom_avatar;
 	
-	//nouv 2026
+	//nouv 2025
 	let drap_noto = 0 // drapeau de calcul des secondes pour l'évolution de la notoriete
 	let lanc_witer = true //drapeau pour accéder à la machine à écrire 
 	const vitesse_witer = 50 // vitesse  de la machine à écrire 
 	let don_site_jon = new Array(); // données générale du site de la base de donnée 01/03/2026
-	//let posmonddeplacer; //positin du monde apres déplacement
-	let pos_fin_monde // position de la fin du monde coté droit
+
+
 	let indmem_avtnj // indice memoire de l'avatar non_joueur rencontré
+	let dataBoutique //données sur les boutiques
+	let pos_boutique // données map des boutiques
+	let prescenceBoutique = false	
+	
+	
+	let nomBoutiques = new Array();
+	let pos_objets = new Array(); // tableau des objest dans les boutiques
+	let tabObjetsbout = new Array(); //tableau des noms des objets cliquables en boutique
+ 	let dataObjets;
+	let nom_boutique = "";
+	let dataObjBoutique;
+	let map;
 	

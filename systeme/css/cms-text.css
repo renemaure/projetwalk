@@ -1,3 +1,15 @@
+/*-- collectif 11880 fichier cms-collectif.css
+regroupe les diferents fichiers gérant les css sur les
+sites suivi par le collectif 
+mise à jour important au 9 novembre 2013 
+
+adapté et remis à jour pour le projetWalk 2025
+mais les codes restent toujours fonctionnels pour tous les sites gérés par le collectif
+
+derniere mise a jour et netoyage des régles au 16/04/2026
+dé^lacer des régles génériques du projetWalk
+-- */	
+
 /*module de getion cms de texte 
 pour les sites gérer par le collectif*/	
 
@@ -19,11 +31,20 @@ pour les sites gérer par le collectif*/
     --mauve: #a78abe;
     --bleublanc: #ced4e5;
     --bleu_clr: #e8ebf5;
+    --noir: #000;
 }
-.tab10g{padding-left: 10px;}
-.vert{background-color: var(--vert) !important;}
-.mt5{margin-top: 5px;}
-.block{display: block;}
+/* Debur des régles de base pour le walk */
+p {
+    margin:0 0 0 0;
+}
+button {
+    font-weight: bold;
+    cursor: pointer;
+    /* border-block-color: var(--blanc); */
+    border: 1px solid var(--bleu);
+    background-color: var(--gris-clr);
+    border-radius: 10px;
+}
 
 
  
@@ -53,7 +74,7 @@ pour les sites gérer par le collectif*/
 
 .times { font-family: Times New Roman;}
 
-.arial-black, .arialb {font-family: arial black;}   
+.arial-black, .arialb {font-family: arial var(--noir);}   
 
 .arial {font-family: arial;} 
 
@@ -66,18 +87,17 @@ pour les sites gérer par le collectif*/
 }
 .main {font-family:  fonte_main;} */
 
-/* couleurs */
+/* couleurs en class*/
  
-.blanc {color:#FFFFFF;}
+.blanc {color:var(--blanc);}
 
-.noir {color:#000000;}
+.noir {color:var(--noir);}
 
 .mauve {color:#6D3489;}
 
 .sable {color:#FFCC66;} 	  
 
-.rouge {color:#FF0000;}
-.red{color: var(--rouge);}
+.red, .rouge{color: var(--rouge);}
 
 .fushia {color: #AE206C;}
 
@@ -91,7 +111,7 @@ pour les sites gérer par le collectif*/
 
 .gras, .g, .gr {font-weight:bold;}
 
-.centrer, .cnt {text-align: center !important;}
+.centrer, .cnt, .cntr {text-align: center !important;}
 
 .justifier, .jst {text-align: justify;}
 
@@ -113,13 +133,17 @@ pour les sites gérer par le collectif*/
 
 /*fond en couleur*/
 
-.bc_noir , .fnoir {background: none repeat scroll 0 0 #000000; }
+.bc_noir , .fnoir {background: none repeat scroll 0 0 var(--noir); }
 
 .bc_mauve , .fmauve {background: none repeat scroll 0 0 #AE206C;}
 
-.fblanc {background: background: none repeat scroll 0 0 #FFFFFF;}
+.fblanc{ background-color: var(--blanc);}
 
-.absolu, .ab {position: absolute;} 
+.frouge{ background-color: var(--rouge);}
+
+.vert{background-color: var(--vert) !important;}
+
+.absolu, .ab {position: absolute !important;} 
 
 .relatif , .re {position:relative;}
  
@@ -127,24 +151,59 @@ pour les sites gérer par le collectif*/
 
 .visible , .vis {display:inline;}
 
+.block{display: block;}
+
+.p0 {padding: 0;}
 .p5 {padding:5px;}	
 .pad , .p10 {padding:10px;}	
 .p15 {padding:15px;}	
 .p20 {padding:20px;}
 
+.ph5, .mt5{margin-top: 5px;}
 .ph10{padding-top: 10px;}
 .ph20{padding-top: 20px;}
 
 .pb10 {padding-bottom: 10px;}
+.pb15{padding-bottom: 15px;}
 .pb20 {padding-bottom: 20px;}
 .pb30 {padding-bottom: 30px;}
 
-.z1 {z-index:1;}
 
+
+.pl5 {padding-left: 5px;}
+.pl10, .tab10g {padding-left: 10px;}
+.pl15 {padding-left: 15px;}
+.pl20 {padding-left: 20px;}
+
+.pt0v5r{padding-top: 0.5rem;}
+.pt1r{padding-top: 1rem;}
+.pt2r{padding-top: 2rem;}
+.pt2v5r{padding-top: 2.5rem;}
+.pt3r{padding-top: 3rem;}
+
+.m0 {margin: 0;}
+.m10 {margin: 10px;}
+
+.mt5 {margin-top: 5px;}
+.mt10 {margin-top: 10px;}
+
+.z1 {z-index:1;}
 .z2 {z-index:2;}
-	
 .z3 {z-index:3;}
 
+.icon-demo .bi, .icon-demo-examples .bi {
+    width: 1em;
+    height: 1em;
+}
+.bi {
+    display: inline-block;
+    vertical-align: -.125em;
+    fill: rgb(7, 7, 7);
+}
+
+.txtbl{
+    color: var(--blanc);
+}
 
 
 

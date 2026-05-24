@@ -2,14 +2,8 @@
 	$avatar =array();
 	$indice =0;
 	include("base_donnees.php");
-	/* nouveau extraction de l'age du monde 22/06/2025  supressio au 20/03/2026 en doublon*/
-	/*$query1 = $laison->query("SELECT * FROM donnees_monde");
-	$data1 = $query1->fetch(PDO::FETCH_ASSOC);
-	$avatar["inc".$indice] = $data1;*/
-
-		/* fin nouveau code */
-
-	$query = $laison->query("SELECT * FROM avatar where etape = '3'"  );
+	//$query = $laison->query("SELECT * FROM avatar where etape = '3'"  );
+	$query = $laison->query("SELECT nom,erg_date,physq,intel,charis,vitalite,confiance,beaute,age,notoriete,pwalk,pos_dep,pos_reel,num_reponse,reponse_perso,memoire_jour, memoire_lieux,reste_pwalk,prescence,stock_objet FROM avatar where etape = '3'"  );
 	while ($data = $query->fetch(PDO::FETCH_ASSOC))
 	{
 		$indice++;

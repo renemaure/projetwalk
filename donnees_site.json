@@ -30,7 +30,7 @@
             "meta_subject" : "",
 
     "instal_jquery":true,
-    "fich_jquery":"jquery-3.7.1.min",
+    "fich_jquery":"jquery-4.0.0.min",
     "instal_js":true,"fich_js":"mrap89",
     "_commentaire_4":"version BDD du site ",
     "bdd_site":false,"nom_bdd":"","_commentaire_6":"version local du site",

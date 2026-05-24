@@ -30,8 +30,7 @@
 	if ($demar["icon_site"])  echo"\t\t<link rel=\"icon\"href=\"$demar[chem]/$demar[dirimg]/$demar[head_icon].ico\">\r";
 	echo"\t\t<link rel=\"StyleSheet\" type=\"text/css\" href=\"$demar[chem]/$demar[dircss]/$demar[nom_css_site]$css\">\r";
 	if ($demar["css_collectif"]) echo"\t\t<link rel=\"StyleSheet\" type=\"text/css\" href=\"$demar[chem]/$demar[dircss]/$demar[nom_css_collectif]$css\">\r";
-?>
-		
+?>	
 	<script type="text/javascript" src="systeme/js/jquery-4.0.0.min.js"></script>
 	</head>
 	<body>
@@ -51,11 +50,9 @@
 					<div class="zonne_txt"></div>
 				</article> 
 			</section>
-
 			<div id="info_cookie"> <!-- bulle info --></div>	
 			<div id="affiche_regles"><!--popup regles et infos--></div>	
-			<div id="action_avatar"><!--popup  action de l'avatar actif--></div>
-			
+			<div id="action_avatar"><!--popup  action de l'avatar actif--></div>	
 			<div id="zonne_area"></div>
 			<footer id="footer"> </footer>
 		</main>
