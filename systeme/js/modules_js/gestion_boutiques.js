@@ -2,8 +2,7 @@ import {TestAffichObjet,affichage,ajout_html,inserVar,strUcFirst} from './foncti
 import{gestion_barre_text} from './gestion_infos_centrale.js'
 import {objetsBoutique} from './gestion_evenements.js'
 import {generationObjets} from './gestion_objets.js'
-
-import{trtbaseboutiques} from './infos_base.js'
+import{trtbaseboutiques,interactionObjets} from './infos_base.js'
 import{interactionSyndic,sortirboutique} from './interaction_boutiques.js'
 import {avance_souris,animeAvatar} from './deplacement_monde.js'  
 
@@ -47,8 +46,8 @@ function creationBoutique(dataBoutique) {
     affichage("zone_2","")
     let phrase = dataBoutique.phrase_affiche
     // txtEntrerBoutique(phrase)
-    let titre = "Option de la boutique " + strUcFirst(dataBoutique.nom_boutique)
-    trtbaseboutiques(titre) // titre de la zone info monde
+    // let titre = "Option de la boutique " + strUcFirst(dataBoutique.nom_boutique)
+    trtbaseboutiques(dataBoutique) // titre de la zone info monde
     generationObjets()
     afficheAvatarBoutique(dataBoutique)
     // objetsBoutique()    //lance l'evenement on click sur le mobilier avec aussi la map
@@ -62,7 +61,6 @@ function afficheAvatarBoutique(dataBoutique){
     ajout_html('div','zone_souris')
     monde.appendChild(structure)
     document.getElementById("avatar_actif").style.left=`${posEntreAvat}px`
-
     document.getElementById("zone_souris").addEventListener("click", avance_souris) 
 }
 export function avBoutique(){
@@ -70,25 +68,22 @@ export function avBoutique(){
     fin_avanc = 1200
     fin_recul = -20
     let finPosAvat = parseInt(Avatar_actif.pos_rel) + avc_avat
-    console.log("finPosAvat: " + finPosAvat)
     if ( finPosAvat < fin_avanc &&  finPosAvat > fin_recul) animeAvatar("#avatar_actif",finPosAvat)
     finPosAvat = finPosAvat+55;
     for (let index = 1; index <= pos_objets[0]; index= index+4) {
         if (finPosAvat >= parseInt(pos_objets[index]) && finPosAvat <= parseInt(pos_objets[index+1])) {
-            console.log(pos_objets[index+2]) 
+            console.log("objet détecter: "+pos_objets[index+2])
             document.addEventListener("transitionend", () => {
                 if (pos_objets[index+2]=="porte") {
-                    console.log("objet détecter: "+pos_objets[index+2])
-                    sortirboutique() 
-                    // break; 
+                    sortirboutique()
+                    // affPorteBoutique()
                 }
                 else{
                     extraireDataObjetBout(pos_objets[index+2])
-                    // break
                 } 
             });
         
-        } else affichage("ctrl_diag","")
+        } 
     } 
     activ_souris = true    
 }
@@ -112,33 +107,41 @@ function extraireDataObjetBout(nomobjet) {
 function infosObjet(nomobjet) {
     let html=""   
     if (dataObjBoutique[nomobjet]["map"] =="true") {
-        interactionSyndic(nomobjet,dataObjBoutique[nomobjet]["description"]);
+        // interactionSyndic(nomobjet,dataObjBoutique[nomobjet]["description"]);
+        interactionObjets(nomobjet)
     }
     else{
-        let tab = dataObjBoutique[nomobjet]["refstocker"].split(",")
-        console.log("tab : ")+ tab
-        html +="Vous pouvez prendre sur "+dataObjBoutique[nomobjet]["description"]+". <ul>"
-        for (let index =1; index <= tab[0]; index++) {
-            html += "<li  id= 'ref_"+tab[index]+"'>" +dataObjBoutique[tab[index]]["nom_objet"]+"</li>"
+        if (dataObjBoutique[nomobjet]["refstocker"]!="vide") {
+            let tab = dataObjBoutique[nomobjet]["refstocker"].split(",")
+            html +="Vous pouvez acheter sur "+dataObjBoutique[nomobjet]["description"]+". <ul>"
+            for (let index =1; index <= tab[0]; index++) {
+                html += "<li  id= 'ref_"+tab[index]+"'>" + dataObjBoutique[tab[index]]["description"]+" au prix de "+ dataObjBoutique[tab[index]]["prix"] +"Pk</li>"
+            }
+            html+="</ul>"
+            affichage("ctrl_diag",html)  
+            /* boucle ecouteur de la liste */   
+            for (let index = 1; index <=  tab[0]; index++) {
+                let donne = "ref_"+tab[index]
+                console.log(document.getElementById(donne))
+                document.getElementById(donne).addEventListener("click", function () {
+                    predreObjet(tab[index],nomobjet);       
+                });        
+            }
         }
-        html+="</ul>"
-        affichage("ctrl_diag",html)     
-        for (let index = 1; index <=  tab[0]; index++) {
-            let donne = "ref_"+tab[index]
-            console.log(document.getElementById(donne))
-            document.getElementById(donne).addEventListener("click", function () {
-                predreObjet(tab[index],nomobjet);       
-            });  
-               
+        else{
+            let html = "Désolé, mais "+dataObjBoutique[nomobjet]["description"] + " est vide pour le moment"
+           affichage("ctrl_diag",html) 
         }
     }
+    
 } 
 function predreObjet(refobjet,nomobjet) {
-    
     document.getElementById(refobjet).style.cssText = `display:none;`;
-    Avatar_actif.stokobjet = dataObjBoutique[refobjet]
+    let html = "Pour le moment l'interaction s'arette ici! le reste est en programmation!!"
+     affichage("ctrl_diag",html)
+/*     Avatar_actif.stokobjet = dataObjBoutique[refobjet]
     // console.log("ref de l'objet : " + Avatar_actif.stokobjet)
-    console.log(TestAffichObjet(Avatar_actif.stokobjet))
+    console.log(TestAffichObjet(Avatar_actif.stokobjet)) */
     activ_souris = true
     
 } 

@@ -17,6 +17,7 @@
 	let boutiquePrescenceMonde = false // avatar actif devant une boutique au démarage 2026
 	let premierTour = true; // drapeau marquant le premier tour au lancement
 	let inter_avatar = false; // drapezu passe a true losuqe l'avatar actif rencontre un avatar non joueur
+	let dataBoutique //données de la table BDD boutiques
 
 	let indc_coul = 1; // couleur de base du corps de l'avatar
 
@@ -66,7 +67,7 @@
 
 
 	let indmem_avtnj // indice memoire de l'avatar non_joueur rencontré
-	let dataBoutique //données sur les boutiques
+	
 	let pos_boutique // données map des boutiques
 	let prescenceBoutique = false	
 	

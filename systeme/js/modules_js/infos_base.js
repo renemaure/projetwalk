@@ -7,12 +7,24 @@ export function dialogueAvatarMonde() {
    /*  let spangr = text_jon["spangr"]
     affichage("trt_action_avatar", inserVar(spangr,"[texte]", "Options de déplacements de votre avatar")); */
 }
-export function trtbaseboutiques(titreInfo) {
+export function trtbaseboutiques() {
     let spangr = text_jon["spangr"]
-    affichage("trt_action_avatar", inserVar(spangr,"[texte]", titreInfo));
-    affichage("bout_action_gauch","")
-    affichage("bout_action_droit","") 
+    let titre = "Option de la boutique " + strUcFirst(dataBoutique.nom_boutique)
+    affichage("trt_action_avatar", inserVar(spangr,"[texte]", titre));
+    affichage("ctrl_text",dataBoutique.phrase_affiche)
+    affichage("ctrl_diag",inserVar(text_jon["txt_mouv_info_base"],"[info_bout]","") )
+    //affichage("bout_action_droit","") 
     deplacementBt() 
+}
+export function interactionObjets(nomobjet) {
+   affichage("ctrl_text",dataObjBoutique[nomobjet]["description"]) 
+}
+export function affPorteBoutique() {
+    let index = "Voulez vous sortir de cette boutique?<br><br> Cochez la case et validez"
+    affichage("ctrl_text",index)
+    vide_ctrl_diag()
+    affichage("bout_action_gauch",text_jon["txt_reponse"])  
+    affichage("bout_action_droit",text_jon["bouton_reponse"])  
 }
 export function trtInterAvatarBase() {
     vide_ctrl_txt() 
@@ -58,7 +70,7 @@ export function debutTour() {
     deplacementBt()
     let spangr = text_jon["spangr"]
     titreInfoAvat(inserVar(spangr,"[texte]", "Options de déplacements de votre avatar"))
-    let html = "Vous pouvez déplacer votre avatar soit en utilisant la souris ou en cliquant sur les fleches en bas.[info_bout]"
+    let html = text_jon["txt_mouv_info_base"]
     let texte = ""
     if (boutiquePrescenceMonde) texte = "<br><br> Vous pouvez aussi entrer dans cette boutique"   
     affichage("ctrl_text",inserVar(html,"[info_bout]",texte) )

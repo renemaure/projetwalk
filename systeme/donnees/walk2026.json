@@ -188,6 +188,7 @@
 "table_tabbord": "<table class=\"footer_tabbord\"><thead><tr><th colspan=\"2\">[titre-table]</th></tr></thead><tbody>[ligne_td]</tbody></table>",
 "lign_table_tabbord" : "<tr><th>[nom_th]</th><td><input type=\"text\" class=\"cnt\" id=\"[id_td]\" value=\"[value_td]\" minlength=\"4\" maxlength=\"15\"/></td></tr>",
 "lign_bt_tabbord" : "<tr><td colspan=\"2\"><button class=\"btn_cookie\" id='[id_bt]'>Validez</button></td></tr>",
+"txt_mouv_info_base" : "Vous pouvez déplacer votre avatar soit en utilisant la souris ou en cliquant sur les fleches en bas.[info_bout]",
 
 "nbr_img" : 12,
 "col_table" : 4,

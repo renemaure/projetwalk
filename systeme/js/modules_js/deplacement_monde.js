@@ -3,14 +3,16 @@ import{avBoutique} from './gestion_boutiques.js'
 import{affFinDecor,vide_ctrl_diag,effaceDebutTour} from './infos_base.js'
 
 export function avance_souris(e){
-    if (!activ_souris) return;
-    effaceDebutTour()
+    if (!activ_souris) return;    
     activ_souris = false;
     pos_avatar = Avatar_actif.pos_rel
      console.log("position de l'avatar: " + Avatar_actif.pos_rel)
      console.log("position de la souris: "+ e.pageX)
     avc_avat = parseInt(e.pageX - marg_main - pos_avatar - 55);
-    if (presence_monde) calculAvance();
+    if (presence_monde){
+        calculAvance();
+        effaceDebutTour()
+    } 
     else avBoutique(); // déplacement dans les boutiques
 }
 export function  calculAvance(){

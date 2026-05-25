@@ -1,4 +1,4 @@
-import{ accePopupAvatarActif} from './infos_base.js'
+import{ accePopupAvatarActif,affPorteBoutique,trtbaseboutiques} from './infos_base.js'
 import {TestAffichObjet,affichage,inserVar,actionRadio} from './fonctions_internes.js'
 import{affpopupactif} from './popup_avatar.js'
 import{DonneesMonde} from './affiche_monde.js'
@@ -23,14 +23,25 @@ export function interactionSyndic(nomobjet,description) {
         
      }
 }
+export function interactionMode() {
+    
+}
 
-export function sortirboutique() {
+export async function sortirboutique() {
+    affPorteBoutique()
+    const value = await actionRadio();
+    if (value == "true") {
+        presence_monde = true
+        activ_souris = true
+        prescenceBoutique = true
+        Avatar_actif.prescence = "monde";
+        console.log(Avatar_actif);
+        affichage("monde",'')
+        DonneesMonde();    
+    }else{
+        trtbaseboutiques()
+    }
+    
 
-	presence_monde = true
-	activ_souris = true
-    prescenceBoutique = true
-    Avatar_actif.prescence = "monde";
-     console.log(Avatar_actif);
-	affichage("monde",'')
-	DonneesMonde();
+
 }
