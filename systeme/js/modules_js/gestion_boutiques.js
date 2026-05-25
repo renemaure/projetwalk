@@ -74,8 +74,15 @@ export function avBoutique(){
             if (finPosAvat >= parseInt(pos_objets[index]) && finPosAvat <= parseInt(pos_objets[index+1])) {
                 console.log(pos_objets[index+2]) 
                 document.addEventListener("transitionend", () => {
-                    if (pos_objets[index+2]=="porte") sortirboutique()   
-                    else extraireDataObjetBout(pos_objets[index+2])
+                    if (pos_objets[index+2]=="porte") {
+                        console.log("objet détecter: "+pos_objets[index+2])
+                        sortirboutique() 
+                        break; 
+                    }
+                    else{
+                        extraireDataObjetBout(pos_objets[index+2])
+                        break
+                    } 
                 });
             
             } else affichage("ctrl_diag","")
