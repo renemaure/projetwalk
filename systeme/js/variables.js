@@ -9,6 +9,7 @@
 	const ecart_temp = 10 // avance en secondes pour un tour de jeu 6 tours pour 1 minute
 	const indic_noto = 10 // nombre de minutes pour augmenter la notoriété de 1
 	let regleData = new Object(); //json des textes des regles
+	let avc_avat; // nombre de pixel que doit faire l'avatar pour ce déplacer
 
 	let inter_nom_avat; //le nom de l'avatar non joueur en interaction avec l'avatar actif
 	let Avatar_actif; // objet des données de l'avatar actif
@@ -19,7 +20,7 @@
 
 	let indc_coul = 1; // couleur de base du corps de l'avatar
 
-	let avc_avat; // nombre de pixel que doit faire l'avatar pour ce déplacer laisser en global!
+	
 	let pos_avatar;//position rel de l'avatar actif pour simplifier les calculs en global !!
 	
 

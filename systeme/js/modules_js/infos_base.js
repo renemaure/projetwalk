@@ -1,5 +1,6 @@
 import {affichage,inserVar,strUcFirst} from './fonctions_internes.js'
 import {calculAvance} from './deplacement_monde.js'
+import{gestionBoutons} from './gestion_evenements.js'
 
 export function dialogueAvatarMonde() {
     affichage("infos_base", text_jon["structure_info_avatar_base"])
@@ -8,10 +9,10 @@ export function dialogueAvatarMonde() {
 }
 export function trtbaseboutiques(titreInfo) {
     let spangr = text_jon["spangr"]
-    // affichage("trt_action_avatar", inserVar(spangr,"[texte]", "Actions possibles au Syndicat d'initiative du Walk"));
     affichage("trt_action_avatar", inserVar(spangr,"[texte]", titreInfo));
     affichage("bout_action_gauch","")
-    affichage("bout_action_droit","")  
+    affichage("bout_action_droit","") 
+    deplacementBt() 
 }
 export function trtInterAvatarBase() {
     vide_ctrl_txt() 
@@ -70,14 +71,15 @@ export function affFinDecor(){
 export function deplacementBt() {
     affichage("bout_action_gauch",inserVar(text_jon["fleche_gauche"],"[texte]"," Recule au pas"))
     affichage("bout_action_droit",inserVar(text_jon["fleche_droite"],"[texte]","Avance au pas ")) 
-    document.getElementById("avgauche").addEventListener("click", function () {
+   /*  document.getElementById("avgauche").addEventListener("click", function () {
         avc_avat = -pas;
         calculAvance() 
     })
     document.getElementById("avdroit").addEventListener("click", function () {
         avc_avat = pas;
         calculAvance()
-    })
+    }) */
+   gestionBoutons()
 }
 export function effaceDebutTour(){
     fermBtAction()
