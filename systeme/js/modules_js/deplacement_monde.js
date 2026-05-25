@@ -7,6 +7,8 @@ export function avance_souris(e){
     effaceDebutTour()
     activ_souris = false;
     pos_avatar = Avatar_actif.pos_rel
+     console.log("position de l'avatar: " + Avatar_actif.pos_rel)
+     console.log("position de la souris: "+ e.pageX)
     avc_avat = parseInt(e.pageX - marg_main - pos_avatar - 55);
     if (presence_monde) calculAvance();
     else avBoutique(); // déplacement dans les boutiques

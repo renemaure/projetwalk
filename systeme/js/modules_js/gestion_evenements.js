@@ -1,5 +1,5 @@
 import {calculAvance,avance_souris} from './deplacement_monde.js'  
-import {ouvirBoutique,accesObjetsBout} from './gestion_boutiques.js'
+import {ouvirBoutique,accesObjetsBout,avBoutique} from './gestion_boutiques.js'
 import{affichage,popup} from './fonctions_internes.js'
 import{positionDepartMonde} from './avatar_actif.js'
 import{ DonneesMonde} from './affiche_monde.js'  
@@ -16,11 +16,13 @@ import{ DonneesMonde} from './affiche_monde.js'
     export function gestionBoutons() {
         document.getElementById("avgauche").addEventListener("click", function () {
             avc_avat = -pas;
-            calculAvance() 
+            if (presence_monde) calculAvance();
+            else avBoutique(); // déplacement dans les boutiques
         })
         document.getElementById("avdroit").addEventListener("click", function () {
             avc_avat = pas;
-            calculAvance()
+            if (presence_monde) calculAvance();
+            else avBoutique(); // déplacement dans les boutiques
         })
     }
      function gestionBoutiques() {

@@ -1,4 +1,4 @@
-import {TestAffichObjet,affichage,ajout_html,inserVar} from './fonctions_internes.js'
+import {TestAffichObjet,affichage,ajout_html,inserVar,strUcFirst} from './fonctions_internes.js'
 import{gestion_barre_text} from './gestion_infos_centrale.js'
 import {objetsBoutique} from './gestion_evenements.js'
 import {generationObjets} from './gestion_objets.js'
@@ -44,17 +44,18 @@ function creationBoutique(dataBoutique) {
     pos_objets = dataBoutique.pos_objet.split(",");
     console.log("tableau objets boutique : "+pos_objets )
     tabObjetsbout = pos_objets.filter((_, i) => i % 3 === 0).slice(1);
-    affichage("zone_2","votre avatar est dans une boutique du monde")
+    affichage("zone_2","")
     let phrase = dataBoutique.phrase_affiche
     // txtEntrerBoutique(phrase)
-    trtbaseboutiques(dataBoutique.titre_info) // titre de la zone info monde
+    let titre = "Option de la boutique " + strUcFirst(dataBoutique.nom_boutique)
+    trtbaseboutiques(titre) // titre de la zone info monde
     generationObjets()
     afficheAvatarBoutique(dataBoutique)
     // objetsBoutique()    //lance l'evenement on click sur le mobilier avec aussi la map
 }
-function afficheAvatarBoutique(dataBoutique){
-    
+function afficheAvatarBoutique(dataBoutique){    
     let posEntreAvat = dataBoutique.pos_avatar
+    Avatar_actif.pos_rel = posEntreAvat
     ajout_html('img','avatar_actif','avatar')
     structure.src ="images/avatar/"+Avatar_actif.nom+".png"
     monde.appendChild(structure)
@@ -65,29 +66,31 @@ function afficheAvatarBoutique(dataBoutique){
     document.getElementById("zone_souris").addEventListener("click", avance_souris) 
 }
 export function avBoutique(){
-        fin_avanc = 1100
-        fin_recul = -20
-        let finPosAvat = parseInt(pos_avatar + avc_avat)
-        if ( finPosAvat < fin_avanc &&  finPosAvat > fin_recul) animeAvatar("#avatar_actif",finPosAvat)
-        finPosAvat = finPosAvat+55;
-        for (let index = 1; index <= pos_objets[0]; index= index+4) {
-            if (finPosAvat >= parseInt(pos_objets[index]) && finPosAvat <= parseInt(pos_objets[index+1])) {
-                console.log(pos_objets[index+2]) 
-                document.addEventListener("transitionend", () => {
-                    if (pos_objets[index+2]=="porte") {
-                        console.log("objet détecter: "+pos_objets[index+2])
-                        sortirboutique() 
-                        break; 
-                    }
-                    else{
-                        extraireDataObjetBout(pos_objets[index+2])
-                        break
-                    } 
-                });
-            
-            } else affichage("ctrl_diag","")
-        } 
-        activ_souris = true    
+    console.log("avance avatar: "+ avc_avat)
+    fin_avanc = 1200
+    fin_recul = -20
+    let finPosAvat = parseInt(Avatar_actif.pos_rel) + avc_avat
+    console.log("finPosAvat: " + finPosAvat)
+    if ( finPosAvat < fin_avanc &&  finPosAvat > fin_recul) animeAvatar("#avatar_actif",finPosAvat)
+    finPosAvat = finPosAvat+55;
+    for (let index = 1; index <= pos_objets[0]; index= index+4) {
+        if (finPosAvat >= parseInt(pos_objets[index]) && finPosAvat <= parseInt(pos_objets[index+1])) {
+            console.log(pos_objets[index+2]) 
+            document.addEventListener("transitionend", () => {
+                if (pos_objets[index+2]=="porte") {
+                    console.log("objet détecter: "+pos_objets[index+2])
+                    sortirboutique() 
+                    // break; 
+                }
+                else{
+                    extraireDataObjetBout(pos_objets[index+2])
+                    // break
+                } 
+            });
+        
+        } else affichage("ctrl_diag","")
+    } 
+    activ_souris = true    
 }
 function extraireDataObjetBout(nomobjet) {
     fetch("systeme/php/donnees_boutiques.php", {
